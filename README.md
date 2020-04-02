@@ -12,15 +12,17 @@ forces for the release and development of such an application.
 Check out video below
 https://www.youtube.com/watch?v=Wk_8hZFY3Nc&feature=youtu.be
 
-Explore demo version of the app at http://exodus.today/
+Explore demo version of the app at http://exodus.today
 
 The api as available at http://exodus.today/swagger/ui/index
 
 Feel free to fork the project and develop it independently or together with us.
 
 Other usefull links
-http://exodus.social/
+http://exodus.social
 
-https://youtu.be/XTHuC9QIeKc (in russian language)
+https://youtu.be/YeEKVYUlom8 
+
+https://youtu.be/XTHuC9QIeKc
 
 
