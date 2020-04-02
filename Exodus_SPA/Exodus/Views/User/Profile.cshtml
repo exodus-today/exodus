@@ -1,0 +1,273 @@
+﻿@model Exodus.ViewModels.VM_User
+
+@{
+    ViewBag.EnableSidebar = true;
+    ViewBag.Title = "My Profile";
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="user-welcome-text">@Exodus.Global.Localisation.Get("Welcome", lang): <span style="font-weight: bold;">@Model.UserFullName</span></div>
+<div class="profile-header">   
+    <span class="my-profile-status">@Exodus.Global.Localisation.Get("YourCurrentStatus", lang):</span>    
+    @Model.UserStatusMessage         
+    <button class="btn-blue" onclick="showPopupWindow(this)" data-popup="#change_Status_Dialog">@Exodus.Global.Localisation.Get("UpdateStatus", lang)</button>  
+    <button class="btn-blue" onclick=" showPopupWindow(this); $('#UserAbout').val($('#text-user-about').text().trim())"
+            data-popup="#about_User_Dialog">@Exodus.Global.Localisation.Get("AboutUser", lang)</button>  
+</div>
+<hr />
+<div class="my-user-about" id="text-user-about">
+    @Model.UserAbout
+</div>
+
+<div id="collumn-wrap">
+    <div id="id_UserContacts">
+        @{ 
+            var invite_link = String.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority,
+               this.Url.Action("Register", "Account", new { InviteCode = Model.UserGuid } ));
+            }
+        <div class="invitation-link">
+            <b class="invite-code">@Exodus.Global.Localisation.Get("YourInvLink", lang):</b> 
+            <span id="invite-code" class="invite-code" style="background:Highlight; background-color:white">
+                @invite_link
+            </span>
+            <button class="btn-blue copy-text" data-clipboard-text="@invite_link">@Exodus.Global.Localisation.Get("Copy", lang)</button>
+        </div>
+        <hr />
+        <table class="simple-table table-middle profile-table" id="id_UserContactsTable" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>@Exodus.Global.Localisation.Get("ContactType", lang)</th>
+                    <th>@Exodus.Global.Localisation.Get("ContactDetails", lang)</th>
+                    <th>@Exodus.Global.Localisation.Get("Action", lang)</th>
+                </tr>
+            </thead>
+            @if (Model.Contacts != null && Model.Contacts.Count > 0)
+            {
+                foreach (var contact in Model.Contacts)
+                {
+                    <tr>
+                        <td style="font-weight: bold;">
+                            <span>@Exodus.Global.Localisation.Get(Enum.GetName(typeof(Exodus.Enums.En_ContactType), contact.ContactType).Replace("_", "")):</span>
+                        </td>
+                        <td>
+                            @if ((Uri.IsWellFormedUriString(contact.ContactValue, UriKind.Absolute)))
+                            { <span class="contact-detail"><a href="@contact.ContactValue" target="_blank">@contact.ContactValue</a></span> }
+                            else
+                            { <span class="contact-detail">@contact.ContactValue</span> }
+                        </td>
+                        <td>
+                            <div class="butt-wrap">
+                                <input class="btn-blue" type="button" onclick="location.href =
+                                       '@Url.Action("ContactEdit", "UserDetails", new { ContactID = contact.ContactID })'"  value="@Exodus.Global.Localisation.Get("Edit", lang)" />
+                                <input class="btn-red" type="button" onclick="if (confirm('@Exodus.Global.Localisation.Get("AreYouSure", lang)?')) 
+                                location.href = '@Url.Action("ContactDelete", "UserDetails", new { ContactID = contact.ContactID })'"
+                                       value="@Exodus.Global.Localisation.Get("Delete")" />
+                            </div>
+                        </td>
+                    </tr>
+                } //end of foreach contacts
+            }
+            else
+            {
+                <tr colspan="3">
+                    @Exodus.Resources.UserProfile.NoContactsFound
+                </tr>
+            }
+            <tr>
+                <td colspan="3">
+                    <input type="button" value="@Exodus.Global.Localisation.Get("AddContact", lang)" 
+                    onclick="showPopupWindow(this);" data-popup="#add_Contact_Dialog" class="btn-blue" />
+                </td>
+            </tr>
+
+        </table>
+        <hr />
+        <div id="id_UserPaymentAccounts" style="margin-top: 20px;">
+            <table class="simple-table table-middle profile-table" id="id_UserPaymentAccounts" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>@Exodus.Global.Localisation.Get("AccountType", lang)</th>
+                        <th>@Exodus.Global.Localisation.Get("AccountDetails", lang)</th>
+                        <th>@Exodus.Global.Localisation.Get("Action", lang)</th>
+                    </tr>
+                </thead>
+                @if (Model.Accounts != null && Model.Accounts.Count > 0)
+                {
+                    foreach (var account in Model.Accounts)
+                    {
+                        <tr>
+                            <td style="font-weight: bold;">
+                                <span>@Exodus.Global.Localisation.Get(Enum.GetName(typeof(Exodus.Enums.En_AccountType), account.AccountType).Replace("_", "")):</span>
+                            </td>
+                            <td>
+                                <span>@account.AccountDetails</span>
+                            </td>
+                            <td>
+                                <div class="butt-wrap">
+                                    @{ 
+                                        var editUrl = Url.Action("PaymentAccountEdit", "UserDetails", new { AccountID = account.AccountID });
+                                        var deleteUrl = Url.Action("PaymentAccountDelete", "UserDetails", new { AccountID = account.AccountID });
+                                     }
+                                    <input class="btn-blue" type="button" onclick="location.href = '@editUrl'" value="@Exodus.Global.Localisation.Get("Edit", lang)" />
+                                    <input class="btn-red" type="button" onclick="if (confirm('Are You Sure?')) location.href = '@deleteUrl'" value="@Exodus.Global.Localisation.Get("Delete", lang)" />
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr colspan="3">
+                        @Exodus.Resources.UserProfile.NoAccountsFound
+                    </tr>
+                }
+                <tr>
+                    <td colspan="3">
+                        <button class="btn-blue" onclick="showPopupWindow(this);" data-popup="#add_Account_Dialog">@Exodus.Global.Localisation.Get("AddAccount", lang)</button>
+                    </td>
+                </tr>
+
+            </table>
+            <br />
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<div class="popup-background" style="display:none" onclick="closePopupWindow(this)"></div>
+<div class="popup popup_window" id="change_Status_Dialog" style="display:none">
+    <h2 class="popup-dialog-header">@Exodus.Global.Localisation.Get("UpdateStatus", lang)</h2>
+    <center>
+        @using (Html.BeginForm("StatusChange", "Account", FormMethod.Post))
+        {
+            <table id="id_ChangeUserStatusTable">
+                <tr class="color-marckers">
+                    <td align="center">
+                        <div class="user-header-elems">
+                            <span>@Exodus.Global.Localisation.Get("Status", lang):</span>
+                            <div class="user-status-wrap">
+                                @*Html.Raw(PageRenderHelper.UserStatus(Exodus.Enums.En_CurrentStatus.I_AM_OK, "span", (Model.UserStatus != Exodus.Enums.En_CurrentStatus.I_AM_OK) ? "span-status hide-element" : "span-status"))
+                                @Html.Raw(PageRenderHelper.UserStatus(Exodus.Enums.En_CurrentStatus.I_AM_PARTIALLY_OK, "span", (Model.UserStatus != Exodus.Enums.En_CurrentStatus.I_AM_PARTIALLY_OK) ? "span-status hide-element" : "span-status"))
+                                @Html.Raw(PageRenderHelper.UserStatus(Exodus.Enums.En_CurrentStatus.I_NEED_HELP, "span", (Model.UserStatus != Exodus.Enums.En_CurrentStatus.I_NEED_HELP) ? "span-status hide-element" : "span-status"))*@
+                            </div>
+                            <div class="select-wrap select-status">
+                                <select class="turnintodropdown" name="UserCurrentStatus" id="UserCurrentStatus">
+                                    <option value="@((int)Model.UserStatus)">@Exodus.Global.Localisation.Get(Enum.GetName(typeof(Exodus.Enums.En_CurrentStatus), Model.UserStatus))</option> 
+                                    @foreach (var type in Enum.GetValues(typeof(Exodus.Enums.En_CurrentStatus)).Cast<Exodus.Enums.En_CurrentStatus>())
+                                    { 
+                                        <option value="@((int)type)">@Exodus.Global.Localisation.Get(Enum.GetName(typeof(Exodus.Enums.En_CurrentStatus), type))</option> 
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="select-wrap">
+                                <select class="turnintodropdown" name="UserHelpAmountCurrency" id="UserHelpAmountCurrency">
+                                    <option value="@((int)Exodus.Enums.En_Currency.UAH)">@Exodus.Global.Localisation.Get("UAH", lang)</option>
+                                    <option value="@((int)Exodus.Enums.En_Currency.UAH)">@Exodus.Global.Localisation.Get("UAH", lang)</option>
+                                    <option value="@((int)Exodus.Enums.En_Currency.USD)">@Exodus.Global.Localisation.Get("USD", lang)</option>
+                                </select>                           
+                            </div>
+                            <div class="select-wrap select-wrap-period">
+                                <select class="turnintodropdown" name="UserHelpPeriod" id="UserHelpPeriod">
+                                    <option value="@((int)Exodus.Enums.En_HelpPeriods.Once)">@Exodus.Global.Localisation.Get("Ones", lang)</option>
+                                    <option value="@((int)Exodus.Enums.En_HelpPeriods.Once)">@Exodus.Global.Localisation.Get("Ones", lang)</option>
+                                    <option value="@((int)Exodus.Enums.En_HelpPeriods.Monthly)">@Exodus.Global.Localisation.Get("Monthly", lang)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="input-text-area" id="UserStatusMessage" name="UserStatusMessage" cols="25" rows="5">@Model.UserStatusMessage</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="popup-last-raw">
+                        <span>@Exodus.Global.Localisation.Get("AmountReq", lang):</span>
+                        <input name="UserHelpAmountRequired" class="js-input-number popup-amount" id="UserHelpAmountRequired" 
+                               type="text" value="0,00" data-val-required="Требуется поле Decimal." data-val="true"
+                               data-val-number="The field Decimal must be a number.">
+                        <input class="btn-blue" type="submit" value="@Exodus.Global.Localisation.Get("UpdateMyStatus", lang)" />   
+                    </td>
+                </tr>
+            </table>
+        }
+    </center>
+    <a class="close" title="Close" onclick="closePopupWindowBtn(this)"><img src="~/Images/close.png" /></a>
+</div>
+
+<div id="add_Account_Dialog" class="popup popup_window" style="display:none">
+    <h2 class="popup-dialog-header">@Exodus.Global.Localisation.Get("AddNewPayAcc", lang)</h2>
+    <center>
+    @using (Html.BeginForm("PaymentAccountAdd", "UserDetails", FormMethod.Post))
+    {
+        <table id="id_AddPaymentAccountTable">
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-text-area" name="AccountValue" id="id_AccountValue" cols="15" rows="8"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="popup-last-raw">
+                    <input class="btn-blue" type="submit" value="@Exodus.Global.Localisation.Get("AddAccount", lang)" />
+                </td>
+            </tr>
+        </table>
+      }
+    </center>
+    <a class="close" title="Close" onclick="closePopupWindowBtn(this);"><img src="~/Images/close.png"/></a>    
+</div>
+
+<div id="add_Contact_Dialog" class="popup popup_window" style="display:none">
+    <h2 class="popup-dialog-header">@Exodus.Global.Localisation.Get("AddNewContact", lang)</h2>
+    <center>
+        @using (Html.BeginForm("ContactAdd", "UserDetails", FormMethod.Post))
+        {
+        <table id="id_AddContactTable">
+            <tr>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-text-area" name="ContactValue" id="id_ContactValue" cols="15" rows="8"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="popup-last-raw">
+                    <input class="btn-blue" type="submit" value="@Exodus.Global.Localisation.Get("AddContact", lang)" />
+                </td>
+            </tr>
+        </table>
+        }
+    </center>
+    <a class="close" title="Close" onclick="closePopupWindowBtn(this);"><img src="~/Images/close.png" /></a>
+</div>
+
+<div id="about_User_Dialog" class="popup popup_window" style="display:none">
+    <h2 class="popup-dialog-header">@Exodus.Global.Localisation.Get("AboutUser", lang)</h2>
+    <center>
+        @using (Html.BeginForm("AboutChange", "UserDetails", FormMethod.Post, new { @id= "AddContactForm" }))
+        {
+            <table>
+                <tr>
+                    <td>
+                        <textarea form="AddContactForm" class="input-text-area" name="UserAbout" id="UserAbout" cols="15" rows="8" wrap="soft"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="popup-last-raw">
+                        <input class="btn-blue" type="submit" value="@Exodus.Global.Localisation.Get("Save", lang)" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </center>
+    <a class="close" title="Close" onclick="closePopupWindowBtn(this);"><img src="~/Images/close.png" /></a>
+</div>

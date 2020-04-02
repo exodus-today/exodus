@@ -1,0 +1,21 @@
+﻿@model Exodus.Exceptions.ExodusException
+@using Exodus.Helpers
+@{
+    var lang = Exodus.Global.Global.Language;
+    Layout = "~/Views/Shared/Layout_Errors.cshtml";
+}
+
+<div class="mt-4" style="width:500px">
+    <h3 style="text-align:center">Error</h3>
+    <br />
+    <h4 style="text-align:center">@Model.Message</h4>
+    <br>
+    <input onclick="window.history.back(); return false;" type="button"
+           value="Back" class="btn btn-outline-primary w-100">
+    <br><br>
+    <input onclick="window.location.href='/Desktop/Index'" ; return false;"
+           type="button" value="Home Page" class="btn btn-outline-primary w-100">
+</div>
+<div style="display:none">
+    <textarea>@Model.Message</textarea>
+</div>

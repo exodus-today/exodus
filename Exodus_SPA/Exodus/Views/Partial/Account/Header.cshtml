@@ -1,0 +1,32 @@
+﻿@using Exodus.Helpers
+@{ var lang = Exodus.Global.Global.Language;}
+<div class="ex-header">
+    <div class="ex-header__logo-container">
+        <img src="/Styles/dist/images/logo.png" class="ex-header__logo">
+        <div id="ex-header__search" data-react="/Search/CompactSearch">
+            @*RENDER SEARCH*@
+        </div>
+
+        <div style="margin:15px; position:absolute" class="main-menu-open-button" >
+            <a style="color: rgb(128, 221, 50); cursor: pointer; margin: 5px;">
+                <img src="/Styles/dist/images/icons/home.svg" style="width:50px; color:white" />
+            </a>
+        </div>
+
+        <div style="margin:15px; left:130px; position:absolute" data-load="/Intentions/Dispatcher?UserID=@Model.UserID" 
+             data-target="#ex-route-1">
+            <a style="color: rgb(128, 221, 50); cursor: pointer; margin: 5px;">
+                <img src="/Styles/dist/images/icons/dispatcherw.svg" style="width:50px;" />
+            </a>
+        </div>
+    </div>
+    <div class="ex-header__person">
+        <div data-load="/Account/View_UserProfile" data-target="#ex-route-1">
+            <img src="@PageHelper.CurrentUser.AvatarSmall" class="ex-header__person-avatar">
+            <span class="ex-header__person-status ex-header__person-status_@PageHelper.GetUserStatusColour(Model.UserStatus)"></span>
+            <div class="ex-header__person-name">@Model.UserFullName</div>
+        </div>
+        <i class="ex-header__person-arrow"></i>
+        <i class="ex-header__desktop-home main-menu-open-button"></i>
+    </div>
+</div>

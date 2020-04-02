@@ -1,0 +1,43 @@
+.ex-status-amount {
+
+}
+
+.ex-status-amount__required {
+    color: $gray-600;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.ex-status-amount__recieved {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.ex-status-amount__currency {
+    color: $gray-400;
+    font-size: 18px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.ex-status-amount {
+    
+}
+
+.ex-status-amount_ok {
+    .ex-status-amount__recieved {
+        color: theme-color('success');
+    }
+}
+
+.ex-status-amount_regular-help {
+    .ex-status-amount__recieved {
+        color: theme-color('warning');
+    }
+}
+
+.ex-status-amount_emergency {
+    .ex-status-amount__recieved {
+        color: theme-color('danger');
+    }
+}

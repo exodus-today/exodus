@@ -1,0 +1,48 @@
+.ex-person-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ex-person-item__avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.ex-person-item__status {
+    width: 5%;
+    .ex-person-item_success &{
+        color: theme-color('success');
+    }
+    .ex-person-item_danger &{
+        color: theme-color('danger');
+    }
+    .ex-person-item_warning &{
+        color: theme-color('warning');
+    }
+}
+
+.ex-person-item__name {
+    width: 40%;
+    font-size: 16px;
+}
+
+.ex-person-item__cashflow {
+    width: 30%;
+    text-align: right;
+    font-size: 22px;
+
+    .ex-person-item_success &{
+        color: theme-color('success');
+    }
+    .ex-person-item_danger &{
+        color: theme-color('danger');
+    }
+    .ex-person-item_warning &{
+        color: theme-color('warning');
+    }
+
+    i {
+        font-size: 14px;
+    }
+}

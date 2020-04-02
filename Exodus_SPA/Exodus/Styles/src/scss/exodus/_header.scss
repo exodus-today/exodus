@@ -1,0 +1,266 @@
+.ex-header {
+    position: relative;
+    padding-bottom: 70px;
+    padding-top: 30px;
+    padding-left: 7%;
+    display: flex;
+    justify-content: space-between;
+    
+    padding-right: 7%;
+    background-color: #1a1a1a;
+    border-bottom: 3px solid #313131;
+    transition: $transition-base;
+    .ex-main-menu_close & {
+        background-color: transparent;
+        border-color: transparent;
+        padding-right: 2%;
+    }
+}
+
+.ex-header__logo-container {
+    width: 65%;
+}
+
+.ex-header__person,
+.ex-header__dispatcher {
+    cursor: pointer;
+    width: 18%;
+    position: relative;
+}
+
+.ex-header__logo {
+    width:70%;
+    margin-top:3px;
+    margin-bottom:32px;
+}
+
+.ex-header__search-form {
+    position: relative;
+}
+
+.ex-header__search-text {
+    position: relative;
+    z-index: 1;
+    background-color: #313131;
+    border: 1px solid #717171;
+    color: #717171;
+    width: 85%;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 34px;
+    vertical-align: middle;
+    transition: $transition-base;
+    cursor: pointer;
+
+    &:focus {
+        border: 1px solid white;
+        background-color: white;
+        width: 100%;
+        outline: none;
+    }
+
+    &:not([value=""]):focus+button+.ex-header__search-results {
+        display: block;
+    }
+}
+
+.ex-header__search-submit {
+    @extend i;
+    @extend .icons-search;
+    position: absolute;
+    color: $gray-600;
+    z-index: 3;
+    left: 87%;
+    top: 16px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 36px;
+    width: 13%;
+    transition: $transition-base;
+    cursor: pointer;
+
+    :focus+&{
+        color: $gray-800;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover::before {
+        font-weight: bold !important;
+    }
+}
+
+.ex-header__search-results {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    border: #717171;
+    border-radius: 1px;
+    margin-top: 1px;
+    display: none;
+
+    &[data-loading=true] {
+        min-height: 60px;
+    }
+
+    &:hover {
+        display: block;
+    }
+
+    & > div {
+        height: 36px;
+        display: table;
+        width: 100%;
+
+        &.ex-search-more {
+            padding: 10px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: #e0e0e0;
+        }
+
+        & > img {
+            display: table-cell;
+            height: 30px;
+            padding-left: 10px;
+            width: 45px;
+            padding-right: 5px;
+        }
+
+        & > span {
+            display: table-cell;
+            vertical-align: middle;
+            width: 92%;
+            padding-right: 10px;
+        }
+    }
+}
+
+
+
+.ex-header__person-avatar,
+.ex-header__dispatcher-icon {
+    border-radius: 50%;
+    width: 60%;
+    margin-bottom: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ex-header__dispatcher-icon {
+    border-radius: 0;
+}
+
+.ex-header__person-status,
+.ex-header__dispatcher-status {
+    width: 34%;
+    padding-bottom: 34%;
+    height: 0;
+    top: 0;
+    margin-top: 50%;
+    position: absolute;
+    background-color: #1a9f1a;
+    box-shadow: 0 0 0 1px #1a1a1a;
+    left: 50%;
+    margin-left: -18%;
+    border-radius: 50%;
+}
+
+.ex-header__dispatcher-status {
+    display: none;
+}
+
+.ex-header__person-status_success {
+    background-color: theme-color('success');
+}
+
+.ex-header__person-status_warning {
+    background-color: theme-color('warning');
+}
+
+.ex-header__person-status_danger {
+    background-color: theme-color('danger');
+}
+
+.ex-header__person-name,
+.ex-header__dispatcher-label {
+    color: #bbbbbb;
+    text-align: center;
+    line-height: 1.2;
+    opacity: 1;
+    visibility: visible;
+    transition: $transition-base;
+    font-size: 16px;
+
+    .ex-main-menu_close & {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.ex-header__person-arrow {
+    @extend .icons-arrow-right;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 120%;
+    padding: 30px;
+    z-index: -1;
+    opacity: 0;
+    transition: $transition-base;
+
+    .ex-main-menu_close & {
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.ex-header__desktop-home {
+    @extend .icons-home;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 180%;
+    padding: 30px;
+    z-index: -1;
+    opacity: 0;
+    transition: $transition-base;
+
+    .ex-main-menu_close & {
+        z-index: 1;
+        opacity: 1;
+    }
+}
+
+.ex-header__desktop-dispatcher {
+    @extend .icons-dispatcher;
+    color: white;
+    position: absolute;
+    width: 200%;
+    top: 0;
+    left: 20px;
+    transform: translateX(-50%); 
+    margin-top: 180%;
+    padding: 0px;
+    z-index: 1;
+    opacity: 1;
+    transition: $transition-base;
+
+    .ex-main-menu_close & {
+        z-index: -1;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,13 @@
+.ex-app-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ex-app-item__icon {
+    width: 8%;
+}
+
+.ex-app-item__name {
+    width: 80%;
+}

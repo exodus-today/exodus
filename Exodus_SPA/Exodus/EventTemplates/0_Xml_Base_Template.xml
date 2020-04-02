@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template> <!--Required-->
+  <!--Root section-->
+  
+  <!--Section for keys that come from FrontEnd (Dictionary<string,string>)-->
+  <!-- EXAMPLE: { "keyname": "value", "keyname1": "value2" }-->
+  <content> <!--Required-->
+    <keys>  <!--Required-->
+      <key name="SenderID" type="number" enable="true" model="VM_User" modelName="Sender"/>
+      <!--
+      name -      FrontEnd Key Name               (Required)
+      type -      Value Type (number;text;money)  (Required)
+      enable -    Is Active (default true)
+      model  -    Model Type In Back End          (Required)
+      modelName - Model Name                      (Required)
+      -->
+    </keys>
+  </content>
+
+  <!--Section for creating content for EventList-->
+  <!--Relations related to content Section ModelName must be as in content-->
+  <thumbnail>   <!--Required-->
+    <keys>      <!--Required-->
+      <key name="ReceiverFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="Sender"/>
+      <!--
+      name -          FrontEnd Key Name               (Required)
+      type -          Value Type (number;text;money)  (Required)
+      enable -        Is Active (default true)
+      model  -        Model Type In Back End          (Required)
+      modelName -     Model Name                      (Required)
+      PropertyName -  Property Name in BackEnd Model  (Required)
+      -->
+    </keys>
+  </thumbnail>
+
+  <!--Section For Relation with Users ONLY USER ID-->
+  <related> <!--Required-->
+    <key model="VM_User" PropertyName="UserID" modelName="Sender" relation="Single" RelationType="User" type="number"></key>
+    <!-- 
+      type -          Value Type (number;text;money)  (Required)
+      enable -        Is Active (default true)
+      model  -        Model Type In Back End          (Required)
+      modelName -     Model Name                      (Required)
+      PropertyName -  Property Name in BackEnd Model  (Required)
+      relation -      Type of relation (single;multiple) single only with this UserID 
+      if Multy All related Users with (User;Tag)
+      -->
+  </related>
+</template>

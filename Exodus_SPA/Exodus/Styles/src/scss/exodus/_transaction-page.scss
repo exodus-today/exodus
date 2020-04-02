@@ -1,0 +1,91 @@
+.ex-transaction-page {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.ex-transaction-page__tag-icon {
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    background-image: url(../images/frame.png);
+    background-size: 100% 100%;
+    position: relative;
+    img {
+        position: absolute;
+        width: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.ex-transaction-page__tag-icon2 {
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+    background-image: url(../images/frame.png);
+    background-size: 100% 100%;
+    position: relative;
+    img {
+        position: absolute;
+        width: 80%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.ex-transaction-page__close-icon {
+    height: 50px;
+    width: 50px;
+    // padding-bottom: 50%;
+    // padding-top: 20%;
+    margin-top: 20px;
+    background-image: url(../images/close.png);
+    background-size: 100% 100%;
+    position: relative;
+    img {
+        position: absolute;
+        width: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+   cursor: pointer;
+}
+
+.ex-transaction-page__tag-name {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.ex-transaction-page__tag-description {
+    line-height: 1.2;
+    color: #7d7d7d;
+}
+
+.ex-transaction-page__date {
+    line-height: 1.2;
+    color: #7d7d7d;
+}
+
+.ex-transaction-page__person-avatar {
+    border: 6px solid #e0e0e0;
+    border-radius: 50%;
+    width: 100%;
+    // margin-bottom: 15px;
+}
+
+.ex-transaction-page__person-name {
+    color: #282828;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.ex-transaction-page__amount {
+    color: theme-color('success');
+    font-size: 25px;
+}

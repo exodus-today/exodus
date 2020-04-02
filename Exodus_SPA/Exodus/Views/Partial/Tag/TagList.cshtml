@@ -1,0 +1,25 @@
+﻿@model List<Exodus.ViewModels.VM_Tag>
+@using Exodus.Helpers
+@using Exodus.Enums
+@{ 
+    var lang = PageHelper.Language;
+}
+
+<div class="ex-tag-list">
+    @*<div class="ex-tag-list__item" data-load="@this.Url.Action("View_AddTagR", "Tag")" data-target="#ex-route-1">
+            <img src="~/Styles/dist/images/plus.png" class="ex-tag-list__image">
+            <div class="ex-tag-list__name">@Exodus.Global.Localisation.Get("CreateNewTag", lang)</div>
+        </div>*@
+
+    <div data-react="/Tag/List"></div>
+
+    @*@foreach (var tag in Model)
+        {
+        <div class="ex-tag-list__item" data-tagid="@tag.TagID"
+             data-load="@this.Url.Action(PageHelper.GetApplicationUrl((EN_ApplicationType)tag.ApplicationID), "Application", new { tag.TagID })"
+             data-target="#ex-route-1">
+            <img src="~/Styles/dist/images/tags/@String.Format("{0}.svg", tag.ApplicationID)" class="ex-tag-list__image">
+            <div class="ex-tag-list__name">@tag.Name</div>
+        </div>
+        }*@
+</div>

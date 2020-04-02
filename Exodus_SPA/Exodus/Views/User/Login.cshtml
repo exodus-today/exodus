@@ -1,0 +1,172 @@
+﻿@model Exodus.DTO.UserLoginDTO
+@using Exodus.Helpers
+@{
+    Layout = "~/Views/Shared/Layout_Langs.cshtml";
+    var lang = PageHelper.Language;
+}
+
+<div class="ex-welcome">
+    <div class="ex-welcome__container">
+        <div class="text-center mb-4">
+            <img style="display:block;margin:auto" src="~/Styles/dist/images/logo-dark.png">
+        </div>
+        <div class="bg-white p-4 my-4">
+            @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "login-form", onsubmit = "submitLoginForm(event)" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                <div class="form-group">
+                    <label for="email" class="small">@Exodus.Global.Localisation.Get("EnterYourEmail", lang)</label>
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="form-group">
+                    <label for="password" class="small">@Exodus.Global.Localisation.Get("EnterPass", lang)</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="mt-5">
+                    <input type="submit" value="@Exodus.Global.Localisation.Get("Login", lang)" class="btn btn-outline-primary w-100">
+                </div>
+
+                <script>
+                    function submitLoginForm(event) {
+                        event.preventDefault();
+
+                        var $form = $('form.login-form'),
+                            $loginContainer = $form.parent(),
+                            validator = $form.validate();
+
+                        if (validator.errorList.length == 0) {
+                            var action = $form.attr('action');
+                            $loginContainer.addClass('ex-loading');
+                            $.ajax({
+                                type: "POST",
+                                url: action,
+                                data: $form.serialize(),
+                                success: function (data) {
+                                    if (data.RequestStatus == 200) {
+                                        // document.cookie = "api_key=" + data.Data.api_key + ";path=/;";
+                                        document.location = "/Desktop/Index";
+                                    }
+                                    else {
+                                        $loginContainer.removeClass('ex-loading');
+
+                                        var errorCode = data.ErrorCode;
+
+                                        switch (errorCode) {
+                                            case 32:
+                                                // incorrect login
+                                                validator.showErrors({ 'UserName': getLangValue("Validation.AuthIncorrectLogin") });
+                                                break;
+
+                                            case 33:
+                                                // incorrect password
+                                                validator.showErrors({ 'Password': getLangValue("Validation.AuthIncorrectPassword") });
+                                                break;
+                                        }
+                                    }
+                                },
+                                error: function (data) {
+                                    //debugger
+
+                                }
+                            });
+                        }
+                    }
+                </script>
+            }
+            <br />
+            <div class="text-center mb-4" style="margin:5px">
+                <img src="/Styles/dist/images/icons/fb.png" onclick="loginOverFB();" style="width:32px;cursor:pointer">
+            </div>
+
+        </div>
+        <div class="bg-white p-4 my-4">
+            <p class="small text-center">@Exodus.Global.Localisation.Get("NoPassOrInvite", lang)</p>
+            <a href="@this.Url.Action("RegisterByMyself", "User")" class="btn btn-outline-primary w-100">@Exodus.Global.Localisation.Get("Register", lang)</a>
+        </div>
+
+        <div class="bg-white p-4 my-4">
+            <p class="small text-center">@Exodus.Global.Localisation.Get("ForgotPassword", lang)?</p>
+            <a href="@this.Url.Action("ResetPassword", "User")" class="btn btn-outline-primary w-100">@Exodus.Global.Localisation.Get("RestorePassword", lang)</a>
+        </div>
+
+        <div class="text-center">
+            <a href="@this.Url.Action("About", "Home")" class="text-black small">@Exodus.Global.Localisation.Get("MoreInfoAboutExodus", lang)</a>
+        </div>
+
+    </div>
+</div>
+
+<form method="post" hidden="hidden" action="@this.Url.Action("LoginByFacebook", "User")">
+    <input type="text" name="UserFirstName" id="fbFirstName" />
+    <input type="text" name="UserLastName" id="fbLastName" />
+    <input type="text" name="ExternalID" id="fbID" />
+    <input type="text" name="Email" id="fbEmail" />
+    <input type="text" name="PictureSmall" id="fbPictureSmall" />
+    <input type="text" name="PictureLarge" id="fbPictureLarge" />
+    <input type="submit" id="loginFB" />
+</form>
+
+@section ScriptsAfter
+{
+    <script>
+
+        var UserID, UserFirstName, UserLastName, PictureLarge, PictureSmall, Email;
+
+        window.fbAsyncInit = function ()
+        {
+            FB.init({ appId: '181085582817830', cookie: true, xfbml: true, version: 'v3.2' });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id)
+        {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/ru_RU/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function loginOverFB() {
+            $(".ex-welcome").addClass("ex-loading");
+
+            FB.login(function (response)
+            {
+                if (response.authResponse)
+                {
+                    FB.api('/me?fields=first_name,last_name,id,email,picture.type(large)&redirect=false', function (respMe)
+                    {
+                        Email = respMe.email; // Email
+                        UserID = respMe.id; // UserID
+                        UserFirstName = respMe.first_name; // UsrName
+                        UserLastName = respMe.last_name; // UsrName
+                        PictureLarge = respMe.picture.data.url;
+                        FB.api('/me/picture?type=small&redirect=false', function (respPic)
+                        {
+                            PictureSmall = respPic.data.url; // SmallPic
+                            sendLogin();
+                        });
+                    });
+                }
+                else {
+                    $(".ex-welcome").removeClass("ex-loading");
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            });
+        }
+
+        function sendLogin()
+        {
+            $('#fbEmail').val(Email);
+            $('#fbFirstName').val(UserFirstName);
+            $('#fbLastName').val(UserLastName);
+            $('#fbID').val(UserID);
+            $('#fbPictureSmall').val(PictureSmall);
+            $('#fbPictureLarge').val(PictureLarge);
+            $('#loginFB').click();
+        }
+                </script>
+}

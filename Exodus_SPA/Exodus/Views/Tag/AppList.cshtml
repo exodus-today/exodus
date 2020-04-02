@@ -1,0 +1,44 @@
+﻿@model Tuple<long, List<VM_Application>>
+@using Exodus.ViewModels
+@using Exodus.Enums
+@{
+    long TagID = Model.Item1;
+    var appList = Model.Item2;
+    VM_Application Default = appList.First();
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="ex-list ex-grid_0-1-0">
+    <div class="ex-list__header">
+        <div class="ex-list__item">
+            <div class="ex-list__item-content">
+                <div class="ex-list__header-title">
+                    <i class="icons-tag mr-3"></i>
+                    @Exodus.Global.Localisation.Get("AvailableApps", lang)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ex-list__viewport">        
+        @foreach (VM_Application Item in appList)
+        {
+            <div class="ex-list__item @(Item == Default ? "ex-list__item_active" : "" )" 
+                 data-load="@this.Url.Action("AppDetail", "Tag", new { TagID = TagID, ApplicationID = Item.ApplicationID })"
+                 data-target="#ex-route-3">
+                <div class="ex-list__item-content">
+                    <div class="ex-app-item">
+                        <img src="~/Styles/dist/images/application/@((EN_ApplicationType)Item.ApplicationID)_inv.svg" class="ex-app-item__icon">
+                        <div class="ex-app-item__name">
+                            @(lang =="en"?Item.ApplicationNameEng:Item.ApplicationNameRus)                                
+                        </div>
+                        <i class="@(Item.ApplicationIsActive ? "icons-arrow-right" : "")"></i>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="ex-route-3"
+     class="ex-grid_0-0-1"
+     data-href="@this.Url.Action("AppDetail", "Tag", new { TagID = Request.Params["TagID"], ApplicationID = Default.ApplicationID})"></div>

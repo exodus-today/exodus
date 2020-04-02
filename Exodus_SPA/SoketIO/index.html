@@ -1,0 +1,34 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+  var socket = new WebSocket('ws://localhost:80/ws/');
+
+        socket.onmessage = function(event)
+        {
+            var message = event.data;
+            var elem = document.getElementById('chat');
+            elem.value = (elem.value + '\r\n' + message);
+            console.log(event);
+        }  
+
+        socket.onopen = function() {
+            
+        };
+        socket.onclose = function() {
+            
+        };
+
+function send()
+{
+    var elem = document.getElementById('send_text');
+    var message = elem.value;
+    socket.send(message);
+    elem.value = '';
+}
+        
+</script>
+
+<textarea id="send_text"></textarea>
+</br>
+<button onclick="send()">SEND</button>
+
+<textarea id="chat" readonly="true"></textarea>

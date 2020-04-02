@@ -1,0 +1,44 @@
+.ex-avatar {  
+    border: 15px solid #626262;
+    border-radius: 50%;
+}
+
+.ex-avatar_light {
+    border-color: $gray-300;
+}
+
+.ex-avatar_medium {
+    width: 75%;
+    border-width: 10px;
+}
+
+.file-upload {
+    position: relative; 
+    overflow: hidden; 
+    width: 100%;
+    height: 36px;
+    background: #6da047;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+}
+.file-upload:hover {
+    background: #7aad55;
+}
+.file-upload input[type="file"]{
+   display: none;
+}
+.file-upload label {
+    
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.file-upload span {
+    line-height: 36px; 
+}

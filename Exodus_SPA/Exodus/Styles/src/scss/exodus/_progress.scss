@@ -1,0 +1,146 @@
+.loading-cup-container {
+    position: relative;
+    color: #000;
+
+    .loading-cup {
+        height: 100px;
+        width: 40%;
+        float: left;
+
+        .ldBar {
+            display: block;
+            float: left;
+            width: 80px;
+            height: 100px;
+            border: 1px solid #000;
+            border-top: 0;
+            border-radius: 0px 0px 5px 5px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient( to left, transparent 1px, #000000 5px, transparent 5px, #000000 1px);
+                background-size: 12px 100%;
+                background-repeat-x: repeat;
+            }
+
+            .ldBar-label {
+                display: none;
+            }
+        } 
+
+        .completed-rate,
+        .full-rate {
+            float: left;
+            position: relative;
+        }
+
+        .completed-rate {
+            margin-right: 2.5px;
+        }
+
+        .full-rate {
+            top: -4px;
+            margin-left: 3px;
+        }
+    }
+
+    .loading-cup-description {
+        width: 60%;
+        float: left;
+
+        > div {
+            display: block;
+            font-weight: bold;
+            font-size: 1.0rem;
+            position: relative;
+
+            > span {
+                display: inline-block;
+                margin-left: 3px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                height: 16px;
+                line-height: 10px;
+                width: 16px;
+                text-align: center;
+                padding: 1px 2px 1px 2px;
+                border: 1px solid #959595;
+                border-radius: 100%;
+                color: #959595;
+                position: relative;
+                top: -2.5px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #000000;
+                    border-color: #000000;
+                }
+
+                > i {
+                    font-style: normal;
+                }
+            }
+        }
+    }
+
+    .loading-cup-legend {
+        position: absolute;
+        top: -16px;
+        left: 6px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        height: 16px;
+        line-height: 10px;
+        width: 16px;
+        text-align: center;
+        padding: 1px 2px 1px 1px;
+        border: 1px solid #959595;
+        border-radius: 100%;
+        color: #959595;
+        cursor: help;
+
+        &:hover {
+            color: #000000;
+            border-color: #000000;
+        }
+        
+        .loading-cup-legend-icon {
+            font-style: normal;
+        }
+    }
+}
+
+.month-progress-bar {
+    width: 100%;
+    color: #000;
+    position: relative;
+    
+    .month-progress-bar-indicator {
+        .start-point {
+            float: left;
+        }
+
+        .end-point {
+            float: right;
+        }
+
+        .completed-point {
+            position: relative;
+        }
+    }
+
+    .month-progress-bar-description {
+        margin-bottom: 15px;
+        text-align: right;
+
+        span {
+            display: block;
+            font-weight: bold;
+            font-size: 1.0rem;
+        }
+    }
+}

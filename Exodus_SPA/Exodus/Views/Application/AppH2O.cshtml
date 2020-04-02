@@ -1,0 +1,14 @@
+﻿@model Tuple<Exodus.ViewModels.VM_Tag, EN_TagRole>
+@using Exodus.Enums
+@{
+    Exodus.ViewModels.VM_Tag tag = Model.Item1;
+    EN_TagRole tagRole = Model.Item2;
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div id="ex-screen-1" class="ex-navigation @(tagRole == EN_TagRole.Owner ? "mine" : "")" data-react="/H2O/Navigation?defaultIntentionOwnerID=@tag.DefaultIntentionOwner.UserID&tagID=@tag.TagID">
+</div>
+<div id="ex-route-2"
+     class="ex-grid_0-1-1"
+     data-href="@this.Url.Action("AppH2ODefaultPage", "H2O", new { TagID = tag.TagID, TagRole = Convert.ToInt32(tagRole) })">
+</div>

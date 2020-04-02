@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template>
+  <!--Full key model for event / send to api as KEY/VALUE dictionary-->
+  <content>
+    <keys>
+      <key name="IssuerID" type="number" enable="true" model="VM_User" modelName="Issuer" />
+      <key name="HolderID" type="number" enable="true" model="VM_User" modelName="Holder" />
+      <key name="ObligationID" type="number" enable="true" model="VM_Obligation" modelName="Obligation"/>
+      <key name="TagID" type="number" enable="true" model="VM_Tag" modelName="Tag"/>
+    </keys>
+  </content>
+
+  <!--Partial model for fromend-->
+  <thumbnail>
+    <keys>
+      <!--User To-->
+      <key name="HolderFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="Holder"/>
+      <key name="HolderAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="Holder"/>
+      <key name="HolderAvatarBIG" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="Holder"/>
+      <key name="HolderStatus" type="text" enable="true" model="VM_User" PropertyName="UserStatus" modelName="Holder"/>
+
+      <!--User From-->
+      <key name="IssuerFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="Issuer"/>
+      <key name="IssuerAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="Issuer"/>
+      <key name="IssuerAvatarBIG" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="Issuer"/>
+      <key name="IssuerStatus" type="text" enable="true" model="VM_User" PropertyName="UserStatus" modelName="Issuer"/>
+
+      <!--Obligation Info-->
+      <key name="ObligationKind" type="number" enable="true" model="VM_Obligation" PropertyName="Kind" modelName="Obligation"/>
+      <key name="ObligationPeriod" type="number" enable="true" model="VM_Obligation" PropertyName="ObligationPeriod" modelName="Obligation"/>
+      <key name="ObligationDate" type="dt" enable="true" model="VM_Obligation" PropertyName="ObligationDate" modelName="Obligation"/>
+      <key name="Amount" type="number" enable="true" model="VM_Obligation" PropertyName="AmountPerPayment" modelName="Obligation"/>
+      
+      <!--Tag-->
+      <key name="TagDescription" type="text" enable="true" model="VM_Tag" PropertyName="Description" modelName="Tag"/>
+      <key name="TagName" type="text" enable="true" model="VM_Tag" PropertyName="Name" modelName="Tag"/>
+      <key name="EndDate" type="text" enable="true" model="VM_Tag" PropertyName="EndDate" modelName="Tag"/>
+      <key name="TagPeriod" type="text" enable="true" model="VM_Tag" PropertyName="Period" modelName="Tag"/>
+    </keys>
+  </thumbnail>
+
+  <related>
+    <key model="VM_User" PropertyName="UserID" modelName="Issuer" relation="Single" RelationType="User"  type="number"></key>
+    <key model="VM_User" PropertyName="UserID" modelName="Holder" relation="Single" RelationType="User"  type="number"></key>
+  </related>
+</template>

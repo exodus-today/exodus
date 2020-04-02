@@ -1,0 +1,16 @@
+.custom-control-indicator {
+    border: 1px solid theme-color('primary');
+
+    :checked + &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: theme-color('primary');
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

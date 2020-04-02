@@ -1,0 +1,139 @@
+﻿@model Tuple<Exodus.ViewModels.VM_Tag, Exodus.ViewModels.VM_User>
+@using Exodus.ViewModels
+@using Exodus.Enums;
+@{
+    var lang = Exodus.Global.Global.Language;
+    var culture = Exodus.Helpers.PageHelper.Culture;
+    var tag = Model.Item1;
+    var user = Model.Item2;
+}
+
+<div id="ex-screen-1" class="ex-navigation ex-navigation_public">
+    <div class="ex-navigation__info">
+        <div class="ex-navigation__content">
+
+            <img src="@user.AvatarBig" class="ex-navigation__image ex-avatar ex-avatar_light">
+            <div class="ex-navigation__title">@user.UserFirstName @user.UserLastName</div>
+            @*<div class="ex-navigation__subtitle">@Model.UserEmail</div>*@
+            <br/>
+            @if (tag != null)
+            {
+            <div class="ex-navigation__title" data-load=@("/Application/AppH2O?TagID=" + tag.TagID) data-target="#ex-route-1" style="cursor:pointer; color:cornflowerblue">
+                <small>
+                    @Exodus.Global.Localisation.Get("BackToTag", lang)
+                </small>
+            </div>
+            }
+        </div>
+    </div>
+    <div id="ex-profile-page-navigation">
+        <div class="ex-navigation__item active" data-scrollto="#ex-profile-page-status" data-viewport="#ex-screen-2">
+            @Exodus.Global.Localisation.Get("Status", lang)
+
+            @switch (user.UserStatus)
+            {
+                case En_CurrentStatus.I_AM_OK:<i class="icons-status text-success ex-navigation__icon"></i> break;
+                case En_CurrentStatus.I_AM_PARTIALLY_OK: <i class="icons-status text-warning ex-navigation__icon"></i> break;
+                case En_CurrentStatus.I_NEED_HELP: <i class="icons-status text-danger ex-navigation__icon"></i>break;
+            }
+
+        </div>
+        <div class="ex-navigation__item" data-scrollto="#ex-profile-page-relations" data-viewport="#ex-screen-2">
+            @Exodus.Global.Localisation.Get("Relations", lang)
+            <i class="icons-social ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item" data-scrollto="#ex-profile-page-intentionsandobligations" data-viewport="#ex-screen-2">
+            @Exodus.Global.Localisation.Get("IntentionsAndObligations", lang)
+            <i class="icons-exchange ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item" data-scrollto="#ex-profile-page-commontags" data-viewport="#ex-screen-2">
+            @Exodus.Global.Localisation.Get("CommonTags", lang)
+            <i class="icons-two-persons ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item" data-scrollto="#ex-profile-page-publictags" data-viewport="#ex-screen-2">
+            @Exodus.Global.Localisation.Get("PublicTags", lang)
+            <i class="icons-tag ex-navigation__icon"></i>
+        </div>
+    </div>
+
+    <div id="ex-route-2">
+        <div id="ex-screen-2" class="ex-panels ex-scroll ex-scroll_with-free-space">
+            <div id="ex-profile-page-status" class="ex-panel">
+                <div class="ex-panel__header">
+
+                    @switch (user.UserStatus)
+                    {
+                        case En_CurrentStatus.I_AM_OK:<i class="ex-status-indicator ex-status-indicator_sm ex-status-indicator_ok"></i> break;
+                        case En_CurrentStatus.I_AM_PARTIALLY_OK: <i class="ex-status-indicator ex-status-indicator_sm ex-status-indicator_regular-help"></i> break;
+                        case En_CurrentStatus.I_NEED_HELP: <i class="ex-status-indicator ex-status-indicator_sm ex-status-indicator_emergency"></i>break;
+                    }
+
+                    @Exodus.Global.Localisation.Get("Status", lang)
+                    <span class="ex-panel__toggle">
+                        <span class="ex-panel__show">@Exodus.Global.Localisation.Get("Show", lang)</span>
+                        <span class="ex-panel__hide">@Exodus.Global.Localisation.Get("Hide", lang)</span>
+                        <i class="ex-panel__toggle-icon"></i>
+                    </span>
+                </div>
+                <div class="ex-panel__content" data-react="/PublicProfile/UserStatus?UserID=@user.UserID"></div>
+            </div>
+
+            @if (tag != null)
+            {
+            <div id="ex-profile-page-relations" class="ex-panel">
+                <div class="ex-panel__header">
+                    <i class="ex-panel__icon icons-social"></i>
+                    @Exodus.Global.Localisation.Get("Relations", lang)
+                    <span class="ex-panel__toggle">
+                        <span class="ex-panel__show">@Exodus.Global.Localisation.Get("Show", lang)</span>
+                        <span class="ex-panel__hide">@Exodus.Global.Localisation.Get("Hide", lang)</span>
+                        <i class="ex-panel__toggle-icon"></i>
+                    </span>
+                </div>
+                <div class="ex-panel__content" data-react="/PublicProfile/UserRelations?UserID=@user.UserID&TagID=@tag.TagID"></div>
+            </div>
+            }
+
+            <div id="ex-profile-page-intentionsandobligations" class="ex-panel">
+                <div class="ex-panel__header">                    
+                    <i class="ex-panel__icon icons-exchange"></i>
+                    @Exodus.Global.Localisation.Get("IntentionsAndObligations", lang)
+                    <span class="ex-panel__toggle">
+                        <span class="ex-panel__show">@Exodus.Global.Localisation.Get("Show", lang)</span>
+                        <span class="ex-panel__hide">@Exodus.Global.Localisation.Get("Hide", lang)</span>
+                        <i class="ex-panel__toggle-icon"></i>
+                    </span>
+                </div>
+                <div class="ex-panel__content"></div>
+            </div>
+
+
+            <div id="ex-profile-page-commontags" class="ex-panel">
+                <div class="ex-panel__header">
+                    <i class="ex-panel__icon icons-two-persons"></i>
+                    @Exodus.Global.Localisation.Get("CommonTags", lang)
+                    <span class="ex-panel__toggle">
+                        <span class="ex-panel__show">@Exodus.Global.Localisation.Get("Show", lang)</span>
+                        <span class="ex-panel__hide">@Exodus.Global.Localisation.Get("Hide", lang)</span>
+                        <i class="ex-panel__toggle-icon"></i>
+                    </span>
+                </div>
+                <div class="ex-panel__content_dark" data-react="/PublicProfile/CommonTags?UserID=@user.UserID"></div>
+            </div>
+
+            <div id="ex-profile-page-publictags" class="ex-panel">
+                <div class="ex-panel__header">
+                    <i class="ex-panel__icon icons-tag"></i>
+                    @Exodus.Global.Localisation.Get("PublicTags", lang)
+                    <span class="ex-panel__toggle">
+                        <span class="ex-panel__show">@Exodus.Global.Localisation.Get("Show", lang)</span>
+                        <span class="ex-panel__hide">@Exodus.Global.Localisation.Get("Hide", lang)</span>
+                        <i class="ex-panel__toggle-icon"></i>
+                    </span>
+                </div>
+                <div class="ex-panel__content_dark" data-react="/PublicProfile/PublicTags?UserID=@user.UserID"></div>
+            </div>
+        </div>
+    </div>

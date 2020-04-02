@@ -1,0 +1,57 @@
+﻿@model VM_Tag
+@using Exodus.ViewModels
+@using Exodus.Enums
+@{
+    var tag = Model;
+    var lang = Exodus.Global.Global.Language;
+}
+<div id="ex-screen-1" class="ex-navigation">
+    <div class="ex-navigation__info">
+        <div class="ex-navigation__content">
+            <div>
+                <img class="ex-navigation__image ex-avatar" src="@(tag.DefaultIntentionOwner != null ? tag.DefaultIntentionOwner.AvatarBig : "~/Styles/dist/images/tags/"+Model.ApplicationID.ToString()+".svg")">            
+            </div>
+            @*<div class="ex-navigation__title">#@(lang == "en" ? @Model.NameEng : @Model.NameRus)</div>*@
+        </div>
+    </div>
+
+    <div class="ex-navigation__item active"
+         data-load="@this.Url.Action("TagInfo", "Tag", new { TagID = Request.Params["TagID"] })"
+         data-target="#ex-route-2">
+        @Exodus.Global.Localisation.Get("Info", lang)
+        <i class="icons-person ex-navigation__icon"></i>
+    </div>
+
+    <div class="ex-navigation__item"
+         data-load="@this.Url.Action("UserList", "H2O", new { TagID = Request.Params["TagID"] })"
+         data-target="#ex-route-2">
+        @Exodus.Global.Localisation.Get("Members", lang)
+        <i class="icons-person ex-navigation__icon"></i>
+    </div>
+
+    @*<div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Notifications", lang)
+            <i class="icons-bell ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Transactions", lang)
+            <i class="icons-exchange ex-navigation__icon"></i>
+        </div>
+        <!--
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Reports", lang)
+            <i class="icons-statistic ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Settings", lang)
+            <i class="icons-gear ex-navigation__icon"></i>
+        </div>*@
+</div>
+
+@*<div id="ex-route-2"
+    class="ex-grid_0-1-1"
+    data-href="@this.Url.Action("UserList", "H2O", new { TagID = Request.Params["TagID"] })"></div>*@
+
+<div id="ex-route-2"
+    class="ex-grid_0-1-1"
+    data-href="@this.Url.Action("TagInfo", "Tag", new { TagID = Request.Params["TagID"] })"></div>

@@ -1,0 +1,14 @@
+.ex-scroll {
+    overflow-y: scroll;
+}
+
+.ex-scroll_with-free-space {
+    @include media-breakpoint-up(lg) {
+        &>:first-child {
+            // margin-top: 300px !important;
+        }
+        &>:last-child {
+            margin-bottom: 300px !important;
+        }
+    }
+}

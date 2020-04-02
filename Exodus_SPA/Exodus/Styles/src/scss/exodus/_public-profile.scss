@@ -1,0 +1,96 @@
+.ex-public-profile-relations-image {
+    display: inline;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.ex-public-profile-relation-user {
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+.ex-public-profile-relation-user__container {    
+    width: 140px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    
+    cursor: pointer;
+    text-align: center;
+    padding:10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ex-public-profile-relation-user__container:hover {    
+    background: #eee;
+}
+
+
+.ex-public-profile-public-tag {
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;       
+}
+
+.ex-public-profile-public-tag__container {    
+    width: 250px;
+    // height:50px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    
+    cursor: pointer;
+    text-align: left;
+    // padding:10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ex-public-profile-public-tag__container:hover {    
+    background: #111;
+    color:#fff;
+}
+
+.ex-public-profile-common-tag {
+    width: 100%;
+    height: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;       
+}
+
+.ex-public-profile-common-tag__container {    
+    width: 250px;
+    //height:50px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    
+    cursor: pointer;
+    text-align: left;
+    //padding:10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ex-public-profile-common-tag__container:hover {    
+    background: #111;
+    color:#fff;
+}
+
+.ex-public-profile-search-input {        
+    height:30px;
+    font-size:25px;
+    margin-left: 25px;
+}

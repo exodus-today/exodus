@@ -1,0 +1,78 @@
+﻿@using Exodus.Helpers
+@{
+    var mainLang = PageHelper.Language;
+    var mainUrl = Url.Action().Trim('/');
+    mainUrl = mainUrl.StartsWith(mainLang) ? mainUrl.Substring(mainLang.Length) : mainUrl;
+}
+<!DOCTYPE html>
+<html lang="@mainLang">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("HeaderBefore", false)
+    <base href="/">
+    @RenderSection("Header", false)
+    <style>
+        .lang-bar {
+            position: fixed;
+            right: 50px;
+            top: 10px;
+            height: 30px;
+        }
+
+        .lang-item {
+            width: 20px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .lang-item-active {
+            text-decoration: underline !important;
+            color: #459edb;
+        }
+    </style>
+    <link rel="stylesheet" href="~/Styles/dist/css/main.css">
+    <script type="text/javascript">
+        var mainLanguage = "@PageHelper.Language";
+        var langArray = {};
+        @foreach(var elem in Exodus.Global.Localisation.GetLocalisationDic(PageHelper.Language))
+        { 
+            @:langArray["@elem.Key"] = "@elem.Value";
+        }
+        function getLangValue(key) {
+            return window.langArray[key];
+        }
+    </script>
+</head>
+<body>
+    <div class="lang-bar">
+        @foreach (var lang in Exodus.Global.Localisation.AvalibleLanguages)
+        {
+            <div class="@((lang == mainLang) ? "lang-item lang-item-active" : "lang-item")">
+                <a href="@((lang == mainLang) ? "#" :  String.Format("/{0}/{1}", lang, mainUrl))">@lang</a>
+            </div>
+        }
+    </div>
+    @RenderSection("ScriptsBefore", false)
+    @RenderBody()
+    @RenderSection("Footer", false)
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script async src="~/Styles/dist/js/main.js"></script>
+    @RenderSection("ScriptsAfter", false)
+    <script src="~/Scripts/detect-device.min.js.js"></script>
+    <script>
+        @if (Exodus.Global.Global.IsMobileActive)
+        {
+            @:if (device.type == "mobile") { window.location.href = "@Exodus.Global.Global.MobileUrl"; }
+        }
+        @*if (window.location.protocol == 'http:' && window.location.hostname != 'localhost') { window.location.protocol = "https"; }*@
+    </script>
+</body>
+</html>

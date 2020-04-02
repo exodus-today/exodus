@@ -1,0 +1,13 @@
+﻿@model Exodus.ViewModels.VM_User
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+        <div class="text-muted text-small mb-4">@Model.HelpDetail.UserHelpDetails</div>
+        <div class="btn btn-outline-danger w-100 mb-4">@Exodus.Global.Localisation.Get("CreateTransaction", lang)</div>
+        <div class="btn btn-outline-warning w-100">@Exodus.Global.Localisation.Get("HelpRegularly", lang)</div>
+    </div>
+</div>

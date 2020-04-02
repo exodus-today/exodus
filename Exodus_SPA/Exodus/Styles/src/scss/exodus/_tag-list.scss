@@ -1,0 +1,151 @@
+.ex-tag-list {
+    @extend .clearfix;
+    min-height: 100%;
+    background-image: url(../images/tag-bg.png);
+    background-size: 100%;
+    background-position: 0 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 25px;
+
+    transition: $transition-base;
+    opacity: 1;
+    .ex-main-menu_close & {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+.ex-tag-list__item {
+    position: relative;
+    width: 18.75%;
+    float: left;
+    height: 0;
+    padding-bottom: 36%;
+    cursor: pointer;
+    &:not(:nth-child(4n)) {
+        margin-right: 8.33%;
+    }
+}
+
+.ex-tag-list__image-container {
+    width: 76px;
+    height: 76px;
+    border: 9px solid #505050;
+    border-radius: 100%;
+    margin: 10px auto 0 auto;
+    position: relative;
+    text-align: center;
+
+    .day-count,
+    .day-label {
+        display: none;
+    }
+
+    .circle-intentions,
+    .circle-obligations {
+        position: absolute; 
+        left: -9px;
+        top: -9px; 
+
+        width: 76px;
+        height: 76px;
+
+        circle {
+            stroke: rgba(0, 128, 0, 1);
+        }
+    }
+
+    .circle-intentions circle {
+        stroke: rgba(255, 255, 255, 0.5);
+    }
+
+    &[data-h2o-userstatus="2"] {
+        .circle-obligations circle {
+            stroke: rgba(255, 197, 23, 1); 
+        }
+        .circle-intentions circle {
+            stroke: rgba(255, 197, 23, 0.5);
+        }
+    }
+
+    &[data-h2o-userstatus="3"] {
+        .circle-obligations circle {
+            stroke: rgba(253, 103, 33, 1);
+        }
+        .circle-intentions circle {
+            stroke: rgba(253, 103, 33, 0.5);
+        }
+    }
+}
+
+.ex-tag-list__image-container-period {
+    &:before {
+        display: block;
+        position: absolute;
+        content: '';
+        top: -9px;
+        left: -9px;
+        right: -9px;
+        bottom: -9px;
+        background: url(../images/tags/tag-progress-period.png);
+    }
+}
+
+.ex-tag-list__image-container-owninitiative {
+    .day-count,
+    .day-label {
+        display: block;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 23px;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+
+    .day-label {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: -5px;
+    }
+}
+
+.ex-tag-list__image-pluscontainer {
+    border-color: transparent;
+}
+
+.ex-tag-list__image {
+    /*
+    position: absolute;
+    left: 50%;
+    margin-left: -30%;
+    margin-top: 50%;
+    transform: translateY(-47%);
+    width: 60%;
+    */
+}
+
+.ex-tag-list__image-owninitiative {
+    padding: 14px;
+}
+
+.ex-tag-list__image-h2o {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.ex-tag-list__name {
+    
+    margin-top: 110%;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 14px; 
+    height:70px;
+    padding: 0px 0px;
+    white-space: wrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}

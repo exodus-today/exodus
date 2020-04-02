@@ -1,0 +1,9 @@
+﻿@model Tuple<Exodus.ViewModels.VM_Tag, EN_TagRole>
+@using Exodus.Enums
+@{
+    Exodus.ViewModels.VM_Tag tag = Model.Item1;
+    EN_TagRole TagRole = Model.Item2;
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div data-react="/OwnInitiative/Dashboard?tagID=@tag.TagID&tagDescription=@tag.Description&tagRole=@Convert.ToInt32(TagRole)"></div>

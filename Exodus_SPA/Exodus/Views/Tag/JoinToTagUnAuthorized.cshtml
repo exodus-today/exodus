@@ -1,0 +1,168 @@
+﻿@model Tuple<Exodus.ViewModels.VM_User, Exodus.ViewModels.VM_Tag>
+@using Exodus.Helpers
+@using Exodus.Enums
+
+@{
+    Layout = "~/Views/Shared/Layout_Langs.cshtml";
+    var User = Model.Item1;
+    var Tag = Model.Item2;
+    var lang = Exodus.Global.Global.Language;
+}
+
+@section ScriptsBefore
+{
+    <script type="text/javascript">
+        function login() {
+            document.getElementById('reg').style.display = 'none';
+            document.getElementById('log').style.display = 'block';
+            document.getElementById('btn1').style.background = 'rgb(69, 158, 219)';
+            document.getElementById('btn1').style.color = 'white';
+            document.getElementById('btn2').style.background = 'white';
+            document.getElementById('btn2').style.color = 'rgb(69, 158, 219)';           
+        }
+        function reg() {
+            document.getElementById('reg').style.display = 'block';
+            document.getElementById('log').style.display = 'none';            
+            document.getElementById('btn1').style.background = 'white';
+            document.getElementById('btn1').style.color = 'rgb(69, 158, 219)';
+            document.getElementById('btn2').style.background = 'rgb(69, 158, 219)';
+            document.getElementById('btn2').style.color = 'white';
+        }
+    </script>
+}
+
+<div class="ex-welcome">
+    <div style="width:600px;">
+        <div class="text-center mb-4">
+            <img style="display:inline;margin-right:15px;" src="~/Styles/dist/images/logo-dark.png">
+        </div>
+        <div class="bg-white p-4">
+            <div style="min-height: 160px;">
+                <div class="row mb-1">
+                    <div class="col-md-12">
+                        <img src="@User.AvatarBig" class="ex-avatar ex-avatar_medium ex-avatar_light" style="float:left;margin-left:15px;margin-right:30px;width:160px">
+                        <h4><strong>@User.UserFullName</strong></h4> @Exodus.Global.Localisation.Get("InviteYouToTag", lang): <br>
+                        <h4>#@Tag.Name</h4>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-12">
+                        <br />
+                        <p><b>@Exodus.Global.Localisation.Get("Application", lang):</b> @Tag.ApplicationName</p>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-12">
+                        <p><b>@Exodus.Global.Localisation.Get("Description", lang):</b> @Tag.Description</p>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-md-7">
+                        <p><b>@Exodus.Global.Localisation.Get("Periodicity", lang):</b></p>
+                    </div>
+                    <div class="col-md-5">
+                        @{ string periodName = ""; }
+                        @switch (Tag.Period)
+                        {
+                            case EN_TagPeriod.Undefine: periodName = Exodus.Global.Localisation.Get("Undefine", lang); break;
+                            case EN_TagPeriod.Once: periodName = Exodus.Global.Localisation.Get("Once", lang); break;
+                            case EN_TagPeriod.Weekly: periodName = Exodus.Global.Localisation.Get("Weekly", lang) + " " + Tag.DayOfWeek; ; break;
+                            case EN_TagPeriod.Yearly: periodName = Exodus.Global.Localisation.Get("Yearly", lang); break;
+                            case EN_TagPeriod.Monthly: periodName = Exodus.Global.Localisation.Get("Monthly", lang) + " " + Tag.DayOfMonth + ((lang == "ru") ? " Числа" : "th"); break;
+                        }
+                        <p>@periodName</p>
+                    </div>
+                    <div class="col-md-7 d-flex ">
+                        <p><b>@Exodus.Global.Localisation.Get("MinIntention", lang):</b> </p>
+                        @{ string currencyName = ""; }
+                        @switch ((En_Currency)Tag.MinIntentionCurrencyID)
+                        {
+                            case En_Currency.USD: currencyName = Exodus.Global.Localisation.Get("USD", lang); break;
+                            case En_Currency.UAH: currencyName = Exodus.Global.Localisation.Get("UAH", lang); break;
+                            case En_Currency.RUB: currencyName = Exodus.Global.Localisation.Get("RUB", lang); break;
+                            case En_Currency.EUR: currencyName = Exodus.Global.Localisation.Get("EUR", lang); break;
+                        }
+
+                    </div>
+                    <div class="col-md-5 d-flex align-items-center">
+                        <p>@Model.Item2.MinIntentionAmount.ToString("F2").Replace(",", ".") @currencyName</p>
+                    </div>
+                </div>
+                @if (Tag.Period == EN_TagPeriod.Once)
+                {
+                    <div class="row mb-1">
+                        <div class="col-md-7">
+                            <p><b>@Exodus.Global.Localisation.Get("EndDate", lang):</b></p>
+                        </div>
+                        <div class="col-md-5">
+                            <p> @Tag.EndDate.ToString("dd.MM.yyyy")</p>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div style="background-color:#ececec;">
+                <div style="display:flex;justify-content: center;">
+                    <button onclick="login()" id="btn1" class="btn btn-outline-primary w-25" style="color:white;background:rgb(69, 158, 219)">@Exodus.Global.Localisation.Get("Enter", lang)</button>
+                    <button onclick="reg()" id="btn2" class="btn btn-outline-primary w-50" style="color:rgb(69, 158, 219);background:white">@Exodus.Global.Localisation.Get("IAmNewOne", lang)</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="log">
+                <div class="bg-white p-4">
+                    @using (Html.BeginForm("LoginAndJoin", "Tag", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                        <div class="form-group">
+                            <label for="email" class="small">@Exodus.Global.Localisation.Get("EnterYourEmail", lang)</label>
+                            <input type="text" name="Login" class="form-control" placeholder="Email" required autofocus />
+                            <input type="hidden" name="UserID" required value=@User.UserID />
+                            <input type="hidden" name="TagID" required value=@Tag.TagID />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="small">@Exodus.Global.Localisation.Get("EnterPass", lang)</label>
+                            <input type="password" name="Password" class="form-control" placeholder="Password" required />
+                        </div>
+                        <div class="mt-5">
+                            <input type="submit" value="@Exodus.Global.Localisation.Get("LoginAndJoin", lang)" class="btn btn-outline-primary w-100">
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="tab-content" id="reg" style="display:none">
+                <div class="bg-white p-4">
+                    @using (Html.BeginForm("RegisterAndJoin", "Tag", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                        <div class="form-group">
+                            <label for="text" class="small">@Exodus.Global.Localisation.Get("YourName", lang)</label>
+                            <input type="text" name="FirstName" class="form-control" placeholder="@Exodus.Global.Localisation.Get("YourName", lang)" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="text" class="small">@Exodus.Global.Localisation.Get("YourLastName", lang)</label>
+                            <input type="text" name="LastName" class="form-control" placeholder="@Exodus.Global.Localisation.Get("YourLastName", lang)" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="small">@Exodus.Global.Localisation.Get("EnterYourEmail", lang)</label>
+                            <input type="text" name="Login" class="form-control" placeholder="Email" required autofocus />
+                            <input type="hidden" name="UserID" required value=@User.UserID />
+                            <input type="hidden" name="TagID" required value=@Tag.TagID />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="small">@Exodus.Global.Localisation.Get("EnterPass", lang)</label>
+                            <input type="password" name="Password" class="form-control" placeholder="@Exodus.Global.Localisation.Get("Password", lang)" required />
+                        </div>
+                        <div class="mt-5">
+                            <input type="submit" value="@Exodus.Global.Localisation.Get("RegAndJoin", lang)" class="btn btn-outline-primary w-100">
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="@this.Url.Action("About", "Home" )" class="text-black small">@Exodus.Global.Localisation.Get("MoreInfoAboutExodus", lang)</a>
+            </div>
+        </div>
+    </div>
+</div>

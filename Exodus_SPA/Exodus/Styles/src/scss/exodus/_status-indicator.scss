@@ -1,0 +1,23 @@
+.ex-status-indicator {
+    display: inline-block;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.ex-status-indicator_lg {
+    width: 70px;
+    height: 70px;
+}
+
+.ex-status-indicator_ok {
+    background-color: theme-color('success');
+}
+
+.ex-status-indicator_regular-help {
+    background-color: theme-color('warning');
+}
+
+.ex-status-indicator_emergency {
+    background-color: theme-color('danger');
+}

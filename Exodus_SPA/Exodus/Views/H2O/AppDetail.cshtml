@@ -1,0 +1,46 @@
+﻿@model VM_Tag
+@using Exodus.ViewModels
+@using Exodus.Enums
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+@*<div id="ex-screen-1" class="ex-navigation">
+        <div class="ex-navigation__info">
+            <div class="ex-navigation__content">
+                <div class="ex-navigation__image ex-tag">
+                    <img src="~/Styles/dist/images/tags/@(Model.ApplicationID).svg">
+                </div>
+                <div class="ex-navigation__title">#@(lang == "en" ? @Model.NameEng : @Model.NameRus)</div>
+                <div id="linkToJoin" class="ex-navigation__subtitle" style="user-select:text;">@Model.LinkToJoin</div>
+                <br />
+                <button id="LinkButton" class="btn btn-outline-primary w-100">@Exodus.Global.Localisation.Get("CopyLink", lang)</button>
+            </div>
+        </div>
+        <div class="ex-navigation__item"
+             data-load="@this.Url.Action("UserList", "H2O", new { TagID = Request.Params["TagID"] })"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("Members", lang)
+            <i class="icons-person ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Notifications", lang)
+            <i class="icons-bell ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Transactions", lang)
+            <i class="icons-exchange ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Reports", lang)
+            <i class="icons-statistic ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item">
+            @Exodus.Global.Localisation.Get("Settings", lang)
+            <i class="icons-gear ex-navigation__icon"></i>
+        </div>*
+    </div>
+
+    <div id="ex-route-2"
+         class="ex-grid_0-1-1"
+         data-href="@this.Url.Action("UserList", "H2O", new { TagID = Request.Params["TagID"] })"></div>@

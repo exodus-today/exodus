@@ -1,0 +1,17 @@
+.event-details-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.event-details-row {
+    width: 100%;
+    text-align:center;
+}
+.event-details-item {
+    padding: 5px; 
+    margin: 10px;
+    text-align: center;
+}

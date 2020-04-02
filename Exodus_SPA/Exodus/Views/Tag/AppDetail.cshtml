@@ -1,0 +1,21 @@
+﻿@model Tuple<long, VM_Application>
+@using Exodus.ViewModels
+@{
+    var app = Model.Item2;
+    var tagID = Model.Item1;
+    var lang = Exodus.Global.Global.Language;
+}
+
+
+<div class="ex-grid_0-0-1">
+    <div class="px-5 py-3">
+        <h4>@app.ApplicationNameRus</h4>
+        <p class="my-5">@app.ApplicationDescription</p>
+        @if (app.ApplicationIsActive)
+        {
+            <div class="btn btn-outline-primary w-100"
+             data-load="@this.Url.Action("AppDetail", "H2O", new { TagID = tagID})"
+             data-target="#ex-route-1">@Exodus.Global.Localisation.Get("GoToPage", lang)</div>
+        }
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model Exodus.ViewModels.VM_User
+@using Exodus.Helpers
+
+@{
+    int privateTypeID = (int)Exodus.Enums.EN_TagAccessType.Private;
+    int publicTypeID = (int)Exodus.Enums.EN_TagAccessType.Public;
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="ex-navigation">
+    <div class="ex-navigation__info">
+        <div class="ex-navigation__content">
+            <div class="ex-navigation__image ex-tag">#</div>
+            <div class="ex-navigation__title">#@Exodus.Global.Localisation.Get("NewTag", lang)</div>
+        </div>
+    </div>
+
+
+    <div class="ex-navigation__item active">
+        @Exodus.Global.Localisation.Get("NewTag", lang)
+        <i class="icons-gear ex-navigation__icon"></i>
+    </div>
+
+</div>
+
+<div id="ex-route-2">
+    <div id="ex-screen-2" class="ex-panels ex-scroll ex-scroll_with-free-space" style="margin-right: -19px;">
+        <div class="ex-panel">
+            <div class="ex-panel__header">
+                <i class="ex-panel__icon">#</i>
+                @Exodus.Global.Localisation.Get("NewTag", lang):
+            </div>
+            <div class="ex-panel__content">
+                <div data-react="/Obligation/RequestFulFill?UserID=@Model.UserID&lang=@lang"></div>
+            </div>
+        </div>
+    </div>
+</div>

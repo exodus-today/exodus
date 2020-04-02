@@ -1,0 +1,54 @@
+﻿@model Exodus.View_InputModels.VIM_Dispatcher
+@{
+    var lang = Exodus.Global.Global.Language;
+    var activeItem = Model.MenuItem;
+}
+    <div id="ex-screen-1" class="ex-navigation">
+        <div class="ex-navigation_dispatcher__info">
+            <div class="ex-navigation__content">
+                <div class="ex-navigation__image ex-dispatcher">
+                    <img src="/Styles/dist/images/icons/dispatcherw.svg" style="width:50px;">
+                </div>
+                <div class="ex-navigation__title">@Exodus.Global.Localisation.Get("IntentionDispatcher", lang)</div>
+            </div>
+        </div>
+
+        <div class="ex-navigation__item @(activeItem == Exodus.Enums.EN_ViewMenuItem.MyIntentions ? "active" : "")"
+             data-load="@this.Url.Action("MyIntentions", "Intentions")"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("MyIntentions", lang)
+            <i class="icons-bell ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item @(activeItem == Exodus.Enums.EN_ViewMenuItem.FriendIntentions ? "active" : "")"
+             data-load="@this.Url.Action("FriendIntentions", "Intentions")"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("FriendIntentions", lang)
+            <i class="icons-bell ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item @(activeItem == Exodus.Enums.EN_ViewMenuItem.MyObligations ? "active" : "")"
+             data-load="@this.Url.Action("MyObligations", "Intentions")"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("MyObligations", lang)
+            <i class="icons-exchange ex-navigation__icon"></i>
+        </div>
+
+        <div class="ex-navigation__item @(activeItem == Exodus.Enums.EN_ViewMenuItem.ObligationsInMyFavour ? "active" : "")"
+             data-load="@this.Url.Action("ObligationsInMyFavour", "Intentions")"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("ObligationsInMyFavour", lang)
+            <i class="icons-exchange ex-navigation__icon"></i>
+        </div>
+        <div class="ex-navigation__item @(activeItem == Exodus.Enums.EN_ViewMenuItem.Transactions ? "active" : "")"
+             data-load="@this.Url.Action("Transactions", "Intentions")"
+             data-target="#ex-route-2">
+            @Exodus.Global.Localisation.Get("Transactions", lang)
+            <i class="icons-two-persons ex-navigation__icon"></i>
+        </div>
+
+    </div>
+
+<div id="ex-route-2"
+class="ex-grid_0-1-1"
+data-href="@this.Url.Action(Enum.GetName(typeof(Exodus.Enums.EN_ViewMenuItem), activeItem), "Intentions", new { itemID = Model.ItemID })"></div>

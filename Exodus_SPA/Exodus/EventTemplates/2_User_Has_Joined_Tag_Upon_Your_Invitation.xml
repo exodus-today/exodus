@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template>
+  <!--Full key model for event / send to api as KEY/VALUE dictionary-->
+  <content>
+    <keys>
+      <!---->
+      <key name="TagID" type="number" enable="true" modelName="Tag" model="VM_Tag" />
+      <!---->
+      <key name="InvitedUserID" type="number" enable="true" modelName="InvitedUser" model="VM_User"/>
+      <!---->
+      <key name="InviterUserID" type="number" enable="true" modelName="InviterUser" model="VM_User"/>
+      <!---->
+      <key name="ApplicationID" type="number" enable="true" modelName="Application"  model="VM_Application"/>
+    </keys>
+  </content>
+
+  <!--Partial model for fromend-->
+  <thumbnail>
+    <keys>
+      <key name="InvitedUserFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="InvitedUser"/>
+      <key name="InvitedUserAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="InvitedUser"/>
+      <key name="InvitedUserAvatarBIG" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="InvitedUser"/>
+
+      <key name="InviterUserFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="InviterUser"/>
+      <key name="InviterUserAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="InviterUser"/>
+      <key name="InviterUserAvatarBig" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="InvitedUser"/>
+      
+      <key name="TagName" type="text" enable="true" model="VM_Tag" PropertyName="Name" modelName="Tag"/>
+      <key name="ApplicationID"  type="number" enable="true" model="VM_Application" PropertyName="ApplicationID" modelName="Application"/>
+      <key name="ApplicationName"  type="number" enable="true" model="VM_Application" PropertyName="Name" modelName="Application"/>
+    </keys>
+  </thumbnail>
+
+  <related>
+    <key model="VM_User" PropertyName="UserID" modelName="InviterUser" relation="Single" type="num" RelationType="User"></key>
+  </related>
+</template>

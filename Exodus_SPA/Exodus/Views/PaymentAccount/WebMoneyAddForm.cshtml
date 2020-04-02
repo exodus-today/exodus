@@ -1,0 +1,31 @@
+﻿@{
+    var lang = Exodus.Global.Global.Language;
+}
+
+<form action="@this.Url.Action("PaymentAccountAdd", "PaymentAccount")"
+      method="POST"
+      id="ex-new-payment-form"
+      data-update="@this.Url.Action("PaymentAccountList", "PaymentAccount")">
+    <input type="hidden" name="AccountType" value="@((int)Exodus.Enums.En_AccountType.WebMoney)">
+    <div class="row mb-4">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("WMpurse", lang):
+        </div>
+        <div class="col-9">
+            <input type="text" name="AccountDetails" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <button class="btn btn-outline-success w-100">
+                @Exodus.Global.Localisation.Get("Save", lang)
+            </button>
+        </div>
+        <div class="col">
+            <div class="btn btn-outline-secondary w-100" data-toggle="collapse" data-target="#ex-new-payment">
+                @Exodus.Global.Localisation.Get("Cancel", lang)
+            </div>
+        </div>
+    </div>
+</form>

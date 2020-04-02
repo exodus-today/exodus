@@ -1,0 +1,53 @@
+.ex-tag {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/frame.png);
+    background-size: 100% 100%;
+
+    img {
+        max-width: 60%;
+        max-height: 60%;
+    }
+}
+
+.ex-dispatcher {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/frame.png);
+    background-size: 100% 100%;
+
+    img {
+        max-width: 60%;
+        max-height: 60%;
+    }
+}
+
+.create-intention-form {
+
+    .intention-amount,
+    .intention-period {
+        width: 80px;
+        float: left;
+        margin-right: 5px;
+    }
+
+    .intention-period + label {
+        margin-top: 0.5rem;
+    }
+
+    .intention-currency {
+        width: auto;
+        float: left;
+        margin-right: 5px;
+        padding-right: 40px;
+    }
+}
+[data-loading="true"] .create-intention-form .btn {
+    user-select: none;
+}

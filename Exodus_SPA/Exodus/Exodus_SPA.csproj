@@ -1,0 +1,1058 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{767548A7-1933-4164-AF4B-1E1D763014D2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Exodus</RootNamespace>
+    <AssemblyName>Exodus</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.3.4.13329\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet.Extensions, Version=1.0.5009.36235, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.Extensions.1.0.5009.36235\lib\net45\DotNetOpenAuth.AspNet.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.4.13329\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFrameworkExtras.EF6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF6.1.0.0\lib\net45\EntityFrameworkExtras.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.14.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.14\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack.CssSelectors, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.CssSelectors.1.0.2\lib\net45\HtmlAgilityPack.CssSelectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.8.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.8.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.8.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.8.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.8.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.8.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.7\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.7\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharpFork.1.0.4.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Controllers\AppH2OController.cs" />
+    <Compile Include="API\Controllers\ApplicationController.cs" />
+    <Compile Include="API\Controllers\AppOwnInitiativeController.cs" />
+    <Compile Include="API\Controllers\BaceApiController.cs" />
+    <Compile Include="API\Controllers\BankCardController.cs" />
+    <Compile Include="API\Controllers\EventsController.cs" />
+    <Compile Include="API\Controllers\IntentionController.cs" />
+    <Compile Include="API\Controllers\ObligationController.cs" />
+    <Compile Include="API\Controllers\PaymentAccountController.cs" />
+    <Compile Include="API\Controllers\PublicProfileController.cs" />
+    <Compile Include="API\Controllers\SearchController.cs" />
+    <Compile Include="API\Controllers\TagController.cs" />
+    <Compile Include="API\Controllers\TransactionController.cs" />
+    <Compile Include="API\Controllers\UserController.cs" />
+    <Compile Include="Constant\Constants.cs" />
+    <Compile Include="Domain\DL_Global.cs" />
+    <Compile Include="Domain\DL_H2O.cs" />
+    <Compile Include="Domain\DL_Main.cs" />
+    <Compile Include="Domain\fn_t_TagStats_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_App_Settings_Read_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_EventList_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_EventList_Read_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Event_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_GetPaymentAccountByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_GetTokenAction_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligation_KindDefault_ByAppID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligation_Routing_ByObligationID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_PaymentAccounts_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Tags_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Tags_Public_with_UserCount_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO_Api\DTO_ApplicationSettings.cs" />
+    <Compile Include="DTO_Api\DTO_CreditCard.cs" />
+    <Compile Include="DTO_Api\DTO_EventListItem.cs" />
+    <Compile Include="DTO_Api\DTO_Intention.cs" />
+    <Compile Include="DTO_Api\DTO_Obligation.cs" />
+    <Compile Include="DTO_Api\DTO_ObligationRouting.cs" />
+    <Compile Include="DTO_Api\DTO_PaymentAccount.cs" />
+    <Compile Include="DTO_Api\DTO_Tag.cs" />
+    <Compile Include="DTO_Api\DTO_TagJoinDetails.cs" />
+    <Compile Include="DTO_Api\DTO_TransactionAdd.cs" />
+    <Compile Include="DTO_Api\DTO_TransactionConfirm.cs" />
+    <Compile Include="DTO_Api\DTO_UserLogin.cs" />
+    <Compile Include="DTO_Api\DTO_RegisterByInviteCode.cs" />
+    <Compile Include="DTO_Api\DTO_RegisterByMyself.cs" />
+    <Compile Include="DTO_Api\DTO_User_LightModel.cs" />
+    <Compile Include="DTO_Api\DTO_UserStatusUpdate.cs" />
+    <Compile Include="API\Models\API_Enums.cs" />
+    <Compile Include="API\Models\API_Response.cs" />
+    <Compile Include="API\Models\API_Session.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="API\Controllers\ExodusController.cs" />
+    <Compile Include="AutoMapper\Mapper.cs" />
+    <Compile Include="Configuration\ConfigurationFile.cs" />
+    <Compile Include="ControllerAttribute\CompressAttribute.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DesktopController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\H2OController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AvatarController.cs" />
+    <Compile Include="Controllers\IntentionsController.cs" />
+    <Compile Include="Controllers\ExodusAdminController.cs" />
+    <Compile Include="Controllers\ObligationsController.cs" />
+    <Compile Include="Controllers\OwnInitiativeController.cs" />
+    <Compile Include="Controllers\PaymentAccountController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Controllers\PublicProfileController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Domain\Contact.cs" />
+    <Compile Include="Domain\DL_Banks.cs" />
+    <Compile Include="Domain\DL_Application.cs" />
+    <Compile Include="Domain\DL_Cards.cs" />
+    <Compile Include="Domain\DL_Events.cs" />
+    <Compile Include="Domain\DL_Intention.cs" />
+    <Compile Include="Domain\DL_Obligation.cs" />
+    <Compile Include="Domain\DL_Transactions.cs" />
+    <Compile Include="Domain\DL_User.cs" />
+    <Compile Include="Domain\exodus.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>exodus.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\exodus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\exodus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>exodus.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DL_Search.cs" />
+    <Compile Include="Domain\stp_AccountTypes_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Application_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Application_GetList_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_BankNames_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_CreditCards_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_CreditCardTypes_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_EventTemplate_ByEventTypeID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_EventTemplate_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Event_GetEventTypes_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Event_Single_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_GetBankNamesByCardNumber_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_GetCreditCardByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_GetUserRelations_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intentions_All_ByHolderID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intentions_All_ByIssuerID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intentions_ByUserPublicProfile_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intention_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intention_ByTagID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Intention_ByUserIssuerID_ByTagID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligations_All_ByHolderID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligations_All_ByIssuerID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligation_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Obligation_ByTagID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Search_Tag_ByString_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Search_User_ByString_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_TagsCommon_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_TagsPublic_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Tags_OwnedByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Tag_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Transactions_ByTagApplication_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Transactions_ByTag_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Transactions_ByUserReceiver_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Transactions_ByUserSender_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Transaction_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_UserLoginDetails_ByEmail_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Users_ByTag_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_Users_With_Statuses_ByTag_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_Accounts_ByUserID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_Account_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_ByEmail_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_ByExternalID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_ByGuid_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_ByID_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\DL_Tag.cs" />
+    <Compile Include="Domain\DL_PaymentAccount.cs" />
+    <Compile Include="API\Helpers\ApiKeyHelper.cs" />
+    <Compile Include="Domain\stp_User_GetAll_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\stp_User_GetAvatarAll_Result.cs">
+      <DependentUpon>exodus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\IntentionDTO.cs" />
+    <Compile Include="DTO\ObligationDTO.cs" />
+    <Compile Include="DTO\RegistrationDTO.cs" />
+    <Compile Include="DTO\SearchResultItemDTO.cs" />
+    <Compile Include="DTO\TagLoginAndJoinDTO.cs" />
+    <Compile Include="DTO\TagRegisterAndJoinDTO.cs" />
+    <Compile Include="DTO\UserLoginByFacebookDTO.cs" />
+    <Compile Include="DTO\UserLoginDTO.cs" />
+    <Compile Include="DTO\UserStatusDTO.cs" />
+    <Compile Include="Enums\Errors.cs" />
+    <Compile Include="Enums\Events.cs" />
+    <Compile Include="Enums\Intentions.cs" />
+    <Compile Include="Enums\Obligations.cs" />
+    <Compile Include="Enums\Tags.cs" />
+    <Compile Include="DTO\DTO_KeyItem.cs" />
+    <Compile Include="DTO\DTO_ModelObject.cs" />
+    <Compile Include="Enums\TokenAction.cs" />
+    <Compile Include="Events\EventCreator.cs" />
+    <Compile Include="Events\EventModel.cs" />
+    <Compile Include="Exceptions\ApiEventTempleteIncorrectKeys.cs" />
+    <Compile Include="Exceptions\ApplicationNotFoundException.cs" />
+    <Compile Include="Exceptions\ApplicationStartupExceptionList.cs" />
+    <Compile Include="Exceptions\BankNotFoundException.cs" />
+    <Compile Include="Exceptions\CanNotAddYourSelfException.cs" />
+    <Compile Include="Exceptions\CardNotFoundException.cs" />
+    <Compile Include="Exceptions\IntentionNotFoundException.cs" />
+    <Compile Include="Exceptions\InviteCodeException.cs" />
+    <Compile Include="Exceptions\LocalisationInitException.cs" />
+    <Compile Include="Exceptions\LoginException.cs" />
+    <Compile Include="Exceptions\RegistrationException.cs" />
+    <Compile Include="Exceptions\DataBaseException.cs" />
+    <Compile Include="Exceptions\IncorrectPaymentAccountTypeException.cs" />
+    <Compile Include="Exceptions\TagException.cs" />
+    <Compile Include="Exceptions\TokenActionNotFoundException.cs" />
+    <Compile Include="Exceptions\TokenExpirationDateFaledException.cs" />
+    <Compile Include="Exceptions\TransactionNotFoundException.cs" />
+    <Compile Include="Exceptions\UserExistException.cs" />
+    <Compile Include="Exceptions\YouHaveAlreadyInTag.cs" />
+    <Compile Include="ExeptionsBase\ExodusExeption.cs" />
+    <Compile Include="ExeptionsBase\IExodusExeption.cs" />
+    <Compile Include="Exceptions\HttpForbiddenException.cs" />
+    <Compile Include="Exceptions\ObligationNotFoundException.cs" />
+    <Compile Include="Exceptions\LangNotFoundException.cs" />
+    <Compile Include="Exceptions\PaymentAccountNotFoundException.cs" />
+    <Compile Include="Exceptions\TagNotFoundException.cs" />
+    <Compile Include="Exceptions\UserNotFoundException.cs" />
+    <Compile Include="Exceptions\ValidationException.cs" />
+    <Compile Include="Extensions\EnumExtention.cs" />
+    <Compile Include="Extensions\UrlHelperExtension.cs" />
+    <Compile Include="Extensions\XmlDocument.cs" />
+    <Compile Include="Global\Cache.cs" />
+    <Compile Include="Global\Cache_Exception.cs" />
+    <Compile Include="Global\Cache_Init.cs" />
+    <Compile Include="Global\Cache_Models.cs" />
+    <Compile Include="Global\Global.cs" />
+    <Compile Include="GlobalModels\Session.cs" />
+    <Compile Include="Global\Settings.cs" />
+    <Compile Include="Helpers\AvatarGenerator.cs" />
+    <Compile Include="Helpers\EventTemplate.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Helpers\PageHelper.cs" />
+    <Compile Include="Interfaces\IDictionarySerialozation.cs" />
+    <Compile Include="JSON\JsonGenarator.cs" />
+    <Compile Include="Localisation\Localisation.cs" />
+    <Compile Include="Log4Net\Logger.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CheckObject.cs" />
+    <Compile Include="Models\TokenAction.cs" />
+    <Compile Include="Models\UserAvatar.cs" />
+    <Compile Include="Models\UserLoginDetails.cs" />
+    <Compile Include="Models_Search\Tag.cs" />
+    <Compile Include="Models_Search\UserSearch.cs" />
+    <Compile Include="Security\Security.cs" />
+    <Compile Include="Service\SL_EventService.cs" />
+    <Compile Include="Service\SL_MailService.cs" />
+    <Compile Include="Service\SL_NXor.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CookieHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\SL_Search.cs" />
+    <Compile Include="ViewModels\VM_Account.cs" />
+    <Compile Include="ViewModels\VM_AccountType.cs" />
+    <Compile Include="ViewModels\VM_Application.cs" />
+    <Compile Include="ViewModels\VM_Bank.cs" />
+    <Compile Include="ViewModels\VM_BankCard.cs" />
+    <Compile Include="ViewModels\VM_EventCategory.cs" />
+    <Compile Include="ViewModels\VM_Event.cs" />
+    <Compile Include="ViewModels\VM_EventTemplate.cs" />
+    <Compile Include="ViewModels\VM_EventType.cs" />
+    <Compile Include="ViewModels\VM_ImportanLevel.cs" />
+    <Compile Include="ViewModels\VM_Intention.cs" />
+    <Compile Include="ViewModels\VM_IntentionTerm.cs" />
+    <Compile Include="ViewModels\VM_ObligationClass.cs" />
+    <Compile Include="ViewModels\VM_ObligationKind.cs" />
+    <Compile Include="ViewModels\VM_ObligationRouting.cs" />
+    <Compile Include="ViewModels\VM_ObligationRoutingType.cs" />
+    <Compile Include="ViewModels\VM_ObligationStatus.cs" />
+    <Compile Include="ViewModels\VM_ObligationType.cs" />
+    <Compile Include="ViewModels\VM_PaymentAccount.cs" />
+    <Compile Include="ViewModels\VM_Period.cs" />
+    <Compile Include="ViewModels\VM_SearchQuery.cs" />
+    <Compile Include="ViewModels\VM_TagJoinDetails.cs" />
+    <Compile Include="ViewModels\VM_TagPublicWinUserCount.cs" />
+    <Compile Include="ViewModels\VM_TransferType.cs" />
+    <Compile Include="ViewModels\VM_UserHelpDetails.cs" />
+    <Compile Include="ViewModels\VM_MyTransactions.cs" />
+    <Compile Include="ViewModels\VM_Obligation.cs" />
+    <Compile Include="ViewModels\VM_SearchResults.cs" />
+    <Compile Include="ViewModels\VM_StatusInfo.cs" />
+    <Compile Include="ViewModels\VM_Tag.cs" />
+    <Compile Include="ViewModels\VM_TagRole.cs" />
+    <Compile Include="ViewModels\VM_TagUser.cs" />
+    <Compile Include="ViewModels\VM_Transaction.cs" />
+    <Compile Include="ViewModels\VM_User.cs" />
+    <Compile Include="ViewModels\VM_UserPaymentAccounts.cs" />
+    <Compile Include="ViewModels\VM_UserRegister.cs" />
+    <Compile Include="ViewModels\VM_BankCardType.cs" />
+    <Compile Include="View_InputModels\VIM_Dispatcher.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppXML\app_settings.xml" />
+    <Content Include="App_Data\Localisation\EN.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Localisation\RU.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Domain\exodus.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>exodus.edmx</DependentUpon>
+      <LastGenOutput>exodus.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Domain\exodus.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>exodus.edmx</DependentUpon>
+      <LastGenOutput>exodus.cs</LastGenOutput>
+    </Content>
+    <Content Include="EventTemplates\0_Xml_Base_Template.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\10_Obligation_execution_requested.xml" />
+    <Content Include="EventTemplates\11_Intention_To_Obligation_Convertion_Requested.xml" />
+    <Content Include="EventTemplates\12_User_Reported_Key_Tag_Related_Event.xml" />
+    <Content Include="EventTemplates\13_Own_Initiative_Tag_Reached_Target_Amount_Including_Intentions.xml" />
+    <Content Include="EventTemplates\14_Own_Initiative_Tag_Reached_Target_Amount.xml" />
+    <Content Include="EventTemplates\3_User_Has_Left_Tag.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\1_Tag_Join_Invitation.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\2_User_Has_Joined_Tag_Upon_Your_Invitation.xml" />
+    <Content Include="EventTemplates\5_New_Transaction_Received_Confirmation_Required.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\6_Transaction_Was_Confirmed_By_Receiver.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\7_User_Status_Became_Red.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EventTemplates\8_User_Status_Became_Green.xml" />
+    <Content Include="EventTemplates\9_User_Status_Became_Yellow.xml" />
+    <Content Include="Exodus_SPA.wpp.targets.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="Domain\exodus.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>exodus.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Domain\exodus.edmx.diagram">
+      <DependentUpon>exodus.edmx</DependentUpon>
+    </Content>
+    <Content Include="Exodus.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="appSettings.config" />
+    <Content Include="Log4Net.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Properties\PublishProfiles\CustomProfile.pubxml.user" />
+    <Content Include="Scripts\detect-device.min.js.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Styles\dist\css\global.css" />
+    <Content Include="Styles\dist\css\main.css" />
+    <Content Include="Styles\dist\fonts\arrow-bottom-blue.svg" />
+    <Content Include="Styles\dist\fonts\icons.svg" />
+    <Content Include="Styles\dist\fonts\loading.svg" />
+    <Content Include="Styles\dist\images\application\funds-legend-en.jpg" />
+    <Content Include="Styles\dist\images\application\funds-legend.jpg" />
+    <Content Include="Styles\dist\images\application\H20.svg" />
+    <Content Include="Styles\dist\images\application\H20_inv.svg" />
+    <Content Include="Styles\dist\images\application\ico_tag2.svg" />
+    <Content Include="Styles\dist\images\application\ico_tag2_inv.svg" />
+    <Content Include="Styles\dist\images\application\Insurance.svg" />
+    <Content Include="Styles\dist\images\application\Insurance_inv.svg" />
+    <Content Include="Styles\dist\images\application\Own_Initiative.svg" />
+    <Content Include="Styles\dist\images\application\Own_Initiative_inv.svg" />
+    <Content Include="Styles\dist\images\application\Pawnshop.svg" />
+    <Content Include="Styles\dist\images\application\Pawnshop_inv.svg" />
+    <Content Include="Styles\dist\images\arrow-bottom-blue.svg" />
+    <Content Include="Styles\dist\images\arrow-down.png" />
+    <Content Include="Styles\dist\images\arrow-left.png" />
+    <Content Include="Styles\dist\images\arrow-right-blue.png" />
+    <Content Include="Styles\dist\images\arrow-right.png" />
+    <Content Include="Styles\dist\images\avatar.png" />
+    <Content Include="Styles\dist\images\avatar200x200\big.jpeg" />
+    <Content Include="Styles\dist\images\avatar50x50\small.jpeg" />
+    <Content Include="Styles\dist\images\bell.png" />
+    <Content Include="Styles\dist\images\Bitcoin_logo.svg" />
+    <Content Include="Styles\dist\images\calendar.svg" />
+    <Content Include="Styles\dist\images\chain.png" />
+    <Content Include="Styles\dist\images\chine.png" />
+    <Content Include="Styles\dist\images\chinecrash.png" />
+    <Content Include="Styles\dist\images\circle-green.png" />
+    <Content Include="Styles\dist\images\circle-red.png" />
+    <Content Include="Styles\dist\images\circle-yellow.png" />
+    <Content Include="Styles\dist\images\close.png" />
+    <Content Include="Styles\dist\images\edit.png" />
+    <Content Include="Styles\dist\images\favicon.png" />
+    <Content Include="Styles\dist\images\fb.svg" />
+    <Content Include="Styles\dist\images\frame.png" />
+    <Content Include="Styles\dist\images\icons\add-person.svg" />
+    <Content Include="Styles\dist\images\icons\arrow-bottom.svg" />
+    <Content Include="Styles\dist\images\icons\arrow-left.svg" />
+    <Content Include="Styles\dist\images\icons\arrow-right.svg" />
+    <Content Include="Styles\dist\images\icons\arrow-top.svg" />
+    <Content Include="Styles\dist\images\icons\bell.svg" />
+    <Content Include="Styles\dist\images\icons\card.svg" />
+    <Content Include="Styles\dist\images\icons\dispatcher.png" />
+    <Content Include="Styles\dist\images\icons\dispatcher.svg" />
+    <Content Include="Styles\dist\images\icons\dispatcherw.svg" />
+    <Content Include="Styles\dist\images\icons\edit.svg" />
+    <Content Include="Styles\dist\images\icons\exchange.svg">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Styles\dist\images\icons\fb.png" />
+    <Content Include="Styles\dist\images\icons\gear.svg" />
+    <Content Include="Styles\dist\images\icons\hash.svg" />
+    <Content Include="Styles\dist\images\icons\home.svg" />
+    <Content Include="Styles\dist\images\icons\in.png" />
+    <Content Include="Styles\dist\images\icons\info.svg" />
+    <Content Include="Styles\dist\images\icons\logout.svg" />
+    <Content Include="Styles\dist\images\icons\person.svg" />
+    <Content Include="Styles\dist\images\icons\search.png" />
+    <Content Include="Styles\dist\images\icons\search.svg" />
+    <Content Include="Styles\dist\images\icons\social.svg" />
+    <Content Include="Styles\dist\images\icons\statistic.svg" />
+    <Content Include="Styles\dist\images\icons\status-outline copy.svg" />
+    <Content Include="Styles\dist\images\icons\status-outline.svg" />
+    <Content Include="Styles\dist\images\icons\status.svg" />
+    <Content Include="Styles\dist\images\icons\tag.svg" />
+    <Content Include="Styles\dist\images\icons\two-persons.svg" />
+    <Content Include="Styles\dist\images\icons\vk.png" />
+    <Content Include="Styles\dist\images\ico_h20.ai" />
+    <Content Include="Styles\dist\images\ico_h20.svg" />
+    <Content Include="Styles\dist\images\ico_h20_inv.ai" />
+    <Content Include="Styles\dist\images\ico_h20_inv.svg" />
+    <Content Include="Styles\dist\images\ico_insure.ai" />
+    <Content Include="Styles\dist\images\ico_insure.svg" />
+    <Content Include="Styles\dist\images\ico_insure_inv.ai" />
+    <Content Include="Styles\dist\images\ico_kassa.ai" />
+    <Content Include="Styles\dist\images\ico_kassa.svg" />
+    <Content Include="Styles\dist\images\ico_kassa_inv.ai" />
+    <Content Include="Styles\dist\images\ico_tag1.ai" />
+    <Content Include="Styles\dist\images\ico_tag1.svg" />
+    <Content Include="Styles\dist\images\ico_tag1_inv.ai" />
+    <Content Include="Styles\dist\images\ico_tag2.ai" />
+    <Content Include="Styles\dist\images\ico_tag2.svg" />
+    <Content Include="Styles\dist\images\ico_tag2_inv.ai" />
+    <Content Include="Styles\dist\images\in.svg" />
+    <Content Include="Styles\dist\images\invite.png" />
+    <Content Include="Styles\dist\images\loader.gif" />
+    <Content Include="Styles\dist\images\loader.svg" />
+    <Content Include="Styles\dist\images\loading.svg" />
+    <Content Include="Styles\dist\images\logo-dark%28old%29.png" />
+    <Content Include="Styles\dist\images\logo-dark.png" />
+    <Content Include="Styles\dist\images\logo.png" />
+    <Content Include="Styles\dist\images\logout.png" />
+    <Content Include="Styles\dist\images\logout.svg" />
+    <Content Include="Styles\dist\images\man.png" />
+    <Content Include="Styles\dist\images\notice-green.png" />
+    <Content Include="Styles\dist\images\notice-red.png" />
+    <Content Include="Styles\dist\images\notice-yellow.png" />
+    <Content Include="Styles\dist\images\payment\AmericanExpress.png" />
+    <Content Include="Styles\dist\images\payment\Bank Card.svg" />
+    <Content Include="Styles\dist\images\payment\bitcoin.svg" />
+    <Content Include="Styles\dist\images\payment\Discover.png" />
+    <Content Include="Styles\dist\images\payment\Maestro.png" />
+    <Content Include="Styles\dist\images\payment\MasterCard.png" />
+    <Content Include="Styles\dist\images\payment\paypal.svg" />
+    <Content Include="Styles\dist\images\payment\Visa.png" />
+    <Content Include="Styles\dist\images\payment\visa.svg" />
+    <Content Include="Styles\dist\images\payment\webmoney.svg" />
+    <Content Include="Styles\dist\images\person.png" />
+    <Content Include="Styles\dist\images\plus.png" />
+    <Content Include="Styles\dist\images\relation.png" />
+    <Content Include="Styles\dist\images\search-dark.png" />
+    <Content Include="Styles\dist\images\search.png" />
+    <Content Include="Styles\dist\images\setting.png" />
+    <Content Include="Styles\dist\images\social.png" />
+    <Content Include="Styles\dist\images\statistic.png" />
+    <Content Include="Styles\dist\images\tag-bg.png" />
+    <Content Include="Styles\dist\images\tag-dark.png" />
+    <Content Include="Styles\dist\images\tags\1.svg" />
+    <Content Include="Styles\dist\images\tags\1_inv.svg" />
+    <Content Include="Styles\dist\images\tags\2.svg" />
+    <Content Include="Styles\dist\images\tags\2_inv.svg" />
+    <Content Include="Styles\dist\images\tags\3.svg" />
+    <Content Include="Styles\dist\images\tags\3_inv.svg" />
+    <Content Include="Styles\dist\images\tags\4.svg" />
+    <Content Include="Styles\dist\images\tags\4_inv.svg" />
+    <Content Include="Styles\dist\images\tags\5.svg" />
+    <Content Include="Styles\dist\images\tags\5_inv.svg" />
+    <Content Include="Styles\dist\images\tags\ico_h20.svg" />
+    <Content Include="Styles\dist\images\tags\ico_h20_inv.svg" />
+    <Content Include="Styles\dist\images\tags\ico_insure.svg" />
+    <Content Include="Styles\dist\images\tags\ico_insure_inv.svg" />
+    <Content Include="Styles\dist\images\tags\ico_kassa.svg" />
+    <Content Include="Styles\dist\images\tags\ico_kassa_inv.svg" />
+    <Content Include="Styles\dist\images\tags\ico_tag1.svg" />
+    <Content Include="Styles\dist\images\tags\ico_tag1_inv.svg" />
+    <Content Include="Styles\dist\images\tags\ico_tag2.svg" />
+    <Content Include="Styles\dist\images\tags\ico_tag2_inv.svg" />
+    <Content Include="Styles\dist\images\times-gray.png" />
+    <Content Include="Styles\dist\images\transaction-arrow-right-green.png" />
+    <Content Include="Styles\dist\images\triangle-right-gray.png" />
+    <Content Include="Styles\dist\images\triangle-right-green.png" />
+    <Content Include="Styles\dist\images\triangle-right-red.png" />
+    <Content Include="Styles\dist\images\Vector Smart Object copy.png" />
+    <Content Include="Styles\dist\images\vk.svg" />
+    <Content Include="Styles\dist\images\WebMoney_logo_blue.svg" />
+    <Content Include="Styles\dist\js\main.js" />
+    <Content Include="Views\Intentions\MyObligations.cshtml" />
+    <Content Include="Views\Tag\JoinToTagUnAuthorized.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\Desktop\Index.cshtml" />
+    <Content Include="Views\User\RegisterWithTag.cshtml" />
+    <Content Include="Views\User\RegisterByMyself.cshtml" />
+    <Content Include="Views\Partial\Tag\UserList.cshtml" />
+    <Content Include="Views\Partial\Transaction\TransactionList.cshtml" />
+    <Content Include="Views\Partial\Tag\TagList.cshtml" />
+    <Content Include="Views\Partial\Account\UserStatus.cshtml" />
+    <Content Include="Views\Partial\Account\UserData.cshtml" />
+    <Content Include="Views\Partial\Account\UserProfile.cshtml" />
+    <Content Include="Views\Partial\Account\Header.cshtml" />
+    <Content Include="Views\Partial\Account\Navigation.cshtml" />
+    <Content Include="Views\Partial\Tag\UserDetail.cshtml" />
+    <Content Include="Views\Partial\Tag\AppDetail.cshtml" />
+    <Content Include="Views\Home\AskLogin.cshtml" />
+    <Content Include="Views\PaymentAccount\BankAccountAddForm.cshtml" />
+    <Content Include="Views\PaymentAccount\BitcoinAddForm.cshtml" />
+    <Content Include="Views\PaymentAccount\BankCardAddForm.cshtml" />
+    <Content Include="Views\PaymentAccount\BitcoinUpdateForm.cshtml" />
+    <Content Include="Views\PaymentAccount\BankCardUpdateForm.cshtml" />
+    <Content Include="Views\PaymentAccount\PaymentAccountList.cshtml" />
+    <Content Include="Views\PaymentAccount\PayPalUpdateForm.cshtml" />
+    <Content Include="Views\PaymentAccount\PayPalAddForm.cshtml" />
+    <Content Include="Views\PaymentAccount\WebMoneyAddForm.cshtml" />
+    <Content Include="Views\PaymentAccount\WebMoneyUpdateForm.cshtml" />
+    <Content Include="Views\Tag\AppDetail.cshtml" />
+    <Content Include="Views\Tag\AppList.cshtml" />
+    <Content Include="Views\Tag\TagDetail.cshtml" />
+    <Content Include="Views\H2O\AppDetail.cshtml" />
+    <Content Include="Views\H2O\UserActions.cshtml" />
+    <Content Include="Views\H2O\UserDetail.cshtml" />
+    <Content Include="Views\H2O\UserList.cshtml" />
+    <Content Include="Views\PublicProfile\UserDetail.cshtml" />
+    <Content Include="Views\PublicProfile\UserStatus.cshtml" />
+    <Content Include="Styles\dist\css\main.css.map" />
+    <Content Include="Styles\dist\fonts\Calibri.ttf" />
+    <Content Include="Styles\dist\fonts\CalibriLight.ttf" />
+    <Content Include="Styles\dist\fonts\icons.eot" />
+    <Content Include="Styles\dist\fonts\icons.ttf" />
+    <Content Include="Styles\dist\fonts\icons.woff" />
+    <Content Include="Styles\dist\fonts\icons.woff2" />
+    <Content Include="Styles\dist\js\main.js.map" />
+    <Content Include="Styles\dist\mix-manifest.json" />
+    <Content Include="Views\Shared\Layout_Langs.cshtml" />
+    <Content Include="Views\Partial\Tag\AddTagR.cshtml" />
+    <Content Include="Views\Tag\JoinToTag.cshtml" />
+    <Content Include="Views\Errors\PageNotFound.cshtml" />
+    <Content Include="Views\Errors\ServerError.cshtml" />
+    <Content Include="Views\Intentions\Dispatcher.cshtml" />
+    <Content Include="Views\Intentions\Dashboard.cshtml" />
+    <Content Include="Views\Errors\UnknownError.cshtml" />
+    <Content Include="Views\Intentions\Calendar.cshtml" />
+    <Content Include="Views\Intentions\Notifications.cshtml" />
+    <Content Include="Views\Intentions\Reports.cshtml" />
+    <Content Include="Views\User\LoginByFacebook.cshtml" />
+    <Content Include="Views\Intentions\MyIntentions.cshtml" />
+    <Content Include="Views\Intentions\FriendIntentions.cshtml" />
+    <Content Include="Views\Intentions\ObligationsInMyFavour.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Desktop\OpenTag.cshtml" />
+    <Content Include="Views\Intentions\Obligation.cshtml" />
+    <Content Include="Views\Errors\Info.cshtml" />
+    <Content Include="Views\PaymentAccount\BankAccountUpdateForm.cshtml" />
+    <Content Include="Views\Shared\Layout_Errors.cshtml" />
+    <Content Include="Views\Errors\TagCanNotAddYourSelf.cshtml" />
+    <Content Include="Views\Errors\TagNotFound.cshtml" />
+    <Content Include="Views\Errors\UserNotFound.cshtml" />
+    <Content Include="Views\Errors\IncorrectInviteCode.cshtml" />
+    <Content Include="Views\Errors\ApplicationNotFound.cshtml" />
+    <Content Include="Views\Errors\BankNotFound.cshtml" />
+    <Content Include="Views\Errors\CardNotFound.cshtml" />
+    <Content Include="Views\Application\AppH2O.cshtml" />
+    <Content Include="Views\Application\AppOwnInitiative.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\Errors\ApplicationStartupExceptionList.cshtml" />
+    <None Include="Views\Errors\IncorrectLogin.cshtml" />
+    <Content Include="Views\Errors\UserAlreadyExist.cshtml" />
+    <Content Include="Views\Partial\Obligation\MyFulFillR.cshtml" />
+    <Content Include="Views\Partial\Obligation\RequestFulFillR.cshtml" />
+    <Content Include="Views\Intentions\FulFillObligation.cshtml" />
+    <Content Include="Views\Intentions\FulFillObligationRequest.cshtml" />
+    <Content Include="Views\Errors\Registration.cshtml" />
+    <Content Include="Views\Partial\Tag\TagInfo.cshtml" />
+    <Content Include="Views\Errors\LocalisationInit.cshtml" />
+    <Content Include="Views\Partial\Event\EventList.cshtml" />
+    <Content Include="Views\Partial\Applications\H2O_Init.cshtml" />
+    <Content Include="Views\ExodusAdmin\LocalisationUpdate.cshtml" />
+    <Content Include="Views\User\RegisterByFacebook.cshtml" />
+    <Content Include="Views\Partial\Applications\H2O\H2O_Init.cshtml" />
+    <Content Include="Views\Partial\Applications\H2O\OwnInitiative_Init.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\OwnInitiative\Settings.cshtml" />
+    <Content Include="Views\OwnInitiative\Dashboard.cshtml" />
+    <Content Include="Views\OwnInitiative\UserList.cshtml" />
+    <Content Include="Views\OwnInitiative\UserDetail.cshtml" />
+    <Content Include="Views\OwnInitiative\AppInfo.cshtml" />
+    <Content Include="Views\H2O\InviteMembers.cshtml" />
+    <Content Include="Views\OwnInitiative\InviteMembers.cshtml" />
+    <Content Include="Views\Intentions\Transactions.cshtml" />
+    <Content Include="Views\ExodusAdmin\SpeedTest.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\ResetPassword.cshtml" />
+    <Content Include="Views\Home\TokenAction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Logs\" />
+    <Folder Include="obj\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Views\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1712</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11123/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.10.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

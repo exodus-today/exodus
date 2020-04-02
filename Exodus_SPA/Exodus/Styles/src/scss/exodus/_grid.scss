@@ -1,0 +1,81 @@
+.ex-grid {
+    position: fixed;
+    height: 100%;
+    top: 0;
+}
+
+.ex-grid_1-0-0 {
+    @extend .ex-grid;
+
+    left: 1/5*100%;
+    width: 4/5*100%;
+    @include media-breakpoint-up(md){
+        left: 1/10*100%;
+        width: 4/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: 1/15*100%;
+        width: 4/15*100%;
+    }
+}
+
+.ex-grid_0-1-0 {
+    @extend .ex-grid;
+
+    left: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md){
+        left: 5/10*100%;
+        width: 5/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: 5/15*100%;
+        width: 5/15*100%;
+    }
+}
+
+.ex-grid_0-0-1 {
+    @extend .ex-grid;
+
+    left: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md){
+        left: 100%;
+        width: 5/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: 10/15*100%;
+        width: 5/15*100%;
+    }
+}
+
+.ex-grid_1-1-1 {
+    @extend .ex-grid;
+
+    left: 1/5*100%;
+    width: 100%;
+    @include media-breakpoint-up(md){
+        left: 1/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: 1/15*100%;
+    }
+}
+
+.ex-grid_0-1-1 {
+    @extend .ex-grid;
+
+    left: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md){
+        left: 5/10*100%;
+        width: 5/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: 5/15*100%;
+        width: 10/15*100%;
+    }
+}

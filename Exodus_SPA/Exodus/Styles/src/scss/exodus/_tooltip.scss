@@ -1,0 +1,17 @@
+.__react_component_tooltip {
+    cursor: help;
+
+    &.hover-visible {
+        pointer-events: auto !important;
+
+        &:hover {
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+    }
+
+    &.place-bottom-left {
+        margin-left: -10px;
+        margin-top: 0;
+    }
+}

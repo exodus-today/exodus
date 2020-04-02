@@ -1,0 +1,45 @@
+﻿@model List<Exodus.ViewModels.VM_TagUser>
+@using Exodus.Helpers
+@using Exodus.ViewModels
+@{ 
+    var lang = Exodus.Global.Global.Language;
+    int count = 0;
+}
+
+<div id="ex-screen-2" class="ex-list ex-grid_0-1-0">
+    <div class="ex-list__header">
+        <div class="ex-list__item">            
+            <div class="ex-list__item-content">
+                <label class="month-name">
+                    @Exodus.Global.Localisation.Get("Members", lang)
+                </label></div>
+            @*<div class="ex-list__item-content">
+                <div class="ex-list__header-btn">
+                <i class="icons-add-person mr-4"></i>
+                @Exodus.Global.Localisation.Get("AddMember", lang)
+            </div>
+            <select class="ex-list__header-select">
+                <option>@Exodus.Global.Localisation.Get("Members", lang)</option>
+            </select>
+        </div>*@
+        </div>
+    </div>
+    <div class="ex-list__viewport">
+        @foreach (var Item in Model)
+        {
+            <div class="ex-list__item" data-user="" data-load="@this.Url.Action("UserDetail", "H2O", new { TagID = Request.Params["TagID"], UserID = Item.TagUser.UserID })" data-target="#ex-route-3">
+                <div class="ex-list__item-content">
+                    <div class="ex-person-item ex-person-item_@PageHelper.GetUserStatusColour(Item.TagUser.UserStatus)">
+                        <img src="@Item.TagUser.AvatarSmall" class="ex-person-item__avatar">
+                        <i class="icons-status ex-person-item__status"></i>
+                        <div class="ex-person-item__name">@Item.TagUser.UserFullName</div>
+                        <div class="ex-person-item__cashflow">
+                            <i class="icons-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div id="ex-route-3" class="ex-grid_0-0-1"></div>

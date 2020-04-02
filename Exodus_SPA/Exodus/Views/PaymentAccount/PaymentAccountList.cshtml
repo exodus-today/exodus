@@ -1,0 +1,65 @@
+﻿@model Exodus.ViewModels.VM_UserPaymentAccounts
+@using Exodus.Helpers
+@using Exodus.Enums
+@using Exodus.ViewModels
+@using System.Linq;
+@{
+    var AccountTypes = Enum.GetValues(typeof(En_AccountType)).Cast<En_AccountType>();
+    var lang = Exodus.Global.Global.Language;
+}
+
+@foreach (VM_PaymentAccount Item in Model.PaymentAccounts.OrderBy(a => a.AccountType))
+{
+    <div class="py-3">
+        <div class="row">
+            <div class="col-3">
+                @if (Item.AccountType == En_AccountType.Bank_Card)
+                {
+                    <img src="@String.Format("/Styles/dist/images/payment/{0}.png", Item.Card.TypeID)" style="height: 30px" />
+                }
+                else
+                {
+                    <img src="@String.Format("/Styles/dist/images/payment/{0}.svg", Item.AccountTypeName)" style="height: 30px" />
+                }
+            </div>
+            <div class="col-5">
+                @((Item.AccountType == En_AccountType.Bank_Card) ? Item.Card.CardNumber : Item.AccountDetails)
+            </div>
+            <div class="col-4">
+                <div class="text-right text-primary w-100" data-toggle="collapse" data-target="#ex-payment-edit-form-@Item.AccountID" aria-expanded="false">
+                    <span class="if-not-expanded">@Exodus.Global.Localisation.Get("Edit", lang)</span>
+                    <span class="if-expanded">@Exodus.Global.Localisation.Get("Cancel", lang)</span>
+                    <i class="ml-4 small icons-edit"></i>
+                </div>
+            </div>
+        </div>
+        <div id="ex-payment-edit-form-@Item.AccountID" class="collapse">
+            @{Html.RenderPartial(PageHelper.PaymentAccountUpdateFormName(Item.AccountType), Item);}
+        </div>
+    </div>
+    <hr>
+}
+
+<div class="collapse" id="ex-new-payment">
+    <div class="pt-5">
+        <div class="row mb-4">
+            <div class="col-3 d-flex align-items-center">
+                @Exodus.Global.Localisation.Get("NewPaymentDetails", lang):
+            </div>
+            <div class="col-9">
+                <select class="form-control" data-load data-target="#ex-new-payment-fields">
+                    @foreach (En_AccountType type in AccountTypes.Except(new[] { En_AccountType.Bank_Account }))
+                    {
+                        <option value="@this.Url.Action("PaymentAccountAddForm", "PaymentAccount", new { type = type })">@PageHelper.AccountTypeName(type)</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div id="ex-new-payment-fields" data-href="@this.Url.Action("ReturnPartial", "PaymentAccount", new { name = PageHelper.PaymentAccountAddFormName(AccountTypes.First())})"></div>
+    </div>
+</div>
+<div class="text-right" style="height: 50px">
+    <div class="btn btn-outline-primary if-not-expanded" data-toggle="collapse" data-target="#ex-new-payment" aria-expanded="false">
+        @Exodus.Global.Localisation.Get("AddPaymentDetails", lang)
+    </div>
+</div>

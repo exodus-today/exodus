@@ -1,0 +1,33 @@
+﻿@model Exodus.ViewModels.VM_User
+@using Exodus.Helpers
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="ex-navigation__info">
+    <div class="ex-navigation__content">
+        <img src="@Model.AvatarBig" class="ex-navigation__image ex-avatar">
+        <div class="ex-navigation__title">@Model.UserFullName</div>
+        <div class="ex-navigation__subtitle">@Model.UserEmail</div>
+    </div>
+</div>
+<div id="ex-profile-page-navigation">
+    <div class="ex-navigation__item active" data-scrollto="#ex-profile-page-status" data-viewport="#ex-screen-2">
+        @Exodus.Global.Localisation.Get("Status", lang)
+        <i id="indicatorNav" class="icons-status text-@PageHelper.GetUserStatusColour(Exodus.Global.Global.CurrentUser.UserStatus) ex-navigation__icon"></i>
+    </div>
+    <div class="ex-navigation__item" data-scrollto="#ex-profile-page-info" data-viewport="#ex-screen-2">
+        @Exodus.Global.Localisation.Get("Information", lang)
+        <i class="icons-info ex-navigation__icon"></i>
+    </div>
+
+    <div class="ex-navigation__item" data-scrollto="#ex-profile-page-payment-react" data-viewport="#ex-screen-2">
+        @Exodus.Global.Localisation.Get("PaymentDetails", lang)
+        <i class="icons-card ex-navigation__icon"></i>
+    </div>
+
+    <a class="ex-navigation__item" href="@this.Url.Action("LogOff", "User")">
+        @Exodus.Global.Localisation.Get("Exit", lang)
+        <i class="icons-logout ex-navigation__icon"></i>
+    </a>
+</div>

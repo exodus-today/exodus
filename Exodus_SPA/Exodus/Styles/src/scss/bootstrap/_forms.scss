@@ -1,0 +1,24 @@
+select.form-control {
+    appearance: none;
+    background-image: url(../images/arrow-bottom-blue.svg);
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.labelR {
+    display: inline-block;
+    margin-top:.5rem;
+}
+
+.input-validation-error {
+    @extend .is-invalid;
+}
+
+.field-validation-error {
+    @extend .invalid-feedback;
+}

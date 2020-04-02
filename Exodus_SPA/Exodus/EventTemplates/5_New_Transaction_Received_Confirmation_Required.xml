@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template>
+  <!--Full key model for event / send to api as KEY/VALUE dictionary-->
+  <content>
+    <keys>
+      <key name="SenderID" type="number" enable="true" model="VM_User" modelName="Sender" />
+      <key name="ReceiverID" type="number" enable="true" model="VM_User" modelName="Receiver" />
+      <key name="TransactionID" type="number" enable="true" model="VM_Transaction" modelName="Transaction"/>
+    </keys>
+  </content>
+
+  <!--Partial model for fromend-->
+  <thumbnail>
+    <keys>
+      <!--User To-->           
+      <key name="ReceiverFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="Receiver"/>
+      <key name="ReceiverAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="Receiver"/>
+      <key name="ReceiverAvatarBIG" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="Receiver"/>
+      <key name="ReceiverStatus" type="text" enable="true" model="VM_User" PropertyName="UserStatus" modelName="Receiver"/>
+
+      <!--User From-->      
+      <key name="SenderFullName" type="text" enable="true" model="VM_User" PropertyName="UserFullName" modelName="Sender"/>
+      <key name="SenderAvatarSMALL" type="url" enable="true" model="VM_User" PropertyName="AvatarSmall" modelName="Sender"/>
+      <key name="SenderAvatarBIG" type="url" enable="true" model="VM_User" PropertyName="AvatarBig" modelName="Sender"/>
+      <key name="SenderStatus" type="text" enable="true" model="VM_User" PropertyName="UserStatus" modelName="Sender"/>
+
+      <!--Transaction Info-->
+      <key name="TransferType" type="number" enable="true" model="VM_Transaction" PropertyName="TransferType" modelName="Transaction"/>
+      <key name="Amount" type="number" enable="true" model="VM_Transaction" PropertyName="TransactionAmount" modelName="Transaction"/>
+      <key name="Currency" type="number" enable="true" model="VM_Transaction" PropertyName="TransactionCurrency" modelName="Transaction"/>
+      <key name="IsConfirmed" type="number" enable="true" model="VM_Transaction" PropertyName="IsConfirmed" modelName="Transaction"/>
+    </keys>
+  </thumbnail>
+
+  <related>
+    <key model="VM_User" PropertyName="UserID" modelName="Receiver" relation="Single" RelationType="User"  type="number"></key>
+    <key model="VM_User" PropertyName="UserID" modelName="Sender" relation="Single" RelationType="User"  type="number"></key>
+  </related>
+</template>

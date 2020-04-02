@@ -1,0 +1,7 @@
+﻿@model Exodus.ViewModels.VM_User
+@using Exodus.Enums
+@using Exodus.Helpers
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+<div data-react="/User/SetStatus?UserStatus=@Model.UserStatus&UserHelpDetails=@Model.HelpDetail.UserHelpDetails&UserHelpAmountRequired=@Model.HelpDetail.UserHelpAmountRequired.ToString("F2")&UserHelpAmountCurrency=@Model.HelpDetail.UserHelpAmountCurrency&UserHalpPeriod=@Model.HelpDetail.UserHelpPeriod"></div>

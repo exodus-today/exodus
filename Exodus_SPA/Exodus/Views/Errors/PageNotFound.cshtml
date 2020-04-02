@@ -1,0 +1,19 @@
+﻿@model String
+@using Exodus.Helpers
+@{
+    var lang = Exodus.Global.Global.Language;
+    ViewBag.Title = Exodus.Global.Localisation.Get("PageNotFound", lang);
+    Layout = "~/Views/Shared/Layout_Errors.cshtml";
+}
+
+<div class="mt-4" style="width:500px">
+    <h4 style="text-align:center">@Exodus.Global.Localisation.Get("Page", lang)</h4>
+    <h4 style="text-align:center;font-weight:bold">@Model</h4>
+    <h4 style="text-align:center">@Exodus.Global.Localisation.Get("NotFound", lang)</h4>
+    <br />
+    <input onclick="window.history.back(); return false;" type="button"
+           value="@Exodus.Global.Localisation.Get("Back", lang)" class="btn btn-outline-primary w-100">
+    <br> <br>
+    <input onclick="window.location.href='/Desktop/Index'" ; return false;"
+           type="button" value="@Exodus.Global.Localisation.Get("HomePage", lang)" class="btn btn-outline-primary w-100">
+</div>

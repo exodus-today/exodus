@@ -1,0 +1,19 @@
+.ex-status-label {
+    font-weight: bold;
+}
+
+.ex-status-label_lg {
+    font-size: 21px;
+}
+
+.ex-status-label_ok {
+    color: theme-color('success');
+}
+
+.ex-status-label_regular-help {
+    color: theme-color('warning');
+}
+
+.ex-status-label_emergency {
+    color: theme-color('danger');
+}

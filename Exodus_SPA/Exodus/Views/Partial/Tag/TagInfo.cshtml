@@ -1,0 +1,178 @@
+﻿@model Tuple<Exodus.ViewModels.VM_Tag, bool?>
+@using Exodus.Enums
+@{
+    Exodus.ViewModels.VM_Tag tag = Model.Item1;
+    bool? AllowCopyLink = Model.Item2;
+    var lang = Exodus.Global.Global.Language;
+}
+<div id="ex-route-1">
+    <div id="ex-screen-2" class="ex-panels ex-scroll ex-scroll_with-free-space" style="margin-right: -19px;">
+        <div class="ex-panel">
+            <div class="ex-panel__header">
+                <i class="ex-panel__icon">#</i>
+                @Exodus.Global.Localisation.Get("Description", lang)
+            </div>
+
+            <div class="ex-panel__content">
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("TagName", lang)
+                        <small>(@Exodus.Global.Localisation.Get("English", lang))</small>:
+                    </div>
+                    <div class="col-md-9">@tag.NameEng</div>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("TagName", lang)
+                        <small>(@Exodus.Global.Localisation.Get("Russian", lang))</small>:
+                    </div>
+                    <div class="col-md-9">@tag.NameRus</div>
+                </div>
+                <hr />
+
+                @if (AllowCopyLink == true)
+                {
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("CopyLink", lang)
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-5"><div id="linkToJoin" class="ex-navigation__subtitle" style="user-select:text;">@tag.LinkToJoin</div></div>
+                            <div class="col-7"><button id="LinkButton" class="btn btn-outline-primary w-100">@Exodus.Global.Localisation.Get("CopyLink", lang)</button></div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                }
+
+
+                @if (tag.Owner_UserID != Exodus.Global.Global.CurrentUser.UserID)
+                {<div class="row mb-4">
+                        <div class="col-md-3">
+                            @Exodus.Global.Localisation.Get("Join", lang)
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-5"></div>
+                                <div class="col-7">
+                                    <button id="TagButton"
+                                            data-load=@("/Tag/JoinToTag?TagID=" + tag.TagID + "&UserID=" + tag.Owner_UserID)
+                                            data-target="#ex-route-2" class="btn btn-outline-success w-100">
+                                        @Exodus.Global.Localisation.Get("Join", lang)
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />}                
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <label>@Exodus.Global.Localisation.Get("AppByDefault", lang):</label>
+                    </div>
+                    <div class="col-md-9">
+                        <label>
+                            <select class="form-control" name="ApplicationID" value=@tag.ApplicationID disabled style="width:400px;">
+                                <option value="1" @((tag.ApplicationType == EN_ApplicationType.H20) ? "selected" : "")>H2O - @Exodus.Global.Localisation.Get("Donations", lang)</option>
+                                <option value="2" @((tag.ApplicationType == EN_ApplicationType.Pawnshop) ? "selected" : "")>@Exodus.Global.Localisation.Get("CashDeskOfMutualAid", lang)</option>
+                                <option value="3" @((tag.ApplicationType == EN_ApplicationType.Insurance) ? "selected" : "")>@Exodus.Global.Localisation.Get("SocialInsurance", lang)</option>
+                                <option value="4" @((tag.ApplicationType == EN_ApplicationType.Own_Initiative) ? "selected" : "")>@Exodus.Global.Localisation.Get("OwnInitiative", lang)</option>
+                            </select>
+                        </label>
+                        <img src="~/Styles/dist/images/tags/@(tag.ApplicationID).svg" style="width:20px">
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("TagAvailability", lang):
+                    </div>
+                    <div class="col-md-9">@tag.AccessType</div>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("TotalAmount", lang):
+                    </div>
+                    <div class="col-md-3">
+                        @(((tag.TotalAmount) > 0) ? string.Format("{0:#.00}", tag.TotalAmount) : "0,00")
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" name="TotalAmount" value="@tag.TotalAmountCurrencyID" disabled>
+                            <option value="@((int)En_Currency.EUR)" @((tag.TotalAmountCurrencyID == 4) ? "selected" : "")>@Exodus.Global.Localisation.Get("EUR", lang)</option>
+                            <option value="@((int)En_Currency.USD)" @((tag.TotalAmountCurrencyID == 1) ? "selected" : "")>@Exodus.Global.Localisation.Get("USD", lang)</option>
+                            <option value="@((int)En_Currency.UAH)" @((tag.TotalAmountCurrencyID == 2) ? "selected" : "")>@Exodus.Global.Localisation.Get("UAH", lang)</option>
+                            <option value="@((int)En_Currency.RUB)" @((tag.TotalAmountCurrencyID == 3) ? "selected" : "")>@Exodus.Global.Localisation.Get("RUB", lang)</option>
+                        </select>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("MinimumIntention", lang):
+                    </div>
+                    <div class="col-md-3">
+                        @(((tag.MinIntentionAmount) > 0) ? string.Format("{0:#.00}", tag.MinIntentionAmount) : "0,00")
+                        &nbsp; @*Exodus.Global.Localisation.Get("MinIntentionCurrencyID", lang)*@
+                    </div>
+                    <div class="col-3">
+                        <select class="form-control" name="IntentionCurrencyID" value="@tag.MinIntentionCurrencyID" disabled>
+                            <option value="@((int)En_Currency.EUR)" @((tag.MinIntentionCurrencyID == 4) ? "selected" : "")>@Exodus.Global.Localisation.Get("EUR", lang)</option>
+                            <option value="@((int)En_Currency.USD)" @((tag.MinIntentionCurrencyID == 1) ? "selected" : "")>@Exodus.Global.Localisation.Get("USD", lang)</option>
+                            <option value="@((int)En_Currency.UAH)" @((tag.MinIntentionCurrencyID == 2) ? "selected" : "")>@Exodus.Global.Localisation.Get("UAH", lang)</option>
+                            <option value="@((int)En_Currency.RUB)" @((tag.MinIntentionCurrencyID == 3) ? "selected" : "")>@Exodus.Global.Localisation.Get("RUB", lang)</option>
+                        </select>
+                    </div>
+                    <div class="col-3"></div>
+
+                </div>
+                <hr />
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        @Exodus.Global.Localisation.Get("Description", lang):
+                    </div>
+                    <div class="col-md-9">@tag.Description</div>
+                </div>
+                <hr />
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <label>@Exodus.Global.Localisation.Get("Periodicity", lang):</label>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control" name="Period" value="@((int)tag.Period)" disabled>
+                            <option value=1 @((tag.Period == EN_TagPeriod.Undefine) ? "selected" : "")>@Exodus.Global.Localisation.Get("Undefined", lang)</option>
+                            <option value=2 @((tag.Period == EN_TagPeriod.Once) ? "selected" : "")>@Exodus.Global.Localisation.Get("Once", lang)</option>
+                            <option value=3 @((tag.Period == EN_TagPeriod.Monthly) ? "selected" : "")>@Exodus.Global.Localisation.Get("Monthly", lang)</option>
+                            <option value=4 @((tag.Period == EN_TagPeriod.Weekly) ? "selected" : "")>@Exodus.Global.Localisation.Get("Weekly", lang)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        @((tag.Period == EN_TagPeriod.Once && tag.ApplicationID != 1) ? (@Exodus.Global.Localisation.Get("EndDate", lang) + " " + @tag.EndDate) : "")
+                        @((tag.Period == EN_TagPeriod.Weekly) ? (@Exodus.Global.Localisation.Get("DayOfTheWeek", lang) + " " + @tag.DayOfWeek) : "")
+                        @((tag.Period == EN_TagPeriod.Monthly) ? (@Exodus.Global.Localisation.Get("DayOfMonth", lang) + " " + @tag.DayOfMonth) : "")
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <label>@Exodus.Global.Localisation.Get("ToUser", lang):</label>
+                    </div>
+                    <div class="col-md-9">
+                        <label>@(tag.DefaultIntentionOwner.UserFirstName + " " + tag.DefaultIntentionOwner.UserLastName)</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

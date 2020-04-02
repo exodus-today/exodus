@@ -1,0 +1,42 @@
+﻿@model Tuple<Exodus.ViewModels.VM_Tag, Exodus.ViewModels.VM_User>
+@using Exodus.ViewModels
+@using Exodus.Enums;
+@{
+    var lang = Exodus.Global.Global.Language;
+    var culture = Exodus.Helpers.PageHelper.Culture;
+    var tag = Model.Item1;
+    var user = Model.Item2;
+}
+
+<div class="ex-grid_0-0-1">
+    <div class="p-5">
+        <div class="row">
+            <div class="col-5">
+                <img src="@user.AvatarBig" class="ex-avatar ex-avatar_medium ex-avatar_light">
+            </div>
+            <div class="col-7">
+                <h4 class="mt-4">@user.UserFirstName @user.UserLastName</h4>
+                <div class="text-primary" data-target="#ex-route-1" data-load="@this.Url.Action("UserDetail", "PublicProfile", new { UserID = user.UserID, TagID = tag.TagID })" style="cursor:pointer">
+                    @Exodus.Global.Localisation.Get("ViewProfile", lang)
+                    <i class="icons-arrow-right ml-2 small"></i>
+                </div>
+            </div>
+        </div>
+        <div class="my-5 row">
+            <div class="col-8">
+                @switch (user.UserStatus)
+                {
+                    case En_CurrentStatus.I_AM_OK:<span class="text-success"><i class="icons-status"></i> @Exodus.Global.Localisation.Get("WithNoHelp", lang)</span> break;
+                    case En_CurrentStatus.I_AM_PARTIALLY_OK: <span class="text-warning"><i class="icons-status"></i> @Exodus.Global.Localisation.Get("RegularHelp", lang)</span> break;
+                    case En_CurrentStatus.I_NEED_HELP: <span class="text-danger"><i class="icons-status"></i> @Exodus.Global.Localisation.Get("UrgentHelp", lang)!</span>break;
+                }
+            </div>
+            <div class="col-4 text-right">
+                @*(user.UserStatus=='I_AM_OK')
+                < span class="small">Euro</span> 0 <span class="text-danger">/ 0</span>*@
+            </div>
+        </div>
+        <hr>
+        <div class="my-5" data-react="/OwnInitiative/UserActions?UserID=@user.UserID&TagID=@Request.Params["TagID"]"></div>
+    </div>
+</div>

@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang name="en" alt-name="en-US">
+  <word key="And" value="and"></word>
+  <word key="LogInError" value="Login error"></word>
+  <word key="YouAreNotLogin" value="You are not in the system"></word>
+  <word key="Login" value="Login"></word>
+  <word key="Register" value="Register"></word>
+  <word key="NoPassOrInvite" value="Don't have password or invitation?"></word>
+  <word key="EnterYourEmail" value="Enter your Email:"></word>
+  <word key="EnterPass" value="Enter password:"></word>
+  <word key="MoreInfoAboutExodus" value="More info about EXODUS paradigm"></word>
+  <word key="ExodusParadigm" value="Paradigma EXODUS"></word>
+  <word key="Cancel" value="Cancel"></word>
+  <word key="YourName" value="Name"></word>
+  <word key="YourLastName" value="Last Name"></word>
+  <word key="InviteToConnect" value="Invite you to connect"></word>
+  <word key="ServiceError" value="Service error"></word>
+  <word key="Back" value="Back"></word>
+  <word key="HomePage" value="Home"></word>
+  <word key="LoginAndJoin" value="Login and join"></word>
+  <word key="RegAndJoin" value="Sign up and join"></word>
+  <word key="Enter" value="Sing in"></word>
+  <word key="IAmNewOne" value="I am a new user"></word>
+  <word key="Desktop" value="Desktop"></word>
+  <word key="PageNotFound" value="Page Not Found"></word>
+  <word key="Page" value="Page"></word> 
+  <word key="NotFound" value="Not found"></word>
+  <word key="ServerError" value="Server Error"></word>
+  <word key="Error" value="Error"></word>
+  <word key="UnknownError" value="Unknown error"></word>
+  <word key="UnknownServerError" value="Unknown server error"></word>
+  <word key="Members" value="Members"></word>
+  <word key="Notifications" value="Notification"></word>
+  <word key="Transactions" value="Transactions"></word>
+  <word key="Reports" value="Reports"></word>
+  <word key="Settings" value="Settings"></word>  
+  <word key="UAH" value="UAH"></word>
+  <word key="RUB" value="RUB"></word>
+  <word key="EUR" value="EUR"></word>
+  <word key="USD" value="USD"></word>
+  <word key="Summ" value="Summ"></word>
+  <word key="Period" value="Period"></word>
+  <word key="Term" value="Term"></word>
+  <word key="TakeIntention" value="Declare intention"></word>
+  <word key="Monthly" value="Monthly"></word>
+  <word key="Weekly" value="Weekly"></word> 
+  <word key="CreateTransaction" value="Create transaction"></word>
+  <word key="HelpRegularly" value="Help regularly"></word>
+  <word key="WithNoHelp" value="Don't need help"></word>
+  <word key="RegularHelp" value="Regular help"></word>
+  <word key="UrgentHelp" value="Urgent help needed"></word>
+  <word key="AddMember" value="Add member"></word>
+  <word key="Calendar" value="Calendar"></word>
+  <word key="Dashboard" value="Dashboard"></word>  
+  <word key="Dispatcher" value="Dispatcher"></word>
+  <word key="IntentionDispatcher" value="Intention dispatcher"></word>
+  <word key="MyIntentions" value="My intentions"></word>
+  <word key="FriendIntentions" value="Intentions in my favor"></word>
+  <word key="MyObligations" value="My obligations"></word>
+  <word key="Intentions" value="Intentions"></word>
+  <word key="Obligation" value="Obligation"></word>
+  <word key="Obligations" value="Obligations"></word>  
+  <word key="Exit" value="Exit"></word> 
+  <word key="Information" value="Information"></word> 
+  <word key="Status" value="Status"></word>
+  <word key="PaymentDetails" value="Payment details"></word>
+  <word key="Statistics" value="Statistics"></word>
+  <word key="YourEmail" value="Your Email"></word>
+  <word key="ChangePhoto" value="Change photo"></word>
+  <word key="DataChangesAfterConfirmation" value="Data changes after confirmation"></word>
+  <word key="Submit" value="Submit"></word>
+  <word key="Save" value="Save"></word>
+  <word key="Description" value="Description"></word>
+  <word key="IAmOk" value="I Am Ok"></word>
+  <word key="CreateNewTag" value="Create new tag"></word>
+  <word key="NewTag" value="New tag"></word>
+  <word key="Show" value="Show"></word>
+  <word key="Hide" value="Hide"></word>
+  <word key="Invite" value="Invite"></word>
+  <word key="InviteToTag" value="Invite to tag"></word>
+  <word key="Search" value="Search"></word>
+  <word key="SearchAll" value="All results on query"></word>
+  <word key="SearchPageTitle" value="Search tag or user"></word>
+  <word key="SearchPagePlaceholder" value="Type name or tag"></word>
+  <word key="SearchPageResults" value="Search results"></word>
+  <word key="SearchPageResultsAll" value="All"></word>
+  <word key="SearchPageResultsTags" value="Only tags"></word>
+  <word key="SearchPageResultsUsers" value="Only users"></word>
+  <word key="Ones" value="Ones"></word>
+  <word key="CopyLink" value="Copy link"></word>
+  <word key="Apps" value="Applications"></word>
+  <word key="Password" value="Password"></word>
+  <word key="InviteYouToTag" value="invites you to join tag"></word>
+  <word key="Tag" value="Tag"></word>
+  <word key="Join" value="Join"></word>
+  <word key="TakeIntentionJoin" value="Take intention and join"></word>
+  <word key="Periodicity" value="Periodicity"></word>
+  <word key="MinIntention" value="Minimal intention"></word>
+  <word key="TagDetails" value="Tag details"></word>
+  <word key="AppByDefault" value="Application by default"></word>
+  <word key="TagInvitation" value="Tag invitation"></word>
+  <word key="OwnInitiative" value="Own initiative"></word>
+  <word key="SocialInsurance" value="Social insurance"></word>
+  <word key="CashDeskOfMutualAid" value="Mutual aid cash desk"></word>
+  <word key="Donations" value="Donations"></word>
+  <word key="AvailableApps" value="Available applications"></word>
+  <word key="GoToPage" value= "Go"></word>
+  <word key="Delete" value= "Delete"></word>
+  <word key="WMpurse" value="Webmoney wallet"></word>
+  <word key="PayPalLogin" value="PayPal login"></word>
+  <word key="Edit" value= "Edit"></word>
+  <word key="NewPaymentDetails" value= "New payment details"></word>
+  <word key="AddPaymentDetails" value= "Add payment details"></word>
+  <word key="ActiveApp" value= "Application is active"></word>
+  <word key="ObligationsInMyFavour" value="Obligations in my favor"></word> 
+  <word key="ObligationsOfOtherUsersExodusInMyFavour" value="Obligations of other Exodus users in my favor"></word> 
+  <word key="CardNumber" value= "Card number"></word>
+  <word key="CardType" value= "Card type"></word>
+  <word key="Validity" value= "Validity"></word>
+  <word key="ViewProfile" value= "View profile"></word>
+  <word key="IssuedBank" value= "Bank that issued card"></word>
+  <word key="BankCard" value="Bank card"></word>
+  <word key="BankAccount" value="Bank account"></word>
+  <word key="MyFulFill" value= "My fulfillment of obligations"></word>
+  <word key="RequestFulFill" value= "Requests to fulfill obligations"></word>
+  <word key="ToTag" value="Open Tag"></word>
+  <word key="CanNotAddYourSelfToTag" value="You cannot add yourself as you are already included in this tag"></word>
+  <word key="TagNotFound" value="Tag not found"></word>
+  <word key="TagNameEmpty" value="Tag name cannot be empty"></word>
+  <word key="SelectTagType" value="Select tag type"></word>
+  <word key="SelectAccessType" value="Select access type (Public / Private)"></word>
+  <word key="IncorrectLoginOrPassword" value="Login failed. Incorrect Login or password"></word>
+  <word key="IncorrectInviteCode" value="Incorrect invite code"></word>
+  <word key="FulFillObligation" value="Fulfill obligation"></word>
+  <word key="FulFillObligationRequest" value="Request to fulfill obligation"></word>
+  <word key="ApplicationNotFound" value="Application not found"></word>
+  <word key="BankNotFound" value="Bank not found"></word>
+  <word key="CardNotFound" value="Card not found"></word>
+  <word key="RegistrationError" value="Registration error"></word>
+  <word key="Info" value="Info"></word>
+  <word key="TagName" value="Tag name"></word>
+  <word key="English" value="English"></word>
+  <word key="Russian" value="Russian"></word>
+  <word key="TagAvailability" value="Tag availability"></word>
+  <word key="Private" value="Private"></word>
+  <word key="Public" value="Public"></word>
+  <word key="InEnglish" value="In English"></word>
+  <word key="InRussian" value="In Russian"></word>
+  <word key="OneTime" value="One-time"></word>
+  <word key="Regular" value="Regular"></word>
+  <word key="EndDate" value="End date"></word>
+  <word key="DayOfMonth" value="Day of month"></word>
+  <word key="ShortDayOfMonth" value="Day"></word>
+  <word key="DayOfTheWeek" value="Day of the week"></word>
+  <word key="Monday" value="Monday"></word>
+  <word key="Tuesday" value="Tuesday"></word>
+  <word key="Wednesday" value="Wednesday"></word>
+  <word key="Thursday" value="Thursday"></word>
+  <word key="Friday" value="Friday"></word>
+  <word key="Saturday" value="Saturday"></word>
+  <word key="Sunday" value="Sunday"></word>
+  <word key="OnMonday" value="On Monday"></word>
+  <word key="OnTuesday" value="On Tuesday"></word>
+  <word key="OnWednesday" value="On Wednesday"></word>
+  <word key="OnThursday" value="On Thursday"></word>
+  <word key="OnFriday" value="On Friday"></word>
+  <word key="OnSaturday" value="On Saturday"></word>
+  <word key="OnSunday" value="On Sunday"></word>
+  <word key="DefaultApplication" value="Default application"></word>
+  <word key="H2OFreeHelp" value="H2O - free help"></word>
+  <word key="CashierMutualAid" value="Mutual aid cash desk"></word>
+  <word key="Amount" value="Amount"></word>
+  <word key="TotalAmount" value="Total amount"></word>
+  <word key="Dollars" value="Dollars"></word>
+  <word key="Hryvnia" value="Hryvnia"></word>
+  <word key="Rubles" value="Rubles"></word>
+  <word key="Euro" value="Euro"></word>
+  <word key="MinimumIntention" value="Minimum intention"></word>
+  <word key="CountIntentionsInFavor" value="Count intentions in favor"></word>
+  <word key="Me" value="Me"></word>
+  <word key="CreateTag" value="Create tag"></word>
+  <word key="Once" value="Once"></word>
+  <word key="Currency" value="Currency"></word>
+  <word key="ObligationHolder" value="Obligation holder"></word>
+  <word key="ObligationAmount" value="Obligation amount"></word>
+  <word key="AmountPerPaiment" value="Amount per payment"></word>
+  <!-- Dispatcher -->
+  <word key="Archive" value="Archive"></word>
+  <word key="Active" value="Active"></word>
+  <word key="Action" value="Action"></word>
+  <word key="Actions" value="Actions"></word>
+  <word key="Application" value="Application"></word>
+  <word key="TagInfo" value="Tag info"></word>
+  <word key="Recipient" value="Recipient"></word>
+  <word key="Sender" value="Sender"></word>
+  <word key="TypeOfIntention" value="Type of intention"></word>
+  <word key="TypesOfIntention.Simple" value="Simple"></word>
+  <word key="TypesOfIntention.Demand" value="On demand"></word>
+  <word key="NotifyAboutEvent" value="Notify about event"></word>
+  <word key="DatePeriod" value="Date/period"></word>
+  <word key="Upcoming" value="Upcoming"></word>
+  <word key="All" value="All"></word>
+  <word key="Current" value="Current"></word>
+  <word key="Select" value="Select"></word>
+  <word key="Decline" value="Decline"></word>
+  <word key="ConvertToObligation" value="Convert to obligation"></word>
+  <word key="CencelIntention" value="Cancel intention"></word>
+  <word key="Unset" value="Unset"></word>
+  <word key="OnEvent" value="On event"></word>
+  <word key="InviteMembers" value="Invite members"></word>
+  <word key="SetPeriod" value="Set period"></word>
+  <word key="Indefinitely" value="Indefinitely"></word>
+  <word key="TakePartInHelp" value="Take part in help"></word>
+  <word key="YouTakePart" value="You are taking part"></word>
+  <word key="Change" value="Change"></word>
+  <word key="Undefined" value="Undefined"></word>
+  <word key="DeleteObligation" value="Delete obligation"></word> 
+  <word key="SpecifyTheRecipient" value="Specify recipient"></word>
+  <word key="MapAccountWallet" value="Map / Account / Wallet"></word>
+  <word key="ObligationIssuer" value="Obligation issuer"></word>
+  <!-- Pretext messages -->
+  <word key="Pretext.By" value="by"></word>
+  <!-- Currency messages -->
+  <word key="Currency.Symbol.USD" value="$"></word>
+  <word key="Currency.Symbol.GRN" value="₴"></word>
+  <word key="Currency.Symbol.RUB" value="₽"></word>
+  <word key="Currency.Symbol.EUR" value="€"></word>
+  <!-- Funds messages -->
+  <word key="Funds.Collected" value="Collected"></word>
+  <word key="Funds.Intentions" value="intentions"></word>
+  <word key="Funds.Obligations" value="obligations"></word>
+  <word key="Funds.Expected" value="Expected"></word>
+  <word key="Funds.Total" value="Total"></word>
+  <word key="Funds.NotCovered" value="Not covered"></word>
+  <word key="Funds.Left" value="Left"></word>
+  <word key="Funds.From" value="from"></word>
+  <!-- Date messages -->
+  <word key="Date.CurrentMonth" value="current month"></word>
+  <word key="Date.NextMonth" value="next month"></word>
+  <word key="Date.OfMonths" value="months"></word>
+  <word key="Date.OfMonths2_4" value="months"></word>
+  <word key="Date.Month" value="month"></word>
+  <word key="Date.Day" value="day"></word>
+  <word key="Date.2_4Days" value="days"></word>
+  <word key="Date.5+Days" value="days"></word>
+  <!-- Users -->
+  <word key="UserNotFound" value="User not found"></word>
+  <word key="ToUser" value="To user"></word>
+  <word key="User" value="User"></word>
+  <word key="UserAlreadyExist" value="Registration failed. A user with the given Email is already registered"></word>
+  <word key="TypeOfObligation" value="Type of obligation"></word>
+  <!-- Validation messages -->
+  <word key="Validation.AuthIncorrectLogin" value="Incorrect login"></word>
+  <word key="Validation.AuthIncorrectPassword" value="Incorrect password"></word>
+  <word key="Validation.OneOfTagNamesIsRequired" value="Tag name should be entered in at least one language"></word>
+  <word key="Validation.TagEndDateTypeMismatch" value="Incorrect date"></word>
+  <word key="Validation.TagEndDateIsBeforeNow" value="Date must be later than today"></word>
+  <word key="Validation.TagMinIntentioIsMoreThanTotal" value="It can`t be more that total amount"></word>
+  <word key="Validation.DescriptionRequired" value="Description cannot be empty"></word>
+  <!-- Notification messages -->
+  <word key="Notification.SuccessfullyDeleted" value="Successfully deleted"></word>
+  <word key="Notification.SuccessfullyСonverted" value="Successfully сonverted"></word>
+  <word key="Notification.LinkCopied" value="Tag link copied to the clipboard"></word>
+  <word key="Notification.IntentionAddedToApplication" value="Your intention added."></word>
+  <word key="Notification.IntentionDeclined" value="Intention declined."></word>
+  <word key="Notification.IntentionConvertedToObligation" value="Intention converted to obligation."></word>
+  <word key="Notification.SentTransaction" value="Transaction has been sent."></word>
+  <word key="Notification.IntentionTypeChanged" value="Intention type changed."></word>
+  <word key="Notification.OwnInitiativeEventReported" value="Event reported."></word>
+  <word key="Notification.SuccessfullySetStatus" value="Status successfully set "></word>
+  <word key="Notification.TooSmallAmount" value="Too small amount"></word>
+  <word key="Notification.UnreadLabel" value="unread"></word>
+  <word key="Notification.ReadLabel" value="read"></word>
+  <!-- Period messages -->
+  <word key="Period.Once" value="Once"></word>
+  <word key="Period.Weekly" value="Weekly"></word>
+  <word key="Period.Monthly" value="Monthly"></word>
+  <word key="Period.Quarterly" value="Quarterly"></word>
+  <word key="Period.Yearly" value="Yearly"></word>
+  <!-- Status -->
+  <word key="StatusChange" value="Status сhange"></word>
+  <word key="DontNeedHelp" value="Don`t need help"></word>
+  <word key="NeedRegularHelp" value="Need regular help"></word>
+  <word key="Emergency" value="Urgent help!"></word>
+  <!-- PublicProfile -->
+  <word key="Relations" value="Connections "></word>
+  <word key="IntentionsAndObligations" value="Intentions and obligations"></word>
+  <word key="CommonTags" value="Common tags"></word>
+  <word key="PublicTags" value="Public tags"></word> 
+
+  <word key="SearchForUserExodus" value="Search for Exodus user"></word> 
+  <word key="EnterPartOfFullName" value="Enter part of full name"></word>
+  <word key="BackToTag" value="Back to tag"></word>
+  <word key="InvitationSent" value="Invitation sent"></word>
+  <word key="Share" value="Share"></word>
+  <word key="Choose" value="Choose"></word>
+  <word key="RequestHasBeenSent" value="Request sent"></word>
+  <word key="RequestExecution" value="Request execution"></word>
+  <!-- Friend obligation -->
+  <word key="Perform" value="Perform"></word>
+  <word key="TransferTo" value="Transfer to"></word>
+  <word key="WhatToDoWithTheObligation" value="What do you want to do with obligation?"></word>
+  <word key="MethodOfPerformanceObligations" value="Method of execution of obligations"></word>
+
+  <word key="CashAtTheMeeting" value="Cash at meeting"></word>
+  <word key="ToMyPaymentAccountIsListedInExodus" value="To my payment account specified in Exodus Organizer"></word>
+  <word key="SpecifyAnotherAccount" value="Specify another account"></word>
+
+  <word key="ThroughWhomToPass" value="Specify intermediate person who will conduct cash transfer"></word>
+  <word key="ToMePersonally" value="To me personally"></word>
+  <word key="ThroughAnotherExodusUser" value="Through another Exodus user"></word>
+  <word key="SpecifyAnotherPerson" value="Specify another person"></word>
+
+  <word key="DescriptionOfThePaymentSystemAndAccount" value="Description of the payment system and account"></word>
+  <word key="AmountRange" value="Amount (range"></word>
+  <word key="DesiredFinalDateOfPerformance" value="Desired final date of performance"></word>
+  <word key="SendRequest" value="Send request"></word>
+  <word key="Close" value="Close"></word>
+
+  <word key="AllNotifications" value="All notifications"></word>
+  <word key="UserHasJoinedYourTag" value="User has joined your Tag"></word>
+
+  <word key="Undefine" value="Undefine"></word>
+  <word key="EventDeclined" value="Event dectlined"></word>
+  <word key="Ok" value="Ok"></word>
+  <word key="Confirm" value="Confirm"></word>
+  <word key="Execute" value="Execute"></word>
+  <word key="Bitcoin" value="Bitcoin"></word>
+  <word key="SaveDetails" value="Save details"></word>
+  <word key="SaveCard" value="Save сard"></word>
+  <word key="RequestConfirmation" value="Request confirmation"></word>
+  <word key="PerformanceInformation" value="Performance information"></word>
+  <word key="InvitesYouToJoinTag" value="invites you to join tag"></word>
+  <word key="GoToInvitation" value="Go to invitation"></word>
+  <word key="YouCanNotInviteYourself" value="You cannot invite yourself!"></word>
+  <word key="MinimalAmount" value="Minimal amount"></word>
+  <word key="TheUserHasLeftTheTagOnTheirOwnInitiative" value="The user has left the tag on their own initiative"></word>
+  <word key="LeftTag" value="left tag"></word>
+  <word key="OnTheirOwnInitiative" value="on their own initiative"></word>
+  <word key="MinimalIntention" value="Minimal intention"></word>
+  <word key="HasJoinedYourTag" value="has joined your tag"></word>  
+  
+  <word key="InvitedYouToJoinTag" value="invited you to join tag"></word>
+  <word key="IncomingTransaction" value="Incoming transaction"></word>
+  <word key="TransactionConfirmedByUser" value="Transaction confirmed by user"></word>
+  <word key="PaymentAccount" value="Payment account"></word>
+  <word key="Cash" value="Cash"></word>
+  <word key="TransactionFrom" value="Transaction from"></word>
+  <word key="ConfirmReceipt" value="Confirm receipt"></word>
+  <word key="ToHelp" value="To help"></word>
+  <word key="Transaction" value="Transaction"></word>
+  <word key="ConfirmationSent" value="Confirmation sent"></word>
+  <word key="ExecuteObligation" value="Execute obligation"></word>
+  <word key="Deadline" value="Deadline"></word>
+  <word key="TransactionFor" value="Transaction for"></word>
+       <word key="RequestToConvertToCommitment" value="Request to convert to commitment"></word>
+       <word key="RequestDetails" value="Request details"></word>
+       <word key="BankName" value="Bank name"></word>
+  <!-- EventList -->
+  <word key="UserHasJoinedToTag" value="User has joined to Tag"></word>
+  <word key="AtYourInvitation" value="at Your invitation"></word>
+  <word key="UserDisconnectedFromTag" value="User disconnected from tag"></word>
+  <word key="UserDisconnectedFromTagBySystem" value="User disconnected from tag by system"></word>
+  <word key="TransactionConfirmedByRecipient" value="Transaction Confirmed by Recipient"></word>
+  <word key="AttentionEmergency" value="Attention Emergency"></word>
+  <word key="NewStatusAllIsWell" value="New status. All is well"></word>
+  <word key="RegularHelpRequired" value="Regular help required"></word>
+  <word key="RequestForPerformanceOfAnObligationOnATag" value="Request for performance of an obligation on a tag"></word>
+  <word key="RequestToConvertIntentionToObligation" value="Request to convert intention to obligation"></word>
+  <word key="ReportsTheOccurrenceOfAKeyTagEvent" value="reports the occurrence of a key tag event"></word>
+  <word key="TagReachedBudgetGivenIntentions" value="Tag reached budget given intentions"></word>
+  <word key="TagReachedBudget" value="Tag reached budget"></word>
+  <!-- EventListDetail -->
+  <word key="GoToTransaction" value="Go to transaction"></word>
+  <word key="RequestForObligation" value="Request for obligation"></word>
+  <word key="GoToObligation" value="Go to obligation"></word>
+  <word key="TagKeyEventOccurred" value="Tag key event occurred"></word>
+  <word key="OwnInitiativeTagReachedBudgetGivenIntentions" value="Own initiative tag reached budget given intentions"></word>
+  <word key="OwnInitiativeTagReachedBudget" value="Own initiative tag reached budget"></word>
+  <!-- ChangePassword -->
+  <word key="PasswordRecovery" value="Password recovery"></word>
+  <word key="ResetPassword" value="Reset password"></word>
+  <word key="SetNewPassword" value="Set new password"></word>
+  <word key="NewPassword" value="New password"></word>
+  <word key="RetypeNewPassword" value="Retype new password"></word>
+  <!-- Notification messages -->
+  <word key="Notification.EmailHasBeenSent" value="Email has been sent"></word>  
+  <!-- UserLogin -->
+  <word key="ForgotPassword" value="Forgot password"></word>
+  <word key="RestorePassword" value="Restore password"></word>
+  <word key="Notification.PasswordsAreDifferent" value="Passwords are different"></word>
+  <!-- Friends obligation -->
+  <word key="Notification.EnterTheCardNumber" value="Enter the card number"></word>
+  <word key="Routings" value="Routings"></word>
+  <word key="ID" value="ID"></word>
+  <word key="FromUser" value="From user"></word>
+  <word key="TransferUser" value="Transfer user"></word>
+  <word key="PaymentInfo" value="Payment info"></word>
+  <!-- Friends obligation -->
+  <word key="DesiredExecutionDate" value="Desired execution date"></word>
+  <word key="HowToExecute" value="How to execute"></word>
+  <word key="TransferCashAtAMeetingToMePersonally" value="Pass cash to me personally at the meeting"></word>
+  <word key="TransferCashFromExodusUser" value="Pass cash through another Exodus user"></word>
+  <word key="Destination" value="Destination"></word>
+  <word key="ToWhomToTransferTheMoney" value="To whom to transfer the money"></word>
+  <word key="TransferToAccount" value="Transfer to account"></word>
+  <word key="TransferToSpecifiedAccountToAccount" value="Transfer to the specified account"></word>
+  <!-- Transaction -->
+  <word key="Confirmed" value="Confirmed"></word>
+  <word key="Sent" value="Sent"></word>
+  <word key="Received" value="Received"></word>
+  <word key="UserProfile" value="User profile"></word>
+  <word key="Yes" value="Yes"></word>
+  <word key="No" value="No"></word>
+  <word key="Date" value="Date"></word>
+  <word key="FromWhom" value="From whom"></word>
+  <word key="To" value="To"></word>
+</lang>

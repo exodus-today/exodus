@@ -1,0 +1,39 @@
+﻿@using Exodus.Helpers
+<!DOCTYPE html>
+<html lang="@PageHelper.Language">
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @RenderSection("HeaderBefore", false)
+    <base href="/">
+    <link rel="stylesheet" href="~/Styles/dist/css/main.css">
+    @RenderSection("HeaderAfter", false)
+    <script type="text/javascript">
+        var mainLanguage = "@PageHelper.Language";
+        var langArray = {};
+        @foreach(var elem in Exodus.Global.Localisation.GetLocalisationDic(PageHelper.Language))
+        { 
+            @:langArray["@elem.Key"] = "@elem.Value";
+        }
+    </script>
+</head>
+<body>
+    @RenderSection("ScriptsBefore", false)
+    @RenderBody()
+    @RenderSection("Footer", false)
+    <script async src="~/Styles/dist/js/main.js"></script>
+    <div id="notify" data-react="/User/Notifications"></div>
+    @RenderSection("ScriptsAfter", false)
+    <script src="~/Scripts/detect-device.min.js.js"></script>
+    <script>
+        @if (Exodus.Global.Global.IsMobileActive)
+        {
+            @:if (device.type == "mobile") { window.location.href = "@Exodus.Global.Global.MobileUrl"; }
+        }
+        @*if (window.location.protocol == 'http:' && window.location.hostname != 'localhost') { window.location.protocol = "https"; }*@
+    </script>
+
+</body>
+</html>

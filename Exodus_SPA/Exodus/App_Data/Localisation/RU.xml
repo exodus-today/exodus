@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lang name="ru" alt-name="ru-RU">
+  <word key="And" value="и"></word>
+  <word key="LogInError" value="Ошибка входа"></word>
+  <word key="YouAreNotLogin" value="Вы не вошли в систему"></word>
+  <word key="Login" value="Войти"></word>
+  <word key="Register" value="Регистрация"></word>
+  <word key="NoPassOrInvite" value="Нет пароля или приглашения?"></word>
+  <word key="EnterYourEmail" value="Введите ваш Email"></word>
+  <word key="EnterPass" value="Введите пароль"></word>
+  <word key="MoreInfoAboutExodus" value="Подробнее о парадигме EXODUS"></word>
+  <word key="ExodusParadigm" value="Парадигма EXODUS"></word>
+  <word key="Cancel" value="Отмена"></word>
+  <word key="YourName" value="Ваше имя"></word>
+  <word key="YourLastName" value="Ваша фамилия"></word>
+  <word key="InviteToConnect" value="Приглашает вас присоединиться"></word>
+  <word key="ServiceError" value="Ошибка системы"></word>
+  <word key="Back" value="Назад"></word>
+  <word key="HomePage" value="На домашнюю"></word>
+  <word key="LoginAndJoin" value="Войти и присоединиться"></word>
+  <word key="RegAndJoin" value="Присоединиться с регистрацией"></word>
+  <word key="Enter" value="Войти"></word>
+  <word key="IAmNewOne" value="Я новый пользователь"></word>
+  <word key="Desktop" value="Рабочий стол"></word>
+  <word key="PageNotFound" value="Страница не найдена"></word>
+  <word key="Page" value="Страница"></word>
+  <word key="NotFound" value="Не найдена"></word>
+  <word key="ServerError" value="Ошибка сервера"></word> 
+  <word key="Error" value="Ошибка"></word>
+  <word key="UnknownError" value="Непредвиденная ошибка"></word>
+  <word key="UnknownServerError" value="Непредвиденная ошибка сервера"></word>
+  <word key="Members" value="Участники"></word>
+  <word key="Notifications" value="Уведомления"></word>
+  <word key="Transactions" value="Транзакции"></word>
+  <word key="Reports" value="Отчеты"></word>
+  <word key="Settings" value="Настройки"></word>
+  <word key="UAH" value="Гривна"></word>
+  <word key="RUB" value="Рубль"></word>
+  <word key="EUR" value="Евро"></word>
+  <word key="USD" value="Доллар"></word>
+  <word key="Summ" value="Сумма"></word>
+  <word key="Period" value="Период"></word>
+  <word key="Term" value="Срок"></word>
+  <word key="TakeIntention" value="Взять намерение"></word>
+  <word key="Monthly" value="Каждый месяц"></word>
+  <word key="Weekly" value="Раз в неделю"></word>
+  <word key="CreateTransaction" value="Создать транзакцию"></word>
+  <word key="HelpRegularly" value="Помогать регулярно"></word>
+  <word key="WithNoHelp" value="Не нуждаюсь в помощи"></word>
+  <word key="RegularHelp" value="Регулярная помощь"></word>
+  <word key="UrgentHelp" value="Срочная помощь"></word>
+  <word key="AddMember" value="Добавить участника"></word>
+  <word key="Calendar" value="Календарь"></word>
+  <word key="Dashboard" value="Доска"></word>
+  <word key="Dispatcher" value="Диспетчер"></word>  
+  <word key="IntentionDispatcher" value="Диспетчер обязательств"></word>
+  <word key="MyIntentions" value="Мои намерения"></word>
+  <word key="FriendIntentions" value="Намерения участников в мою пользу"></word>
+  <word key="MyObligations" value="Мои обязательства"></word>
+  <word key="Intentions" value="Намерения"></word>
+  <word key="Obligation" value="Обязательство"></word> 
+  <word key="Obligations" value="Обязательства"></word> 
+  <word key="Exit" value="Выход"></word>  
+  <word key="Information" value="Информация"></word>  
+  <word key="Status" value="Статус"></word>
+  <word key="PaymentDetails" value="Платёжные реквизиты"></word>
+  <word key="Statistics" value="Статистика"></word>
+  <word key="YourEmail" value="Ваш Email"></word>
+  <word key="ChangePhoto" value="Изменить фото"></word>
+  <word key="DataChangesAfterConfirmation" value="Изменения данных вступят в силу после подтверждения"></word>
+  <word key="Submit" value="Отправить"></word> 
+  <word key="Save" value="Сохранить"></word>
+  <word key="Description" value="Описание"></word>
+  <word key="IAmOk" value="Все хорошо"></word>
+  <word key="CreateNewTag" value="Создать новый тэг"></word>
+  <word key="NewTag" value="Новый тэг"></word>
+  <word key="Show" value="Показать"></word>
+  <word key="Hide" value="Скрыть"></word>
+  <word key="Invite" value="Пригласить"></word>
+  <word key="InviteToTag" value="Пригласить в тэг"></word>
+  <word key="Search" value="Поиск"></word>
+  <word key="SearchAll" value="Все результаты по запросу"></word>
+  <word key="SearchPageTitle" value="Поиск тега или пользователя"></word>
+  <word key="SearchPagePlaceholder" value="Введите имя или тег"></word>
+  <word key="SearchPageResults" value="Результаты поиска"></word>
+  <word key="SearchPageResultsAll" value="Все"></word>
+  <word key="SearchPageResultsTags" value="Только теги"></word>
+  <word key="SearchPageResultsUsers" value="Только пользователи"></word>
+  <word key="Ones" value="Единоразово"></word>
+  <word key="CopyLink" value="Скопировать ссылку"></word>
+  <word key="Apps" value="Приложения"></word>
+  <word key="Password" value="Пароль"></word>
+  <word key="InviteYouToTag" value="приглашает вас присоедениться к тэгу"></word>
+  <word key="Tag" value="Тэг"></word>
+  <word key="Join" value="Присоединиться"></word>
+  <word key="TakeIntentionJoin" value="Взять намерение и присоединиться"></word>
+  <word key="Periodicity" value="Периодичность"></word>
+  <word key="MinIntention" value="Минимальное намерение"></word>
+  <word key="TagDetails" value="Детали тега"></word>
+  <word key="AppByDefault" value="Приложение по умолчанию"></word>
+  <word key="TagInvitation" value="Приглашение в тег"></word>
+  <word key="OwnInitiative" value="Своя инициатива"></word>
+  <word key="SocialInsurance" value="Социальное страхование"></word>
+  <word key="CashDeskOfMutualAid" value="Касса взаимопомощи"></word>
+  <word key="Donations" value="Безвозмездная помощь"></word>
+  <word key="AvailableApps" value="Доступные приложения"></word>
+  <word key="GoToPage" value= "Перейти"></word>
+  <word key="Delete" value= "Удалить"></word>
+  <word key="WMpurse" value="Номер кошелька"></word>
+  <word key="PayPalLogin" value="Логин для PayPal"></word>
+  <word key="Edit" value= "Редактировать"></word>
+  <word key="NewPaymentDetails" value= "Новые реквизиты"></word>
+  <word key="AddPaymentDetails" value= "Добавить платежные реквизиты"></word>
+  <word key="ActiveApp" value= "Приложение активно"></word>
+  <word key="ObligationsInMyFavour" value="Обязательства в мою пользу"></word>
+  <word key="ObligationsOfOtherUsersExodusInMyFavour" value="Обязательства других участников Exodus в мою пользу"></word>  
+  <word key="CardNumber" value= "Номер карты"></word>
+  <word key="CardType" value= "Тип карты"></word>
+  <word key="Validity" value= "Срок действия"></word>
+  <word key="ViewProfile" value= "Смотреть профиль"></word>
+  <word key="IssuedBank" value= "Банк выпустивший карту"></word>
+  <word key="BankCard" value="Банковская карта"></word>
+  <word key="BankAccount" value="Счёт в банке"></word>
+  <word key="MyFulFill" value= "Мои исполнения обязательств"></word>
+  <word key="RequestFulFill" value= "Запросы на исполнение обязательств"></word>  
+  <word key="ToTag" value="Открыть Тэг"></word>
+  <word key="CanNotAddYourSelfToTag" value="Вы не можете присоединиться, так как уже состоите в этом тэге"></word>
+  <word key="TagNotFound" value="Тэг не найден"></word>
+  <word key="TagNameEmpty" value="Имя тэга не может быть пустым"></word>
+  <word key="SelectTagType" value="Выберите тип тэга"></word>
+  <word key="SelectAccessType" value="Выберите тип доступа (Публичный / Приватный)"></word>
+  <word key="IncorrectLoginOrPassword" value="Ошибка входа. Неверный логин или пароль"></word> 
+  <word key="IncorrectInviteCode" value="Неверный пригласительный код"></word>
+  <word key="FulFillObligation" value="Исполнение обязательств"></word>
+  <word key="FulFillObligationRequest" value="Запросы на исполнение"></word>
+  <word key="ApplicationNotFound" value="Приложение не найдено"></word>
+  <word key="BankNotFound" value="Банк не найден"></word>
+  <word key="CardNotFound" value="Карта не найдена"></word>
+  <word key="RegistrationError" value="Ошибка регистрации"></word>
+  <word key="Info" value="Информация"></word>
+  <word key="TagName" value="Имя тега"></word>
+  <word key="English" value="Английское"></word>
+  <word key="Russian" value="Русское"></word>
+  <word key="TagAvailability" value="Доступность тега"></word> 
+  <word key="Private" value="Приватный"></word> 
+  <word key="Public" value="Публичный"></word>
+  <word key="InEnglish" value="По Английски"></word>
+  <word key="InRussian" value="По Русски"></word>
+  <word key="OneTime" value="Единоразовый"></word>
+  <word key="Regular" value="Регулярный"></word>
+  <word key="EndDate" value="Дата окончания"></word>
+  <word key="DayOfMonth" value="Число месяца"></word>
+  <word key="ShortDayOfMonth" value="Числа"></word>
+  <word key="DayOfTheWeek" value="День недели"></word>
+  <word key="Monday" value="Понедельник"></word>
+  <word key="Tuesday" value="Вторник"></word>
+  <word key="Wednesday" value="Среда"></word>
+  <word key="Thursday" value="Четверг"></word>
+  <word key="Friday" value="Пятница"></word>
+  <word key="Saturday" value="Суббота"></word>
+  <word key="Sunday" value="Воскресенье"></word>
+  <word key="OnMonday" value="По Понедельникам"></word>
+  <word key="OnTuesday" value="По Вторникам"></word>
+  <word key="OnWednesday" value="По Средам"></word>
+  <word key="OnThursday" value="По Четвергам"></word>
+  <word key="OnFriday" value="По Пятницам"></word>
+  <word key="OnSaturday" value="По Субботам"></word>
+  <word key="OnSunday" value="По Воскресеньям"></word>
+  <word key="DefaultApplication" value="Приложение по умолчанию"></word>
+  <word key="H2OFreeHelp" value="H2O - безвозмездная помощь"></word>
+  <word key="CashierMutualAid" value="Касса взаимопомощи"></word>
+  <word key="Amount" value="Сумма"></word>
+  <word key="TotalAmount" value="Общая сумма"></word>
+  <word key="Dollars" value="Доллары"></word>
+  <word key="Hryvnia" value="Гривна"></word>
+  <word key="Rubles" value="Рубли"></word>
+  <word key="Euro" value="Евро"></word>
+  <word key="MinimumIntention" value="Минимальное намерение"></word>
+  <word key="CountIntentionsInFavor" value="Считать намерения в пользу"></word>
+  <word key="Me" value="Меня"></word>
+  <word key="CreateTag" value="Создать Тег"></word>
+  <word key="Once" value="Единоразовый"></word>
+  <word key="Currency" value="Валюта"></word>
+  <word key="ObligationHolder" value="Держатель обязательства"></word>
+  <word key="ObligationAmount" value="Сумма обязательства"></word>
+  <word key="AmountPerPaiment" value="Сумма за один платёж"></word>
+  <!-- Dispatcher -->
+  <word key="Archive" value="Архив"></word>
+  <word key="Active" value="Активное"></word>
+  <word key="Action" value="Действие"></word>
+  <word key="Actions" value="Действия"></word>
+  <word key="Application" value="Приложение"></word>
+  <word key="TagInfo" value="Информация о теге"></word>
+  <word key="Recipient" value="Получатель"></word>
+  <word key="Sender" value="Отправитель"></word>
+  <word key="TypeOfIntention" value="Тип намерения"></word>
+  <word key="TypesOfIntention.Simple" value="Обычные"></word>
+  <word key="TypesOfIntention.Demand" value="До востребования"></word>
+  <word key="NotifyAboutEvent" value="Оповестить о событии"></word>
+  <word key="DatePeriod" value="Дата/период"></word>
+  <word key="Upcoming" value="Ближайшие"></word>
+  <word key="All" value="Все"></word>
+  <word key="Current" value="Наступившие"></word>
+  <word key="Select" value="Выбрать"></word>
+  <word key="Decline" value="Отказаться"></word>
+  <word key="ConvertToObligation" value="Преобразовать в обязательство"></word>
+  <word key="CencelIntention" value="Отменить намерение"></word>
+  <word key="Unset" value="Не задано"></word>
+  <word key="OnEvent" value="По наступлению события"></word>
+  <word key="InviteMembers" value="Пригласить участников"></word>
+  <word key="SetPeriod" value="Задать период"></word>
+  <word key="Indefinitely" value="Бессрочно"></word>
+  <word key="TakePartInHelp" value="Принять участие в помощи"></word>
+  <word key="YouTakePart" value="Вы участвуете"></word>
+  <word key="Change" value="Изменить"></word>
+  <word key="Undefined" value="Не задано"></word>
+  <word key="DeleteObligation" value="Удалить обязательство"></word>
+  <word key="SpecifyTheRecipient" value="Укажите получателя"></word>
+  <word key="MapAccountWallet" value="Карта / Счёт / Кошелёк"></word>
+  <word key="ObligationIssuer" value="Obligation issuer"></word>
+  <!-- Pretext messages -->
+  <word key="Pretext.By" value="по"></word>
+  <!-- Currency messages -->
+  <word key="Currency.Symbol.USD" value="$"></word>
+  <word key="Currency.Symbol.GRN" value="₴"></word>
+  <word key="Currency.Symbol.RUB" value="₽"></word>
+  <word key="Currency.Symbol.EUR" value="€"></word>
+  <!-- Funds messages -->
+  <word key="Funds.Collected" value="Собрано"></word>
+  <word key="Funds.Intentions" value="намерений"></word>
+  <word key="Funds.Obligations" value="обязательств"></word>
+  <word key="Funds.Expected" value="Ожидается"></word>
+  <word key="Funds.Total" value="Требуется"></word>
+  <word key="Funds.NotCovered" value="Непокрыто"></word>
+  <word key="Funds.Left" value="Осталось"></word>
+  <word key="Funds.From" value="из"></word>
+  <!-- Date messages -->
+  <word key="Date.CurrentMonth" value="текущий месяц"></word>
+  <word key="Date.NextMonth" value="следующий месяц"></word>
+  <word key="Date.OfMonths" value="месяцев"></word>
+  <word key="Date.OfMonths2_4" value="месяца"></word>
+  <word key="Date.Month" value="месяц"></word>
+  <word key="Date.Day" value="день"></word>
+  <word key="Date.2_4Days" value="дня"></word>
+  <word key="Date.5+Days" value="дней"></word>
+  <!-- Users -->
+  <word key="UserNotFound" value="Пользователь не найден"></word>
+  <word key="User" value="Пользователь"></word>
+  <word key="UserAlreadyExist" value="Ошибка регистрации. Пользователь с таким email уже зарегистрирован"></word>
+  <word key="ToUser" value="Пользователю"></word> 
+  <word key="TypeOfObligation" value="Тип обязательства"></word>
+  <!-- Validation messages -->
+  <word key="Validation.AuthIncorrectLogin" value="Неверный логин"></word>
+  <word key="Validation.AuthIncorrectPassword" value="Неверный пароль"></word>
+  <word key="Validation.OneOfTagNamesIsRequired" value="Имя тэга должно быть заполнено хотя бы на одном языке."></word>
+  <word key="Validation.TagEndDateTypeMismatch" value="Неверная дата."></word>
+  <word key="Validation.TagEndDateIsBeforeNow" value="Должна быть позже текущего дня"></word>
+  <word key="Validation.TagMinIntentioIsMoreThanTotal" value="Не может превышать общей суммы"></word>
+  <word key="Validation.DescriptionRequired" value="Описание не может быть пустым"></word>
+  <!-- Notification messages -->
+  <word key="Notification.SuccessfullyDeleted" value="Успешно удалено"></word>
+  <word key="Notification.SuccessfullyСonverted" value="Успешно преобразовано"></word>
+  <word key="Notification.LinkCopied" value="Ссылка скопирована в буфер обмена"></word>
+  <word key="Notification.IntentionAddedToApplication" value="Ваше намерение добавлено."></word>
+  <word key="Notification.IntentionDeclined" value="Вы отказались от намерения."></word>
+  <word key="Notification.IntentionConvertedToObligation" value="Намерение преобразовано в обязательство."></word>
+  <word key="Notification.SentTransaction" value="Транзакция была отправлена."></word>
+  <word key="Notification.IntentionTypeChanged" value="Тип намерений изменён."></word>
+  <word key="Notification.OwnInitiativeEventReported" value="Оповещение отправлено."></word>
+  <word key="Notification.SuccessfullySetStatus" value="Статус успешно изменен"></word>
+  <word key="Notification.TooSmallAmount" value="Укажите большую сумму"></word>
+  <word key="Notification.UnreadLabel" value="непрочитанные"></word>
+  <word key="Notification.ReadLabel" value="прочитанные"></word>
+  <!-- Period messages -->
+  <word key="Period.Once" value="Разово"></word>
+  <word key="Period.Weekly" value="Еженедельно"></word>
+  <word key="Period.Monthly" value="Ежемесячно"></word>
+  <word key="Period.Quarterly" value="Ежеквартально"></word>
+  <word key="Period.Yearly" value="Ежегодно"></word>
+    <!-- Status -->
+  <word key="StatusChange" value="Смена статуса"></word>
+  <word key="DontNeedHelp" value="Помощь не требуется"></word>
+  <word key="NeedRegularHelp" value="Нужна регулярная помощь"></word>
+  <word key="Emergency" value="Срочная помощь!"></word>
+  <!-- PublicProfile -->
+  <word key="Relations" value="Связи"></word>
+  <word key="IntentionsAndObligations" value="Намерения и обязательства"></word>
+  <word key="CommonTags" value="Общие теги"></word>
+  <word key="PublicTags" value="Публичные теги"></word>
+
+  <word key="SearchForUserExodus" value="Поиск пользователя Exodus"></word>
+  <word key="EnterPartOfFullName" value="Введите часть ФИО"></word>
+  <word key="BackToTag" value="вернуться к тегу"></word>
+  <word key="InvitationSent" value="Приглашение отправлено"></word>
+  <word key="Share" value="Поделиться"></word>
+  <word key="Choose" value="Выбрать"></word>
+  <word key="RequestHasBeenSent" value="Запрос отправлен"></word>
+  <word key="RequestExecution" value="Запрос на исполнение"></word>
+  <!-- Friend obligation -->
+  <word key="Perform" value="Исполнить"></word>
+  <word key="TransferTo" value="Передать"></word>
+  <word key="WhatToDoWithTheObligation" value="Как поступить с обязательством?"></word>
+  <word key="MethodOfPerformanceObligations" value="Способ исполнения обязательства"></word>
+
+  <word key="CashAtTheMeeting" value="Наличными при встрече"></word>
+  <word key="ToMyPaymentAccountIsListedInExodus" value="На мой счет указанный в Exodus"></word>
+  <word key="SpecifyAnotherAccount" value="Указать другой счет"></word>
+
+  <word key="ThroughWhomToPass" value="Через кого передать"></word>
+  <word key="ToMePersonally" value="Лично мне"></word>
+  <word key="ThroughAnotherExodusUser" value="Через другого пользователя Exodus"></word>
+  <word key="SpecifyAnotherPerson" value="Указать другого человека"></word>
+
+  <word key="DescriptionOfThePaymentSystemAndAccount" value="Описание платежной системы и счета"></word>
+  <word key="AmountRange" value="Сумма (диапазон"></word>
+  <word key="DesiredFinalDateOfPerformance" value="Желаемая конечная дата исполнения обязательства"></word>
+  <word key="SendRequest" value="Отправить запрос"></word>
+  <word key="Close" value="Закрыть"></word>
+
+  <word key="AllNotifications" value="Все уведомления"></word>
+  <word key="UserHasJoinedYourTag" value="Пользователь присоединился к вашему тегу"></word>
+
+  <word key="Undefine" value="Незадано"></word>
+  <word key="EventDeclined" value="Событие удалено"></word>
+  <word key="Ok" value="Ok"></word>
+  <word key="Confirm" value="Подтвердить"></word>
+  <word key="Execute" value="Исполнить"></word>
+  <word key="Bitcoin" value="Биткоин"></word>
+  <word key="SaveDetails" value="Сохранить реквизиты"></word>
+  <word key="SaveCard" value="Сохранить карту"></word>
+  <word key="RequestConfirmation" value="Запросить подтверждение"></word>
+  <word key="PerformanceInformation" value="Информация об исполнении"></word>
+  <word key="InvitesYouToJoinTag" value="приглашает Вас присоединится к тегу"></word>
+  <word key="GoToInvitation" value="Перейти к приглашению"></word>
+  <word key="YouCanNotInviteYourself" value="Вы не можете приглашать себя!"></word>
+  <word key="MinimalAmount" value="Минимальный платеж"></word>
+  <word key="TheUserHasLeftTheTagOnTheirOwnInitiative" value="Пользователь покинул тэг по собственной инициативе"></word>
+  <word key="LeftTag" value="покинул тег"></word>
+  <word key="OnTheirOwnInitiative" value="по собственной инициативе"></word>
+  <word key="MinimalIntention" value="Минимальное намерение"></word>
+  <word key="HasJoinedYourTag" value="присоединился к Вашему тегу"></word>
+  
+  <word key="InvitedYouToJoinTag" value="пригласил Вас присоединиться к Тегу"></word>
+  <word key="IncomingTransaction" value="Входящая транзакция"></word>
+  <word key="TransactionConfirmedByUser" value="Транзакция подтверждена пользователем"></word>
+  <word key="PaymentAccount" value="Счет"></word>
+  <word key="Cash" value="Наличными"></word>
+  <word key="TransactionFrom" value="Транзакция от"></word>
+  <word key="ConfirmReceipt" value="Подтвердить получение"></word>
+  <word key="ToHelp" value="Помочь"></word>
+  <word key="Transaction" value="Транзакция"></word>
+  <word key="ConfirmationSent" value="Подтверждение отправлено"></word>
+  <word key="ExecuteObligation" value="Исполнить обязательство"></word>
+  <word key="Deadline" value="Крайний срок"></word>
+  <word key="TransactionFor" value="Транзакция для"></word>
+  <word key="RequestToConvertToCommitment" value="Запросить преобразовать в обязательство"></word>
+  <word key="RequestDetails" value="Детали запроса"></word>
+  <word key="BankName" value="Карта банка"></word>
+  <!-- EventList -->
+  <word key="UserHasJoinedToTag" value="Пользователь присоединился к Тегу"></word>
+  <word key="AtYourInvitation" value="по Вашему приглашению"></word>
+  <word key="UserDisconnectedFromTag" value="Пользователь отключился от тега"></word>
+  <word key="UserDisconnectedFromTagBySystem" value="Пользователь отключен от тега системой"></word>
+  <word key="TransactionConfirmedByRecipient" value="Транзакция подтверждена получателем"></word>
+  <word key="AttentionEmergency" value="Внимание чрезвычайная ситуация"></word>
+  <word key="NewStatusAllIsWell" value="Новый статус. Все хорошо"></word>
+  <word key="RegularHelpRequired" value="Требуется регулярная помощь"></word>
+  <word key="RequestForPerformanceOfAnObligationOnATag" value="Запрос на исполнение обязательства по тегу"></word>
+  <word key="RequestToConvertIntentionToObligation" value="Запрос на преобразование намерения в обязательство"></word>
+  <word key="ReportsTheOccurrenceOfAKeyTagEvent" value="сообщает о наступлении ключевого события тега"></word>
+  <word key="TagReachedBudgetGivenIntentions" value="Тэг достиг бюджета учитывая намерения"></word>
+  <word key="TagReachedBudget" value="Тэг достиг требуемого бюджета"></word>
+  <!-- EventListDetail -->
+  <word key="GoToTransaction" value="Перейти к транзакции"></word>
+  <word key="RequestForObligation" value="Запрос на исполнение обязательства"></word>
+  <word key="GoToObligation" value="Перейти к обязательству"></word>
+  <word key="TagKeyEventOccurred" value="Произошло ключевое событие тега "></word>
+  <word key="OwnInitiativeTagReachedBudgetGivenIntentions" value="Тэг собственной инициативы достиг бюджета учитывая намерения"></word>
+  <word key="OwnInitiativeTagReachedBudget" value="Тэг собственной инициативы достиг требуемого бюджета"></word>
+  <!-- ChangePassword -->
+  <word key="PasswordRecovery" value="Восстановление пароля"></word>
+  <word key="ResetPassword" value="Сбросить пароль"></word>
+  <word key="SetNewPassword" value="Установить новый пароль"></word>
+  <word key="NewPassword" value="Новый пароль"></word>
+  <word key="RetypeNewPassword" value="Новый пароль"></word>
+  <!-- Notification messages -->
+  <word key="Notification.EmailHasBeenSent" value="Сообщение отправлено на почту"></word>  
+  <!-- UserLogin -->
+  <word key="ForgotPassword" value="Забыли пароль"></word>  
+  <word key="RestorePassword" value="Восстановить пароль"></word>
+  <word key="Notification.PasswordsAreDifferent" value="Пароли отличаются"></word>
+  <!-- Friends obligation -->
+  <word key="Notification.EnterTheCardNumber" value="Укажите номер карты"></word>
+  <word key="Routings" value="Роутинги"></word>
+  <word key="ID" value="№"></word>
+  <word key="FromUser" value="От пользователя"></word>
+  <word key="TransferUser" value="Через кого"></word>
+  <word key="PaymentInfo" value="Платежные данные"></word>
+ <!-- Friends obligation -->
+  <word key="DesiredExecutionDate" value="Желаемая дата исполнения"></word>
+  <word key="HowToExecute" value="Как исполнить"></word>
+  <word key="TransferCashAtAMeetingToMePersonally" value="Передать наличными при встрече лично мне"></word>  
+  <word key="TransferCashFromExodusUser" value="Передать наличными через пользователя Exodus"></word>
+  <word key="Destination" value="Адресат"></word>
+  <word key="ToWhomToTransferTheMoney" value="Кому передать деньги"></word>
+  <word key="TransferToAccount" value="Передать на счет"></word>
+  <word key="TransferToSpecifiedAccountToAccount" value="Перечислить на указанный счет"></word>
+ <!-- Transaction -->  
+  <word key="Confirmed" value="Подтвердил"></word>
+  <word key="Sent" value="Отправленные"></word>
+  <word key="Received" value="Полученные"></word>
+  <word key="UserProfile" value="Пользовательский профиль"></word>
+  <word key="Yes" value="Да"></word>
+  <word key="No" value="Нет"></word>
+  <word key="Date" value="Дата"></word>
+  <word key="FromWhom" value="От кого"></word>
+  <word key="To" value="Кому"></word>
+</lang>

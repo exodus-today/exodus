@@ -1,0 +1,42 @@
+.ex-main-menu {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $black;
+    transition: left .3s;
+    width: 5/5*100%;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up(md){
+        width: 5/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        width: 5/15*100%;
+    }
+}
+
+.ex-main-menu_close {
+    cursor: pointer;
+    left: -4/5*100%;
+    @include media-breakpoint-up(md){
+        left: -4/10*100%;
+    }
+    @include media-breakpoint-up(xl){
+        left: -4/15*100%;
+    }
+
+    .ex-header__dispatcher {
+        display: none;
+    }
+}
+
+.ex-main-menu__header {
+    flex-basis: auto;
+}
+
+.ex-main-menu__viewport {
+    flex: 1;
+}

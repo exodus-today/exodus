@@ -1,0 +1,93 @@
+.ex-transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.ex-transaction-item__from,
+.ex-transaction-item__to {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.ex-transaction-item__triangle {
+    width: 5%;
+}
+
+.ex-transaction-item__chine {
+    width: 5%;
+    margin-left:-30px;
+}
+.ex-transaction-item__chinecrash {
+    width: 6%;
+    margin-left:-30px;
+}
+
+.ex-transaction-item__application_big {
+    width: 12%;    
+    background: #427938;
+    border:2px solid #125008;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,255,.2)
+}
+
+.ex-transaction-item__application_big_blue {
+    width: 12%;    
+    background: #206580;
+    border: 2px solid #3ab3e2;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,255,.2)
+}
+
+.ex-transaction-item__application {
+    width: 7%;
+    margin-left:-30px;
+}
+
+.ex-transaction-item__circle {
+    width: 6%;
+}                           
+
+.ex-transaction-item__description60 {
+    width: 60%;
+    line-height: 1.2;
+    font-size: 14px;
+    color: #818181;
+
+    .ex-transaction-item_success &{
+        color: #67971a;
+    }
+    
+    .ex-transaction-item_warning &{
+        color: #fd6721;
+    }
+}
+
+.ex-transaction-item__description {
+    width: 45%;
+    line-height: 1.2;
+    font-size: 14px;
+    color: #818181;
+
+    .ex-transaction-item_success &{
+        color: #67971a;
+    }
+    
+    .ex-transaction-item_warning &{
+        color: #fd6721;
+    }
+}
+
+.ex-transaction-item__date {
+    font-size: 14px;
+    width: 15%;
+    color: #9c9c9c;
+
+}
+
+.ex-transaction-item__notice {
+    width: 6%;
+}

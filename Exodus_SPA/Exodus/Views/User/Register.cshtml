@@ -1,0 +1,50 @@
+﻿@model Exodus.ViewModels.VM_UserRegister
+@{
+    Layout = "~/Views/Shared/Layout_Langs.cshtml";
+    var lang = Exodus.Global.Global.Language;
+}
+<div class="ex-welcome">
+    <div class="ex-welcome__container">
+        <div class="text-center mb-4">
+            <img src="~/Styles/dist/images/logo-dark.png">
+        </div>
+        <div class="bg-white p-4 my-4">
+            <form action="@this.Url.Action("Register", "User")" method="post">
+                <input type="hidden" name="InviteUserID" value="@Model.InvitedBy.UserID" />
+                <div class="row mb-4">
+                    <div class="col-4 text-center">
+                        <img class="ex-header__person-avatar" src="~/Styles/dist/images/man.png">
+                    </div>
+                    <div class="col-8">
+                        <strong>@Exodus.Global.Localisation.Get("User", lang)</strong>
+                        <br><strong>@Model.InvitedBy.UserFullName</strong>
+                        <br>@Exodus.Global.Localisation.Get("InviteToConnect", lang)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="small" for="first-name">@Exodus.Global.Localisation.Get("YourName", lang):</label>
+                    <input id="first-name" type="text" name="FirstName" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="small" for="last-name">@Exodus.Global.Localisation.Get("YourLastName", lang):</label>
+                    <input id="last-name" type="text" name="LastName" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="small" for="email">@Exodus.Global.Localisation.Get("EnterYourEmail", lang):</label>
+                    <input id="email" type="email" name="Email" required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="small" for="password">@Exodus.Global.Localisation.Get("EnterPass", lang):</label>
+                    <input id="password" type="password" name="Password" required class="form-control">
+                </div>
+                <input type="submit" value="@Exodus.Global.Localisation.Get("Register", lang)" class="btn btn-outline-primary w-100">
+            </form>
+            <br />
+            <input onclick="window.location.href='@this.Url.Action("Login", "User")'" type="button" value="@Exodus.Global.Localisation.Get("Cancel", lang)" class="btn btn-outline-primary w-100">
+        </div>  
+        <div class="text-center">
+            <a href="@this.Url.Action("About", "Home")" class="text-black small">@Exodus.Global.Localisation.Get("MoreInfoAboutExodus", lang)</a>
+        </div>
+    </div>
+</div>
+

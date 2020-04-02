@@ -1,0 +1,18 @@
+.own-initiative-area .ex-panel__content th {
+    min-height: 35px;
+}
+
+/*.own-initiative-area .ex-panel__content th,
+.own-initiative-area .ex-panel__content td {
+    font-size: 1.2rem;
+}*/
+
+.own-initiative-area .ex-panel__content td.bg-light-green {
+    background: rgb(229, 252, 185);
+}
+
+.own-initiative-area .ex-panel__content .btn[data-selected="true"] {
+    background: #459edb;
+    color:  #fff;
+}
+

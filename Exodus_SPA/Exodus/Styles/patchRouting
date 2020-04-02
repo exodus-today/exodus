@@ -1,0 +1,235 @@
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RateDto.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RateDto.cs
+index 8623f32..67c32ff 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RateDto.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RateDto.cs
+@@ -113,8 +113,8 @@ namespace Cargoo.RatesMicro.Application.DTO
+         [JsonIgnore]
+         public List<RateGroupDto> RateGroups { get; set; }
+ 
+-        [JsonIgnore]
+-        public List<RoutingDto> Routings { get; set; }
++        /*[JsonIgnore]
++        public List<RoutingDto> Routings { get; set; }*/
+ 
+         [JsonExtensionData]
+         public IDictionary<string, JToken> ExtensionData { get; set; }
+@@ -199,7 +199,7 @@ namespace Cargoo.RatesMicro.Application.DTO
+         {
+             AdditionalCharges = new List<ChargeDto>();
+             RateGroups = new List<RateGroupDto>();
+-            Routings = new List<RoutingDto>();
++           // Routings = new List<RoutingDto>();
+         }
+     }
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RoutingDto.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RoutingDto.cs
+index 2706bf4..b6b612d 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RoutingDto.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/DTO/RoutingDto.cs
+@@ -4,12 +4,12 @@ using System.Text;
+ 
+ namespace Cargoo.RatesMicro.Application.DTO
+ {
+-    public class RoutingDto
++    /*public class RoutingDto
+     {
+         public long Id { get; set; }
+ 
+         public int Position { get; set; }
+ 
+         public long LocationId { get; set; }
+-    }
++    }*/
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Mapping.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Mapping.cs
+index d4387ba..2c2d9f1 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Mapping.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Mapping.cs
+@@ -84,7 +84,7 @@ namespace Cargoo.RatesMicro.Application
+ 
+         public void Process(Rate source, RateDto destination)
+         {
+-            destination.Routing = ResolveRouting(source.Routings);
++            destination.Routing = source.Routing;
+             destination.CustomerGroup = ResolveCustomerGroup(source.RateGroups);
+             destination.Origin = ResolveOrigin(source.Origin);
+             destination.Destination = ResloveDestination(source.Destination);
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Validation/Attributes/RoutingCheckAttribute.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Validation/Attributes/RoutingCheckAttribute.cs
+index 07ef3c7..246d186 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Validation/Attributes/RoutingCheckAttribute.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Application/Validation/Attributes/RoutingCheckAttribute.cs
+@@ -106,14 +106,14 @@ namespace Cargoo.RatesMicro.Application.Validation.Attributes
+                             error.Message = "Location must have PORT type.";
+                             errors.Add(error);
+                         }
+-                        else
++                        /*else
+                         {
+                             instance.Routings.Add(new RoutingDto()
+                             {
+                                 LocationId = location.Id,
+                                 Position = position
+                             });
+-                        }
++                        }*/
+                     }
+                     else
+                     {
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Domain/Models/Rate.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Domain/Models/Rate.cs
+index b79dd6c..f641bd2 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Domain/Models/Rate.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Domain/Models/Rate.cs
+@@ -50,6 +50,10 @@ namespace Cargoo.RatesMicro.Domain.Models
+ 
+         public List<RateGroup> RateGroups { get; set; }
+ 
+-        public List<Routing> Routings { get; set; }
++        //public List<Routing> Routings { get; set; }
++
++        public string Routing { get; set; }
++
++
+     }
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Mapping.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Mapping.cs
+index 6229ae9..9ad04dc 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Mapping.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Mapping.cs
+@@ -39,16 +39,17 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql
+                 .ReverseMap();
+ 
+ 
+-                cfg.CreateMap<Routing, DbRouting_Location>()
++                /*cfg.CreateMap<Routing, DbRouting_Location>()
+                 .ForMember(f => f.RateId, a => a.Ignore())
+                 .ForMember(f => f.Rate, a => a.Ignore())
+                 .ReverseMap();
++
+                 cfg.CreateMap<Rate, DbRouting_Location>()
+                 .ForMember(f => f.RateId, a => a.MapFrom(k => k.Id))
+                 .ForMember(f => f.Rate, a => a.MapFrom(k => k))
+                 .ForMember(f => f.Position, a => a.Ignore())
+                 .ForMember(f => f.LocationId, a => a.Ignore())
+-                .ReverseMap();
++                .ReverseMap();*/
+ 
+ 
+                 cfg.CreateMap<Charge, DbRateAdditionalCharge>()
+@@ -70,7 +71,7 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql
+                 .ForMember(f => f.DestinationId, a => a.MapFrom(k => k.Destination.Id))
+                 .ForMember(f => f.AdditionalCharges, a => a.ResolveUsing(k => ResolveAdditionalCharges(k.AdditionalCharges, k.Id)))
+                 .ForMember(f => f.RateGroups, a => a.ResolveUsing(k => ResolveRateGroups(k.RateGroups, k.Id)))
+-                .ForMember(f => f.Routings, a => a.ResolveUsing(k => ResolveRoutings(k.Routings, k.Id)))
++                .ForMember(f => f.Routing, a => a.MapFrom(k => k.Routing))
+                 ;
+ 
+                 cfg.CreateMap<DbRate, Rate>()
+@@ -104,12 +105,12 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql
+             return dbRateGroups;
+         }
+ 
+-        private static List<DbRouting_Location> ResolveRoutings(List<Routing> routings, long rateId)
++        /*private static List<DbRouting_Location> ResolveRoutings(List<Routing> routings, long rateId)
+         {
+             var dbroutings = _mapper.Map<List<DbRouting_Location>>(routings);
+             if (dbroutings != null && dbroutings.Count > 0)
+                 dbroutings.ForEach(f => f.RateId = rateId);
+             return dbroutings;
+-        }
++        }*/
+     }
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRate.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRate.cs
+index 305db9f..d40b79b 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRate.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRate.cs
+@@ -78,13 +78,15 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Models
+ 
+         public virtual List<DbRate_RateGroup> RateGroups { get; set; }
+ 
+-        public virtual List<DbRouting_Location> Routings { get; set; }
++        //public virtual List<DbRouting_Location> Routings { get; set; }
++
++        public virtual string Routing { get; set; }
+ 
+         public DbRate()
+         {
+             AdditionalCharges = new List<DbRateAdditionalCharge>();
+             RateGroups = new List<DbRate_RateGroup>();
+-            Routings = new List<DbRouting_Location>();
++            //Routings = new List<DbRouting_Location>();
+         }
+     }
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRouting_Location.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRouting_Location.cs
+index e686c68..4f58347 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRouting_Location.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Models/DbRouting_Location.cs
+@@ -6,7 +6,7 @@ using System.Text;
+ 
+ namespace Cargoo.RatesMicro.Infrastructure.Sql.Models
+ {
+-    [Table("routing_location")]
++    /*[Table("routing_location")]
+     public class DbRouting_Location
+     {
+         [Key]
+@@ -20,5 +20,5 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Models
+ 
+         public long RateId { get; set; }
+         public virtual DbRate Rate { get; set; }
+-    }
++    }*/
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/RatesContext.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/RatesContext.cs
+index 4d3391f..2ad93b6 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/RatesContext.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/RatesContext.cs
+@@ -55,6 +55,6 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql
+ 
+         public DbSet<DbRateAdditionalCharge> Rate_AdditionalCharges { get; set; }
+ 
+-        public DbSet<DbRouting_Location> Routing_Locations { get; set; }
++        //public DbSet<DbRouting_Location> Routing_Locations { get; set; }
+     }
+ }
+diff --git a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Repositories/RateRepository.cs b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Repositories/RateRepository.cs
+index 48c44b7..95f2150 100644
+--- a/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Repositories/RateRepository.cs
++++ b/Cargoo.RatesMicroservice/Cargoo.RatesMicro.Infrastructure.Sql/Repositories/RateRepository.cs
+@@ -57,7 +57,7 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Repositories
+ 
+             // find child's elements to delete
+             _context.Rate_AdditionalCharges.RemoveRange(dbRate.AdditionalCharges);
+-            _context.Routing_Locations.RemoveRange(dbRate.Routings);
++            //_context.Routing_Locations.RemoveRange(dbRate.Routings);
+             _context.Rate_RateGroups.RemoveRange(dbRate.RateGroups);
+ 
+             // remove unused values
+@@ -97,7 +97,7 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Repositories
+                 foreach (var f in dbRates)
+                 {
+                     f.AdditionalCharges.ForEach(r => r.Id = 0);
+-                    f.Routings.ForEach(r => r.Id = 0);
++                    //f.Routings.ForEach(r => r.Id = 0);
+                     f.RateGroups.ForEach(r => r.RateGroupId = 0);
+                 }
+ 
+@@ -146,7 +146,7 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Repositories
+             var query = _context.Rates
+                 .Include(f => f.AdditionalCharges)
+                 .Include(f => f.RateGroups).ThenInclude(k => k.RateGroup)
+-                .Include(f => f.Routings)
++                .Include(f => f.Routing)
+                 .OrderByDescending(f => f.Id)
+                 .AsNoTracking().AsQueryable();
+ 
+@@ -165,7 +165,7 @@ namespace Cargoo.RatesMicro.Infrastructure.Sql.Repositories
+             {
+                 // child's elements to delete
+                 _context.Rate_AdditionalCharges.RemoveRange(dbRates.SelectMany(f => f.AdditionalCharges));
+-                _context.Routing_Locations.RemoveRange(dbRates.SelectMany(f => f.Routings));
++                //_context.Routing_Locations.RemoveRange(dbRates.SelectMany(f => f.Routing));
+                 _context.Rate_RateGroups.RemoveRange(dbRates.SelectMany(f => f.RateGroups));
+             }
+         }

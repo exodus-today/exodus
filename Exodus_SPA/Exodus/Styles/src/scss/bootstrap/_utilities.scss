@@ -1,0 +1,16 @@
+[aria-expanded=true] {
+    .if-not-expanded,
+    &.if-not-expanded {
+        display: none;
+    }
+}
+[aria-expanded=false] {
+    .if-expanded,
+    &.if-expanded {
+        display: none;
+    }
+}
+
+[data-toggle] {
+    cursor: pointer;
+}

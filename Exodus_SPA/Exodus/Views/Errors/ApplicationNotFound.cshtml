@@ -1,0 +1,11 @@
+﻿@{
+    var lang = Exodus.Global.Global.Language;
+    Layout = "~/Views/Shared/Layout_Errors.cshtml";
+}
+
+<div class="mt-4" style="width:500px">
+    <h4 style="text-align:center">@Exodus.Global.Localisation.Get("ApplicationNotFound", lang)</h4>
+    <br>
+    <input onclick="window.location.href='/Desktop/Index'" ; return false;"
+           type="button" value="@Exodus.Global.Localisation.Get("HomePage", lang)" class="btn btn-outline-primary w-100">
+</div>

@@ -1,0 +1,142 @@
+.ex-h2o-p {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ex-navigation__info {
+    height: 400px;
+
+
+    & > .ex-navigation__header {
+        display: flex; 
+        align-items: center; 
+        flex-direction: column; 
+        padding-top:60px;
+        color:#eee;
+
+        & > div  {
+            text-align: center;
+        }
+        
+        & > .ex-navigation__title  {
+            margin: 10px;
+        }
+
+        & > .ex-navigation__content {
+
+            & > .ex-navigation__sign {
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+                padding-top: 10px;
+        
+                & > div {
+                    display: flex; 
+                    align-items: center; 
+                    flex-direction: row; 
+                    color: rgb(34, 34, 34);
+        
+                    & > div {
+                        text-align: center; 
+                        width: 100px;
+        
+                        & > div {
+                            background:#e56008; 
+                            width:100px; 
+                            border-radius:10%;
+        
+                            & > h2 {
+                                display: inline;
+                                
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+    }
+
+    
+}
+
+.ex-navigation__share {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    color: #eee;
+
+    & > div {
+        text-align: center; 
+        height: 50px;
+
+        & > a > img {
+            width:40px;
+            margin:5px;
+        }
+    }
+}
+
+.h2o-default-page > div > .ex-list > .ex-list__header > .ex-list__item > .ex-list__item-content {
+    display: block;
+
+    .month-name {
+        text-transform: capitalize;
+    }
+}
+
+.h2o-default-page {
+    
+    table {
+
+        td.bg-light-green {
+            background: rgb(229, 252, 185);
+        }
+    }
+
+    .table-with-actions {
+        td > .btn {
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        td > .btn:last-child {
+            margin-bottom: 5px;
+        }
+    }
+
+    .ex-grid_0-1-0 {
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .ex-panel__content {
+            padding: 10px 10px;
+            background: transparent;
+            color: #000;
+        }
+
+    }
+
+    .shorten-w-30 {
+        max-width: 30px;
+        text-overflow: clip;
+        overflow: hidden;
+    }
+}
+
+.ex-list__body {
+    & > .h2o-user-intention {
+        width: 100%;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-bottom: 20px;
+
+        & > span {
+            color: #242424;
+        }
+
+        & > button {
+            margin-left: 15px;
+        }
+    }
+}

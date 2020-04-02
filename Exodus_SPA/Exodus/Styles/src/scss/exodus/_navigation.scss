@@ -1,0 +1,223 @@
+.ex-navigation {
+    background-color: $white;
+    @extend .ex-grid_1-0-0;
+
+    .ex-navigation__info {
+
+        .ex-navigation__image {
+            &:before {
+                display: block;
+                position: absolute;
+                top: 5px;
+                left: 6px;
+                right: 6px;
+                bottom: 5px;
+                content: '';
+                background-color: $gray-200;
+                z-index: -1;
+            }
+        }
+
+        .ex-navigation__title {
+            color: $gray-900;
+        }
+    }
+
+    .ex-navigation__item {
+        color: $gray-900;
+
+        &:before,
+        &:last-child:after {
+            border-top: 2px solid $gray-200;
+        }
+    }
+}
+
+.ex-navigation.mine {
+    background-color: $gray-800;
+    @extend .ex-grid_1-0-0;
+
+    .ex-navigation__info {
+        
+        .ex-navigation__image {
+            &:before {
+                display: none;
+            }
+        }
+
+        .ex-navigation__title {
+            color: $white;
+        }
+    }
+
+    .ex-navigation__item {
+        background-color: $gray-800;
+
+        &:hover, &:focus, & {
+            color: $gray-300;
+        }
+
+        &:before,
+        &:last-child:after {
+            border-top: 1px solid $gray-700;
+        }
+
+        &.active {
+            background-color: $gray-900;
+            border-left: 7px solid $gray-300;
+        }
+    }
+}
+
+.ex-navigation__image {
+    margin-bottom: 15px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    color: $gray-700;
+    font-size: 80px;
+    position: relative;
+}
+
+
+.ex-navigation__info {
+    height: 0;
+    padding-bottom: 81%;
+    position: relative;
+    border-left: 7px solid transparent;
+
+    &.active {
+        background-color: $gray-900;
+        border-left: 7px solid $gray-300;
+    }
+}
+
+.ex-navigation_dispatcher__info {
+    height: 0;
+    padding-bottom: 250px;
+    position: relative;
+    border-left: 7px solid transparent;
+
+    &.active {
+        background-color: $gray-900;
+        border-left: 7px solid $gray-300;
+    }
+}
+
+
+
+.ex-navigation__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ex-navigation__item {
+    display: block;
+    border-left: 7px solid transparent;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: CalibriLight;
+    line-height: 70px;
+    padding-left: 35px;
+    position: relative;
+    
+    &:hover, &:focus, & {
+        text-decoration: none;
+    }
+
+    &:before,
+    &:last-child:after {
+        content: '';
+        display: block;
+        left: -7px;
+        position: absolute;
+        width: 100%;
+        padding-left: 7px;
+        box-sizing: initial;
+    }
+
+    &:before {
+        top: 0;
+    }
+
+    &:last-child:after {
+        bottom: 0;
+    }
+
+    &.active {
+
+    }
+}
+
+.ex-navigation__item_disabled {
+    color: $gray-700;
+}
+
+
+.ex-navigation__status {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ex-navigation__icon {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ex-navigation__title {
+    font-size: 22px;
+    text-align: center;
+}
+
+.ex-navigation__subtitle {
+    font-size: 14px;
+    color: #7c7c7c;
+    text-align: center;
+    -ms-user-select:text;
+    -webkit-user-select:text;
+    -moz-user-select:text;    
+}
+
+.ex-navigation_public{
+    background-color: white;
+    
+    .ex-navigation__title {
+        color: $gray-800;
+    }
+    
+    .ex-navigation__subtitle {
+        color: $gray-600;
+    }
+    .ex-navigation__item {
+        color: $gray-700;
+        background-color: $white;
+
+        &:before,
+        &:after {
+            border-color: $gray-600;
+        }
+
+        &.active {
+            background-color: #ececec;
+            border-left: 7px solid $gray-600;
+
+            &:before,
+            &:after {
+                display: none;
+            }
+        }
+
+        &.active + *{
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

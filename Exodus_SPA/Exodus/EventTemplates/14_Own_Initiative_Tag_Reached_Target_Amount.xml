@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<template>
+  <!--Full key model for event / send to api as KEY/VALUE dictionary-->
+  <content>
+    <keys>
+      <!---->
+      <key name="TagID" type="number" modelName="Tag" model="VM_Tag" />
+    </keys>
+  </content>
+
+  <!--Partial model for fromend-->
+  <thumbnail>
+    <keys>
+      <!---->
+      <key name="TagName" type="text" enable="true" model="VM_Tag" PropertyName="Name" modelName="Tag"/>
+      <key name="TagDescription" type="text" enable="true" model="VM_Tag" PropertyName="Description" modelName="Tag"/>
+      <key name="EndDate" type="text" enable="true" model="VM_Tag" PropertyName="EndDate" modelName="Tag"/>
+      <key name="TotalAmount" type="number" enable="true" model="VM_Tag" PropertyName="TotalAmount" modelName="Tag"/>
+      <key name="MinIntentionAmount" type="number" enable="true" model="VM_Tag" PropertyName="MinIntentionAmount" modelName="Tag"/>
+    </keys>
+  </thumbnail>
+
+  <related>
+    <key model="VM_Tag" PropertyName="TagID" modelName="Tag" relation="Multiple" type="num" RelationType="Tag" ></key>
+  </related>
+</template>

@@ -1,0 +1,19 @@
+﻿@using Exodus.Helpers
+@{
+    ViewBag.ErrorTitle = Exodus.Global.Localisation.Get("LogInError");
+    ViewBag.Title = "AskLogin";
+    Layout = "~/Views/Shared/Error.cshtml";
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="text-center mb-4">
+    <img style="display:block;margin:auto" src="/Styles/dist/images/logo-dark.png">
+</div>
+<div class="mt-5">
+    <p class="text-center">
+        @Exodus.Global.Localisation.Get("YouAreNotLogin")
+    </p>
+    <input onclick="window.location.href='@this.Url.Action("Login", "User")'"
+            type="button" value="@Exodus.Global.Localisation.Get("Login", lang)"
+            class="btn btn-outline-primary w-100">
+</div>

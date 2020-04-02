@@ -1,0 +1,89 @@
+﻿@using Exodus.ViewModels
+@using Exodus.Enums
+@using Exodus.Domain
+@model VM_PaymentAccount
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+
+<form action="@this.Url.Action("BankCardUpdate", "PaymentAccount")"
+      method="POST"
+      id="ex-new-payment-form"
+      data-update="@this.Url.Action("PaymentAccountList", "PaymentAccount")">
+    <input type="hidden" name="CardID" value="@Model.Card.CardID">
+    <input type="hidden" name="AdditionalInfo">
+    <div class="row mt-5 mb-4">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("CardType", lang):
+        </div>
+        <div class="col-9">
+            <select class="form-control" name="TypeID">
+                <option @(Model.Card.TypeID == EN_CardType.Visa ? "selected" : "") value="@((int)EN_CardType.Visa)">Visa</option>
+                <option @(Model.Card.TypeID == EN_CardType.MasterCard ? "selected" : "") value="@((int)EN_CardType.MasterCard)">MasterCard</option>
+                <option @(Model.Card.TypeID == EN_CardType.AmericanExpress ? "selected" : "") value="@((int)EN_CardType.AmericanExpress)">American Express</option>
+                <option @(Model.Card.TypeID == EN_CardType.Discover ? "selected" : "") value="@((int)EN_CardType.Discover)">Discover</option>
+                <option @(Model.Card.TypeID == EN_CardType.Maestro ? "selected" : "") value="@((int)EN_CardType.Maestro)">Maestro</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("CardNumber", lang):
+        </div>
+        <div class="col-9">
+            <input type="text" name="CardNumber" class="form-control" value="@Model.Card.CardNumber" required>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("Validity", lang):
+        </div>
+        <div class="col-2">
+            <select class="form-control" id="ValidTillMonth" name="ValidTillMonth">
+                @for (var i = 1; i < 13; i++)
+                {
+                    <option>@i</option>}
+            </select>
+        </div>
+        <div class="col-2">
+            <select class="form-control" id="ValidTillYear" name="ValidTillYear">
+                @for (var i = DateTime.Now.Year; i < DateTime.Now.Year + 10; i++)
+                {
+                    <option>@i</option>}
+            </select>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("IssuedBank", lang):
+        </div>
+        <div class="col-9">
+            <select class="form-control" name="BankID">
+                @foreach (var Item in Exodus.Domain._DL.Banks.Get.BankNames())
+                {
+                    <option @(Model.Card.BankID == Item.BankID ? "selected" : "") value="@Item.BankID">@Item.BankName</option>
+                }
+            </select>
+        </div>
+        <input type="hidden" id="CardValidTill" name="CardValidTill" value="" />
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <button class="btn btn-outline-success w-100">
+                @Exodus.Global.Localisation.Get("Save", lang)
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn btn-outline-danger w-100" form="ex-card-delete-@Model.Card.CardID">
+                @Exodus.Global.Localisation.Get("Delete", lang)
+            </button>
+        </div>
+    </div>
+</form>
+<form action="@this.Url.Action("BankCardDelete", "PaymentAccount")"
+      id="ex-card-delete-@Model.Card.CardID"
+      method="POST"
+      data-update="@this.Url.Action("PaymentAccountList", "PaymentAccount")">
+    <input type="hidden" name="CreditCardID" value="@Model.Card.CardID">
+</form>

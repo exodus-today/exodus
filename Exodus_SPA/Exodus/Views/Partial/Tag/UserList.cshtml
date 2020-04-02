@@ -1,0 +1,35 @@
+﻿@using Exodus.Helpers
+
+<div id="ex-screen-2" class="ex-list ex-grid_0-1-0">
+    <div class="ex-list__header">
+        <div class="ex-list__item">
+            <div class="ex-list__item-content">
+                <div class="ex-list__header-btn">
+                    <i class="icons-add-person mr-4"></i>
+                    добавить участника
+                </div>
+                <select class="ex-list__header-select">
+                    <option>участники</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="ex-list__viewport">
+        @foreach (var item in Model) {
+        <div class="ex-list__item" data-load="@this.Url.Action("View_UserDetail", "Tag")" data-target="#ex-route-3">
+            <div class="ex-list__item-content">
+                <div class="ex-person-item ex-person-item_@PageHelper.GetUserStatusColour(item.TagUser.UserStatus)">
+                    <img src="" class="ex-person-item__avatar">
+                    <i class="icons-status ex-person-item__status"></i>
+                    <div class="ex-person-item__name">@item.TagUser.UserFullName</div>
+                    <div class="ex-person-item__cashflow">
+                        <i class="icons-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+<div id="ex-route-3" class="ex-grid_0-0-1"></div>

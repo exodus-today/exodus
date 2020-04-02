@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?8f2828779e8013c697d657f5a5924c20?#iefix") format("embedded-opentype"),
+url("./icons.woff2?8f2828779e8013c697d657f5a5924c20") format("woff2"),
+url("./icons.woff?8f2828779e8013c697d657f5a5924c20") format("woff"),
+url("./icons.ttf?8f2828779e8013c697d657f5a5924c20") format("truetype"),
+url("./icons.svg?8f2828779e8013c697d657f5a5924c20#icons") format("svg");
+}
+
+i {
+    line-height: 1;
+}
+
+i:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: top;
+}
+
+.icons-add-person:before {
+    content: "\f101";
+}
+.icons-arrow-bottom:before {
+    content: "\f102";
+}
+.icons-arrow-left:before {
+    content: "\f103";
+}
+.icons-arrow-right:before {
+    content: "\f104";
+}
+.icons-arrow-top:before {
+    content: "\f105";
+}
+.icons-bell:before {
+    content: "\f106";
+}
+.icons-card:before {
+    content: "\f107";
+}
+.icons-dispatcher:before {
+    content: "\f108";
+}
+.icons-dispatcherw:before {
+    content: "\f109";
+}
+.icons-edit:before {
+    content: "\f10a";
+}
+.icons-exchange:before {
+    content: "\f10b";
+}
+.icons-gear:before {
+    content: "\f10c";
+}
+.icons-hash:before {
+    content: "\f10d";
+}
+.icons-home:before {
+    content: "\f10e";
+}
+.icons-info:before {
+    content: "\f10f";
+}
+.icons-logout:before {
+    content: "\f110";
+}
+.icons-person:before {
+    content: "\f111";
+}
+.icons-search:before {
+    content: "\f112";
+}
+.icons-social:before {
+    content: "\f113";
+}
+.icons-statistic:before {
+    content: "\f114";
+}
+.icons-status-outline:before {
+    content: "\f115";
+}
+.icons-status:before {
+    content: "\f116";
+}
+.icons-tag:before {
+    content: "\f117";
+}
+.icons-two-persons:before {
+    content: "\f118";
+}

@@ -1,0 +1,38 @@
+﻿@using Exodus.ViewModels
+@model VM_PaymentAccount
+@{
+    var lang = Exodus.Global.Global.Language;
+}
+
+<form action="@this.Url.Action("PaymentAccountUpdate", "PaymentAccount")"
+      method="POST"
+      data-update="@this.Url.Action("PaymentAccountList", "PaymentAccount")">
+    <input type="hidden" name="AccountID" value="@Model.AccountID">
+    <div class="row my-5">
+        <div class="col-3 d-flex align-items-center">
+            @Exodus.Global.Localisation.Get("PayPalLogin", lang):
+        </div>
+        <div class="col-9">
+            <input type="text" name="AccountDetails" class="form-control" value="@Model.AccountDetails" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <button class="btn btn-outline-success w-100">
+                @Exodus.Global.Localisation.Get("Save", lang)
+            </button>
+        </div>
+        <div class="col">
+            <button form="ex-payment-delete-@Model.AccountID" class="btn btn-outline-danger w-100">
+                @Exodus.Global.Localisation.Get("Delete", lang)
+            </button>
+        </div>
+    </div>
+</form>
+<form action="@this.Url.Action("PaymentAccountDelete", "PaymentAccount")"
+      id="ex-payment-delete-@Model.AccountID"
+      method="POST"
+      data-update="@this.Url.Action("PaymentAccountList", "PaymentAccount")">
+    <input type="hidden" name="AccountID" value="@Model.AccountID">
+</form>

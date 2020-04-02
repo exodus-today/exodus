@@ -1,0 +1,12 @@
+﻿@model VM_User
+@using Exodus.ViewModels
+@{ 
+    var lang = Exodus.Global.Global.Language;
+}
+
+<div class="text-muted my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae delectus illo saepe illum aliquid molestiae
+    soluta doloribus sit suscipit atque laudantium porro, quisquam dolore deserunt iusto beatae obcaecati, aspernatur deleniti.</div>
+<div data-load="@this.Url.Action("IntentionForm", "H2O", new { UserID = Request.Params["UserID"], TagID = Request.Params["TagID"]})" 
+     data-target="#ex-user-detail" class="btn btn-outline-warning mb-4 w-100">@Exodus.Global.Localisation.Get("HelpRegularly", lang)</div>
+<div data-load="@this.Url.Action("TransactionForm", "H2O", new { UserID = Request.Params["UserID"], TagID = Request.Params["TagID"]})" 
+     data-target="#ex-user-detail" class="btn btn-outline-danger w-100">@Exodus.Global.Localisation.Get("CreateTransaction", lang)</div>

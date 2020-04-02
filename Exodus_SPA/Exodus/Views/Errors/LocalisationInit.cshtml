@@ -1,0 +1,14 @@
+﻿@model Exodus.Exceptions.LocalisationInitException
+@{
+    var lang = Exodus.Global.Global.Language;
+    Layout = "~/Views/Shared/Layout_Errors.cshtml";
+    var message = Model.Message;
+}
+<div class="mt-4" style="width:500px">
+    <h3>Localisation Error:</h3>
+    <br><br>
+    <h4 style="text-align:center">@Html.Raw(message.Replace("\r\n", "<br>"))</h4>
+    <br><br>
+    <input onclick="window.location.href='/Desktop/Index'" ; return false;"
+            type="button" value="Home" class="btn btn-outline-primary w-100">
+</div>

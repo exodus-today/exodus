@@ -1,0 +1,17 @@
+﻿@{
+    var lang = Exodus.Global.Global.Language;
+    ViewBag.Title = Exodus.Global.Localisation.Get("Desktop", lang);
+}
+<div class="ex-main-menu">
+    <div class="ex-main-menu__header" data-react="/Shared/Header">
+        @*RENDER HEADER*@
+    </div>
+    <div class="ex-main-menu__viewport ex-scroll">
+        <div class="ex-tag-list" data-react="/Tag/List">
+        </div>
+    </div>
+</div>
+@*RENDER EVENTS*@
+<div id="ex-route-1" class="ex-grid_1-1-1" data-href="/Event/EventList" data-target="ex-route-1">
+
+</div>
