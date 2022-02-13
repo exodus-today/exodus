@@ -27,7 +27,7 @@
         "@types/react-tooltip": "^3.9.2",
         "@types/shortid": "0.0.29",
         "@types/webpack-env": "^1.13.7",
-        "ajv": "^5.0.0",
+        "ajv": "^6.12.3",
         "bootstrap": "^4.0.0-beta",
         "icon-font-generator": "^1.1.2",
         "jquery": "^3.4.1",
